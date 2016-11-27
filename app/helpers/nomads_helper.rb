@@ -1,2 +1,2 @@
-module FlatsHelper
+module NomadsHelper
 end

@@ -4,7 +4,10 @@
       <%= simple_form_for(@nomad) do |f| %>
         <%= f.input :first_name %>
         <%= f.input :last_name %>
-        <%= f.input :contact, placeholder: 'Your facebook of phone number for example' %>
+        <%= f.input :phone, placeholder: '+33 646 531 750' %>
+        <%= f.input :facebook, placeholder: 'https://www.facebook.com/charly.mrtn' %>
+        <%= f.input :email, placeholder: 'charly.martin.1207@gmail.com' %>
+        <hr>
         <%= f.input :address %>
         <%= f.input :zip_code %>
         <%= f.input :city %>

@@ -1,6 +1,5 @@
 class Nomad < ApplicationRecord
   validates :first_name, presence: true
-  validates :contact, presence: true
 
   validates :address, presence: true
   validates :zip_code, presence: true
