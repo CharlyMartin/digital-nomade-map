@@ -12,16 +12,16 @@
           <thead>
             <tr>
               <th>Address</th>
-              <th>Latitude</th>
-              <th>Longitude</th>
+              <th>First Name</th>
+              <th>Last Name</th>
             </tr>
           </thead>
           <tbody>
             <% @nomads.each do |nomad| %>
               <tr data-nomad-id="<%= nomad.id %>">
                 <td><%= nomad.full_address %></td>
-                <td><%= nomad.latitude %></td>
-                <td><%= nomad.longitude %></td>
+                <td><%= nomad.first_name %></td>
+                <td><%= nomad.last_name %></td>
                 <td>
                   <%= link_to nomad_path(nomad), method: :delete, remote: true, data: { confirm: 'Delete nomad?' } do %>
                     <i class="fa fa-trash"></i>

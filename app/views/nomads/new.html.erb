@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <%= simple_form_for(@nomad) do |f| %>
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
+        <%= f.input :first_name, placeholder: 'Charly' %>
+        <%= f.input :last_name, placeholder: 'MARTIN' %>
         <%= f.input :phone, placeholder: '+33 646 531 750' %>
         <%= f.input :facebook, placeholder: 'https://www.facebook.com/charly.mrtn' %>
         <%= f.input :email, placeholder: 'charly.martin.1207@gmail.com' %>
@@ -11,12 +11,14 @@
         <%= f.input :address %>
         <%= f.input :zip_code %>
         <%= f.input :city %>
-        <%= f.input :country, priority: [ 'FR' ] %>
+        <%= f.input :country %>
         <%= f.submit class: 'btn btn-primary' %>
       <% end %>
     </div>
   </div>
 </div>
+
+<br>
 
 <%= content_for(:after_js) do %>
   <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyDANjx3bosEtIyzJaoWs50Wnt6nt_1rmxU"></script>
