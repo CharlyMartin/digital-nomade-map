@@ -1,6 +1,6 @@
 There are two important files:
 
-- The [`flats/new` view](https://github.com/lewagon/google-maps-autocomplete/blob/master/app/views/flats/new.html.erb) using the `simple_form` gem and the requirement of the Google Place API javascript file.
+- The [`nomads/new` view](https://github.com/lewagon/google-maps-autocomplete/blob/master/app/views/nomads/new.html.erb) using the `simple_form` gem and the requirement of the Google Place API javascript file.
 - The [`google_maps_autocomplete.js`](https://github.com/lewagon/google-maps-autocomplete/blob/master/app/assets/javascripts/google_maps_autocomplete.js) files initializing the form to autocomplete.
 
 The key set in the second file can be used in the following referrer:
