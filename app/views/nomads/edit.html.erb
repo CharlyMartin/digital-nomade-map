@@ -1,7 +1,7 @@
 <div class="container padded-top">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <%= simple_form_for [@nomad] do |f| %>
+      <%= simple_form_for [@nomad], url: nomad_path, method: :patch do |f| %>
         <%= f.input :first_name, placeholder: 'Charly' %>
         <%= f.input :last_name, placeholder: 'MARTIN' %>
         <%= f.input :phone, placeholder: '+33 646 531 750' %>
