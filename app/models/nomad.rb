@@ -3,6 +3,7 @@ class Nomad < ApplicationRecord
   #      :recoverable, :rememberable, :trackable, :validatable
 
   validates :first_name, presence: true
+  validates :email, presence: true
 
   validates :address, presence: true
   # validates :zip_code, presence: true
@@ -10,7 +11,18 @@ class Nomad < ApplicationRecord
   validates :country, presence: true
 
   geocoded_by :full_address
+  reverse_geocoded_by :latitude, :longitude do |obj,results|
+    if geo = results.first
+      puts geo.address
+      obj.address = geo.address
+      obj.city    = geo.city
+      obj.zip_code = geo.postal_code
+      obj.country = geo.country_code
+    end
+  end
+
   after_validation :geocode, if: :full_address_changed?
+  after_validation :reverse_geocode
 
   def full_name
     "#{first_name} #{last_name}"
