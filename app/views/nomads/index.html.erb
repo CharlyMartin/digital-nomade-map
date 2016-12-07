@@ -1,10 +1,11 @@
-<div id="map" style="width: 100%; height: 70vh;"></div>
+<div id="map" style="width: 100%; height: 86vh;"></div>
 
 <% content_for(:after_js) do %>
   <script>
     $(document).ready(function() {
       var handler = Gmaps.build('Google');
-      handler.buildMap({ internal: { id: 'map' } }, function() {
+      handler.buildMap({ provider: { scrollwheel: false, zoomcontrol: true,
+      draggable: true }, internal: { id: 'map' } }, function() {
         markers = handler.addMarkers(<%= raw @hash.to_json %>);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
@@ -21,10 +22,22 @@
 <div class="container padded-top">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
-      <p>
-        <%= link_to new_nomad_path, class: 'btn btn-warning' do %>
-          <i class="fa fa-plus"></i> Add yourself on the map!
+      <div class="col-md-4 col-xs-12">
+        <p>
+          <%= link_to new_nomad_path, class: 'btn btn-warning' do %>
+            <i class="fa fa-plus"></i> 1. Add yourself on the map!
+          <% end %>
+        </p>
+      </div>
+      <div class="col-md-8 col-xs-12">
+        <%= link_to 'https://chrome.google.com/webstore/detail/french-digital-nomads-map/aaokjnbicmobnkgjnmbmffbnldebhgfa', class: 'btn btn-primary', target: '_blank' do %>
+          <i class="fa fa-chrome" aria-hidden="true"></i> 2. Download the chrome extension to update your location automatically
         <% end %>
+      </div>
+
+
+      <p>
+
       </p>
 
       <% if @nomads.any? %>
@@ -55,11 +68,6 @@
           </tbody>
         </table>
       <% end %>
-    </div>
-
-    <div class="col-md-10 col-md-offset-1" style="text-align:center;">
-      <img src="<%= asset_path 'chrome-extension.jpg' %>" width="80" />
-      Update your location automatically with the <a href="https://chrome.google.com/webstore/detail/french-digital-nomads-map/aaokjnbicmobnkgjnmbmffbnldebhgfa">Chrome Extension</a>
     </div>
   </div>
 </div>
