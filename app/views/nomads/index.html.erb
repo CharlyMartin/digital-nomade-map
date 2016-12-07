@@ -1,4 +1,4 @@
-<div id="map" style="width: 100%; height: 86vh;"></div>
+<div id="map" style="width: 100%; height: 82vh;"></div>
 
 <% content_for(:after_js) do %>
   <script>
@@ -18,6 +18,11 @@
     });
   </script>
 <% end %>
+
+<div class="nomad-count">
+  <%= @nomads.count %>
+  NOMADS WORLDWIDE
+</div>
 
 <div class="container padded-top">
   <div class="row">

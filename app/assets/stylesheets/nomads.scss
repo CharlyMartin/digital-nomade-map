@@ -1,3 +1,10 @@
-// Place all the styles related to the flats controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.nomad-count {
+  width: 100%;
+  background: rgba(10, 10, 10, 0.5);
+  font-family: $base-font;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  padding: 1vh 0;
+}
