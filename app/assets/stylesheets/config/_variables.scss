@@ -1,22 +1,9 @@
-/* -------------------------------------
- * Fonts
- * ------------------------------------- */
 // Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Raleway:400,100,300,700,500|Fredoka+One");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Raleway:100,300,400,500,700|Fredoka+One");
 
-$brand-font: "Fredoka One", "Helvetica", "cursive";
-$base-font: "Open Sans", "Helvetica", "sans-serif";
-$header-font: "Raleway", "Helvetica", "sans-serif";
-
-// Local fonts (uncomment following lines)
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+$brand-font: "Fredoka One", "cursive";
+$base-font: "Open Sans", "sans-serif";
+$header-font: "Raleway", "sans-serif";
 
 // Font-size and line-height
 $base-size: 16px;

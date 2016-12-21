@@ -18,10 +18,17 @@
   align-items: center;
 }
 
-#brand {
-  color: white;
+#brand > h1 {
+  color: $brand-yellow-dark;
+  text-shadow: 1px 1px rgba(143, 247, 167, 1);
   font-family: $brand-font;
-  font-size: 15px;
+  font-size: 24px;
+  letter-spacing: 2px;
+  transition: all 0.3 ease;
+  &:hover {
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
 }
 
 /* Optional class to fix the navbar on top */
