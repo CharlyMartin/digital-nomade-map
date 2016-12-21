@@ -24,6 +24,9 @@ class Nomad < ApplicationRecord
   after_validation :geocode, if: :full_address_changed?
   after_validation :reverse_geocode
 
+
+# GEOLOC
+
   def full_name
     "#{first_name} #{last_name}"
   end

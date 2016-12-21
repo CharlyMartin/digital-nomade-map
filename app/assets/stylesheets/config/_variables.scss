@@ -2,7 +2,9 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Raleway:400,100,300,700,500");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Raleway:400,100,300,700,500|Fredoka+One");
+
+$brand-font: "Fredoka One", "Helvetica", "cursive";
 $base-font: "Open Sans", "Helvetica", "sans-serif";
 $header-font: "Raleway", "Helvetica", "sans-serif";
 
@@ -24,8 +26,20 @@ $base-height: 1.4;
  * Colors
  * ------------------------------------- */
 // Scheme
-$brand-color: #D23333;
+// $brand-color-blue: #0A4650;
+// $brand-color-green-dark: #2C9E4B;
+// $brand-color-green-light: #9ED763;
+// $brand-color-yellow-dark: #FDDA16;
+// $brand-color-yellow-light: #FFF2B2;
 
+// Scheme
+$brand-grey: #757761; // rgba(117, 119, 97, 1)
+$brand-yellow-dark: #F4E76E; // rgba(244, 231, 110, 1)
+$brand-yellow-light: #F7FE72; // rgba(247, 254, 114, 1)
+$brand-green: #8FF7A7; // rgba(143, 247, 167, 1)
+$brand-blue: #51BBFE; // rgba(81, 187, 254, 1)
+
+// Bootsrap
 $red: #EE5F5B;
 $blue: #469AE0;
 $yellow: #FDB631;

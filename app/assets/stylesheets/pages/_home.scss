@@ -1,4 +1,8 @@
-/* -------------------------------------
- * CSS code specific to home page
- * (margin/padding adjustments)
- * ------------------------------------- */
+.landing-banner {
+  height: 100vh;
+  background-size: cover !important;
+  background-position: center;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+}
