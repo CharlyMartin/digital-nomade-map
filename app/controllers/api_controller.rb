@@ -9,7 +9,9 @@ class ApiController < ApplicationController
     render json: @nomad
   end
 
+  private
+
   def api_params
-    params.permit(:email, :latitude, :longitude, :api)
+    params.permit(:email, :latitude, :longitude, :api, :last_chrome_update_date)
   end
 end
