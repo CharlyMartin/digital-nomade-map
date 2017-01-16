@@ -1,9 +1,17 @@
 <div class="navbar navbar-fixed">
-  <div class="navbar-container">B</div>
+    <div class="navbar-container left">
+      <%= link_to root_path do %>
+        <%= image_tag 'logo2.png', id: 'logo' %>
+      <% end %>
+    </div>
 
-  <div class="navbar-container" id="brand">
-    <h1> <%= link_to 'NOMAP MAP', root_path %> </h1>
-  </div>
+    <div class="navbar-container center">
+      <p> <%= link_to 'nomadmap', root_path, id: 'brand' %> </p>
+    </div>
 
-  <div class="navbar-container">C</div>
+    <div class="navbar-container right">
+      <%= link_to root_path do %>
+        <%= image_tag 'avatar.png', id: 'avatar' %>
+      <% end %>
+    </div>
 </div>

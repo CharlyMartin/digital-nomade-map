@@ -4,6 +4,16 @@
  * Feel free to change them and create your own
  * ------------------------------------- */
 
+// Universals
+h1, h2, h3, h4, p {
+  margin: 0;
+  font-size: inherit;
+}
+
+* {
+  text-decoration: none !important;
+}
+
 // Paddings
 .padded {
   padding-top: 5em;
@@ -30,8 +40,4 @@
 
 .no-padding {
   padding: 0 !important;
-}
-
-h1, h2, h3, h4 {
-  margin: 0 !important;
 }
