@@ -6,5 +6,4 @@ Rails.application.routes.draw do
   devise_for :nomads
 
   resources :nomads, only: %i(index new create edit update destroy)
-
 end
