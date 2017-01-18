@@ -1,5 +1,5 @@
 .landing-banner {
-  height: 95vh;
+  height: 98vh;
   background-size: cover !important;
   background-position: center;
 }
@@ -24,4 +24,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  color: white;
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
 }
+

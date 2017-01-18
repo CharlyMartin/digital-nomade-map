@@ -6,12 +6,22 @@
         <div class="navbar-placeholder"></div>
 
         <div class="tagline-container">
-          <h1 id="tagline">Meet the digital nomads around you</h1>
+          <h1 id="tagline"> <%= t('pages.home.tagline') %> </h1>
           <p id="typed-js">There's Charly in Thailand</p>
         </div>
 
+        <div class="location-form">
+          <%= simple_form_for :location, url: :nomad_around, method: :get do |f| %>
+            <%= f.input :location, label: false, placeholder: t('pages.home.form_placeholder') %>
+            <%= f.button :submit, t('pages.home.form_submit') %>
+          <% end %>
+        </div>
 
-        <i class="fa fa-angle-down" aria-hidden="true"></i>
+        <div class="scroll-down-container">
+          <p class="pointer"> <%= t('pages.home.scroll_down') %> </p>
+          <i class="fa fa-angle-down pointer" aria-hidden="true"></i>
+        </div>
+
 
       </div>
     </div>
