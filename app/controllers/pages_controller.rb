@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 
   def nomad_around
     location_params[:location]
-    # raise
+    @nomads_around = Nomad.near(location_params[:location], 50).all[0..-1]
   end
 
   private
