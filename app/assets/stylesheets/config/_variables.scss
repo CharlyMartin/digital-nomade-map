@@ -10,18 +10,6 @@ $brand-font: "Comfortaa", "Helvetica", "cursive";
 $base-font: "Open Sans", "Helvetica", "sans-serif";
 $header-font: "Muli", "Helvetica", "sans-serif";
 
-// Fredoka One ||
-
-// Local fonts (uncomment following lines)
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
-
 // Font-size and line-height
 $base-size: 16px;
 $base-height: 1.4;
@@ -56,3 +44,8 @@ $gray-dark:    lighten(#000, 20%);   // #333
 $gray:         lighten(#000, 33.5%); // #555
 $gray-light:   lighten(#000, 46.7%); // #777
 $gray-lighter: lighten(#000, 93.5%); // #eee
+
+// Height
+// :root {
+//   --navbar-height: 6px;
+// }

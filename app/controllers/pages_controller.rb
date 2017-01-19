@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 
   def nomad_around
     location_params[:location]
-    raise
+    # raise
   end
 
   private

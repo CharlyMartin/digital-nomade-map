@@ -1,4 +1,6 @@
 class NomadsController < ApplicationController
+  # skip_before_action :authenticate_nomad!
+
   def index
     @nomads = Nomad.all.order(created_at: :desc).where.not(latitude: nil, longitude: nil)
 

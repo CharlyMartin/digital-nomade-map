@@ -4,13 +4,9 @@ class Nomad < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :first_name, presence: true
-  validates :email, presence: true
-
-  validates :address, presence: true
-  # validates :zip_code, presence: true
-  validates :city, presence: true
-  validates :country, presence: true
+  validates :first_name, :last_name, presence: true
+  validates :city, presence: true # temporary
+  # validates :address, :city, :country, presence: true
 
   geocoded_by :full_address
 
@@ -26,9 +22,6 @@ class Nomad < ApplicationRecord
 
   after_validation :geocode, if: :full_address_changed?
   after_validation :reverse_geocode
-
-
-# GEOLOC
 
   def full_name
     "#{first_name} #{last_name}"

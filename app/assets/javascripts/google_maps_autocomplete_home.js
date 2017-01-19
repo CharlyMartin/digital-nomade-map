@@ -25,9 +25,6 @@ function onPlaceChanged() {
 }
 
 function getAddressComponents(place) {
-  // If you want lat/lng, you can look at:
-  // - place.geometry.location.lat()
-  // - place.geometry.location.lng()
 
   // var street_number = null;
   // var route = null;
