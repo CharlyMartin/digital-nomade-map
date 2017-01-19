@@ -5,6 +5,13 @@ class PagesController < ApplicationController
   end
 
   def nomad_around
+    location_params[:location]
+    raise
   end
 
+  private
+
+  def location_params
+    params.require(:location).permit(:location)
+  end
 end
