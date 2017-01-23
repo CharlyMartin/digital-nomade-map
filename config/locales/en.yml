@@ -1,7 +1,15 @@
 en:
   pages:
     home:
-      tagline: 'Meet the digital nomads around you'
-      scroll_down: 'Scroll down'
-      form_placeholder: 'Enter your location'
-      form_submit: 'Find nomads'
+      tagline: "Meet the digital nomads around you"
+      scroll_down: "Scroll down"
+      form_placeholder: "Enter your location"
+      form_submit: "Find nomads"
+    nomads_around:
+      nomad_number:
+        zero: "There's no digital nomads around you... yet! Sign-up to be the first to ckeck in here"
+        one: "YAY! There's %{count} digital nomad near you. Sign-up to contact them."
+        other: "YAY! There are %{count} digital nomads around you. Sign-up to contact them."
+      sign_up_email: "Sign up with email"
+      sign_up_facebook: " "
+      sign_up_google: " "

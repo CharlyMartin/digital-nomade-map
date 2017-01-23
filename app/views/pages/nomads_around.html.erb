@@ -1,0 +1,20 @@
+<br>
+<br>
+<br>
+<br>
+
+<%= @nomads_around.count %>
+
+<br>
+
+<% @nomads_around.each do |nomad| %>
+  <% nomad.first_name %>
+<% end %>
+
+<p> <%= t('pages.nomads_around.nomad_number', count: @nomads_around.count) %> </p>
+<%= link_to t('pages.nomads_around.sign_up_email'), new_nomad_registration_path %>
+
+<p>or</p>
+<p>sign-in with Facebok</p>
+<p>sign-in with Google</p>
+

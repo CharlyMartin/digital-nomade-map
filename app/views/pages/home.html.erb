@@ -11,7 +11,7 @@
         </div>
 
         <div class="location-form">
-          <%= simple_form_for :location, url: :nomad_around, method: :get do |f| %>
+          <%= simple_form_for :location, url: :nomads_around, method: :get do |f| %>
             <%= f.input :location, label: false, placeholder: t('pages.home.form_placeholder') %>
             <%= f.button :submit, t('pages.home.form_submit') %>
           <% end %>
