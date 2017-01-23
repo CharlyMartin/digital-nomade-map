@@ -1,7 +1,7 @@
 /* Main class */
 .navbar {
   box-shadow: 0 2px $brand-grey;
-  background: $gray-darker;
+  background: $gray-light;
   height: 5vh;
   display: flex;
   padding: 0 30px;
@@ -52,6 +52,12 @@
   height: 40px;
 }
 
-#avatar {
+#avatar-home {
   height: 40px;
+  width: 40px;
+}
+
+.slide-menu {
+  padding-top: 50px;
+  background: red;
 }

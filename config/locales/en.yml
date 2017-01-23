@@ -1,4 +1,9 @@
 en:
+  navbar:
+    sign_up: "Sign-up"
+    sign_in: "Sign-in"
+    edit: "Edit profile"
+    logout: "Log out"
   pages:
     home:
       tagline: "Meet the digital nomads around you"

@@ -10,8 +10,13 @@
     </div>
 
     <div class="navbar-container right">
-      <%= link_to root_path do %>
-        <%= image_tag 'avatar.png', id: 'avatar' %>
-      <% end %>
+      <%= image_tag 'avatar.png', id: 'avatar-home', class: 'pointer' %>
     </div>
+</div>
+
+<div class="slide-menu">
+  <%= link_to t('navbar.sign_up'), new_nomad_registration_path %>
+  <%= link_to t('navbar.sign_in'), new_nomad_session_path %>
+  <%= link_to t('navbar.edit'), edit_nomad_registration_path %>
+  <%= link_to t('navbar.logout'), destroy_nomad_session_path, method: :delete %>
 </div>
