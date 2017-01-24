@@ -6,7 +6,9 @@ en:
     logout: "Log out"
   pages:
     home:
-      tagline: "Meet the digital nomads around you"
+      brand: "momadmap"
+      tagline: "meet digital nomads as you travel"
+      cta: "Find them all!"
       scroll_down: "Scroll down"
       form_placeholder: "Enter your location"
       form_submit: "Find nomads"

@@ -1,17 +1,17 @@
 /* Main class */
-.navbar {
-  box-shadow: 0 2px $brand-grey;
-  background: $gray-light;
-  height: 5vh;
+.mynavbar {
+  // box-shadow: 0 2px $brand-grey;
+  background: rgba(255, 255, 255, 0.95);
+  height: 6vh;
   margin-bottom: 0;
-  padding: 0 20px 0 200px;
+  padding: 0 20px 0 180px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   overflow: visible;
 }
 
-.navbar-fixed {
+.mynavbar-fixed {
   position: fixed;
   left: 0px;
   top: 0px;
@@ -24,12 +24,12 @@
   align-items: center;
 }
 
-#brand {
+#brand-nabar {
   color: $brand-green;
   // text-shadow: 1px 1px rgba(143, 247, 167, 1);
   font-family: $brand-font;
-  font-size: 18px;
-  letter-spacing: 1px;
+  font-size: 20px;
+  // letter-spacing: 1px;
   transition: all 0.3 ease;
   // &:hover {
   //   transform: translateY(-1px);
@@ -68,3 +68,5 @@
     color: white;
   }
 }
+
+.mynavbar > *::before, .navbar > *::after { display: none !important; }
