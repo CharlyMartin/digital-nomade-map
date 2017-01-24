@@ -6,7 +6,7 @@ en:
     logout: "Log out"
   pages:
     home:
-      brand: "momadmap"
+      brand: "nomadmap"
       tagline: "meet digital nomads as you travel"
       cta: "Find them all!"
       scroll_down: "Scroll down"
