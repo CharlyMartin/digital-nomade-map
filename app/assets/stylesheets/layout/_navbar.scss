@@ -3,10 +3,12 @@
   box-shadow: 0 2px $brand-grey;
   background: $gray-light;
   height: 5vh;
+  margin-bottom: 0;
+  padding: 0 20px 0 200px;
   display: flex;
-  padding: 0 30px;
   align-items: center;
   justify-content: space-between;
+  overflow: visible;
 }
 
 .navbar-fixed {
@@ -20,26 +22,13 @@
 .navbar-container {
   display: flex;
   align-items: center;
-  width: 30%;
-}
-
-.left {
-  justify-content: flex-start;
-}
-
-.center {
-  justify-content: center;
-}
-
-.right {
-  justify-content: flex-end;
 }
 
 #brand {
   color: $brand-green;
   // text-shadow: 1px 1px rgba(143, 247, 167, 1);
   font-family: $brand-font;
-  font-size: 22px;
+  font-size: 18px;
   letter-spacing: 1px;
   transition: all 0.3 ease;
   // &:hover {
@@ -48,8 +37,10 @@
   // }
 }
 
-#logo {
-  height: 40px;
+#brand-container {
+  position: absolute;
+  left: 20px;
+  height: inherit;
 }
 
 #avatar-home {
@@ -57,7 +48,23 @@
   width: 40px;
 }
 
+#avatar-container {
+  position: absolute;
+  right: 20px;
+  height: inherit;
+}
+
 .slide-menu {
-  padding-top: 50px;
-  background: red;
+  color: transparent;
+  transition: all 0.5s ease;
+  a {
+    color: transparent;
+  }
+}
+
+.active {
+  transform: translateY(200%);
+  a {
+    color: white;
+  }
 }
