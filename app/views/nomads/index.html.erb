@@ -1,26 +1,7 @@
-<div id="map" style="width: 100%; height: 82vh;"></div>
-
-<% content_for(:after_js) do %>
-  <script>
-    $(document).ready(function() {
-      var handler = Gmaps.build('Google');
-      handler.buildMap({ provider: { scrollwheel: false, zoomcontrol: true,
-      draggable: true }, internal: { id: 'map' } }, function() {
-        markers = handler.addMarkers(<%= raw @hash.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-        if (markers.length == 0) {
-          handler.getMap().setZoom(2);
-        } else if (markers.length == 1) {
-          handler.getMap().setZoom(14);
-        }
-      });
-    });
-  </script>
-<% end %>
+<div id="map" style="width: 100%; height: 95vh;"></div>
 
 <div class="nomad-count">
-  <%= @nomads.count %>
+  <%=  %>
   NOMADS WORLDWIDE
 </div>
 
@@ -41,38 +22,32 @@
       </div>
 
 
-      <p>
 
-      </p>
-
-      <% if @nomads.any? %>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Place</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @nomads.each do |nomad| %>
-              <tr data-nomad-id="<%= nomad.id %>">
-                <td><%= nomad.full_name %></td>
-                <td><%= nomad.city_country %></td>
-                <td>
-                  <%= link_to edit_nomad_path(nomad) do %>
-                    <i class="fa fa-edit"></i>
-                  <% end %>
-                </td>
-                <td>
-                  <%= link_to nomad_path(nomad), method: :delete, remote: true, data: { confirm: 'Delete nomad?' } do %>
-                    <i class="fa fa-trash"></i>
-                  <% end %>
-                </td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      <% end %>
     </div>
   </div>
 </div>
+
+<!-- MAPS SCRIPT -->
+<% content_for(:after_js) do %>
+  <script>
+    $(document).ready(function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ provider: { scrollwheel: false, zoomcontrol: true,
+      draggable: true }, internal: { id: 'map' } }, function() {
+
+        markers = handler.addMarkers(<%= raw @nomads_location.to_json %>);
+
+        handler.bounds.extendWith(markers);
+        handler.map.centerOn(<%= raw @center_point.to_json %>);
+        handler.getMap().setZoom(12);
+        // handler.fitMapToBounds();
+        // if (markers.length == 0) {
+        //   handler.getMap().setZoom(2);
+        // } else if (markers.length == 1) {
+        //   handler.getMap().setZoom(14);
+        // }
+
+      });
+    });
+  </script>
+<% end %>
