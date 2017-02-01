@@ -35,15 +35,18 @@
 }
 
 #cta{
-  padding: 15px 30px;
+  padding: 14px 28px;
   background: $gray-darker;
   font-weight: 600;
   border-radius: 30px;
+  border: 3px solid rgba(0, 0, 0, 0);
   color: $brand-green;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
   &:hover {
-    background: white;
+    background: transparent;
+    color: $gray-darker;
+    border: 3px solid $gray-darker;
   }
 }
 
@@ -95,7 +98,7 @@ input#location_location {
   margin-right: 5px;
 }
 
-// submit input
+// submit button
 .form-container-home > input[name="commit"] {
   height: 50px;
   border-radius: 0 40px 40px 0;
@@ -108,4 +111,30 @@ input#location_location {
   &:hover {
     background: black;
   }
+}
+
+// TYPED JS ////////////////////////////////////////////////////////////////////
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
 }
