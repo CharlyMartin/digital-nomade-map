@@ -1,3 +1,4 @@
+// VIEW 1 //////////////////////////////////////////////////////////////////////
 .landing-banner {
   height: 98vh;
   background-size: cover !important;
@@ -25,8 +26,6 @@
   font-size: 30px;
   font-weight: 300;
 }
-
-
 
 .cta-container {
   width: 100%;
@@ -59,12 +58,54 @@
   bottom: 20px;
 }
 
-////////////////////////////////////////////////////////////////////////////////
+// VIEW 2 ///////////////////////////////////////////////////////////////////////
 
-.form-container {
+.form-banner {
   height: 100vh;
+  width: 100%;
+  text-align: center;
+}
+
+.typed-js-container {
+  height: 30vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.form-container-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-group.location_location {
+  margin: 0;
+}
+
+// search input
+input#location_location {
+  border-radius: 40px 0 0 40px;
+  padding: 0 25px;
+  height: 50px;
+  width: 350px;
+  box-shadow: none;
+  font-weight: 300;
+  margin-right: 5px;
+}
+
+// submit input
+.form-container-home > input[name="commit"] {
+  height: 50px;
+  border-radius: 0 40px 40px 0;
+  padding: 0 25px;
+  background: red;
+  color: white;
+  font-weight: 300;
+  box-shadow: none;
+  border: none;
+  &:hover {
+    background: black;
+  }
 }

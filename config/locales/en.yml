@@ -8,9 +8,9 @@ en:
     home:
       brand: "nomadmap"
       tagline: "meet digital nomads as you travel"
-      cta: "Find them all!"
+      cta: "Find them all"
       scroll_down: "Scroll down"
-      form_placeholder: "Enter your location"
+      form_placeholder: "Enter your current location"
       form_submit: "Find nomads"
     nomads_around:
       nomad_number:
