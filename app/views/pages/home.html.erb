@@ -29,9 +29,11 @@
       <div class="form-banner" id="here">
 
         <div class="typed-js-container">
+
           <p class="element">
-            TYPED_JS PLACEHOLDER
+            <!-- TYPED_JS PLACEHOLDER -->
           </p>
+
         </div>
 
         <div>
@@ -54,4 +56,14 @@
 
 
 <!-- SCRIPT TYPED JS -->
-
+<%= content_for :after_js do %>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.4/typed.min.js"></script>
+  <script>
+      $(function(){
+          $(".element").typed({
+              strings: ["First sentence.", "Second sentence."],
+              typeSpeed: 50
+          });
+      });
+  </script>
+<% end %>
