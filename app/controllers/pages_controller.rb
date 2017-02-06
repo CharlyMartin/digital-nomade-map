@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @nomads = Nomad.all
+    @typed_js = name_in_city_list
   end
 
   def nomads_around
@@ -15,4 +16,14 @@ class PagesController < ApplicationController
   def location_params
     params.require(:location).permit(:location)
   end
+
+  def name_in_city_list
+    list = []
+
+    Nomad.all.each do |nomad|
+      list << "There's #{nomad.first_name} in #{nomad.city}"
+    end
+    return list
+  end
+
 end

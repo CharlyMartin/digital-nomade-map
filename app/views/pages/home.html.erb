@@ -29,10 +29,7 @@
       <div class="form-banner" id="here">
 
         <div class="typed-js-container">
-
-          <p class="element">
-            <!-- TYPED_JS PLACEHOLDER -->
-          </p>
+          <span class="element"></span>
 
         </div>
 
@@ -51,8 +48,7 @@
 
 </div>
 <!-- VIEW 3 -->
-
-
+<% @typed_js %>
 
 
 <!-- SCRIPT TYPED JS -->
@@ -61,8 +57,23 @@
   <script>
       $(function(){
           $(".element").typed({
-              strings: ["First sentence.", "Second sentence."],
-              typeSpeed: 50
+            strings: (<%= raw @typed_js %>),
+            typeSpeed: 40,
+            startDelay: 3000,
+            // backspacing speed
+            backSpeed: 10,
+            // shuffle the strings
+            shuffle: true,
+            // time before backspacing
+            backDelay: 1000,
+            // loop
+            loop: true,
+            // false = infinite
+            loopCount: false,
+            // show cursor
+            showCursor: false,
+            // either html or text
+            contentType: 'text'
           });
       });
   </script>
