@@ -1,6 +1,6 @@
 // VIEW 1 //////////////////////////////////////////////////////////////////////
 .landing-banner {
-  height: 98vh;
+  height: 99vh;
   background-size: cover !important;
   background-position: center;
 }
@@ -23,7 +23,7 @@
 #tagline {
   color: white;
   font-family: $header-font;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 300;
 }
 
@@ -63,7 +63,7 @@
 
 // VIEW 2 ///////////////////////////////////////////////////////////////////////
 .form-banner {
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   text-align: center;
 }
@@ -114,16 +114,20 @@ input#location_location {
 
 // VIEW 3 //////////////////////////////////////////////////////////////////////
 .nomad-banner {
-  height: 100vh;
+  height: 90vh;
   width: 100%;
-  background: red;
+}
+
+.background-image {
+  height: inherit;
+  background-size: cover !important;
+  background-position: center;
 }
 
 // VIEW 4 //////////////////////////////////////////////////////////////////////
 .features-banner {
-  height: 100vh;
+  height: 90vh;
   width: 100%;
-  background: green;
 }
 
 
