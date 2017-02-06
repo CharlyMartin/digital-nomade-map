@@ -42,12 +42,25 @@
   border: 3px solid transparent;
   color: $brand-green;
   cursor: pointer;
+  animation: levitate;
+  animation-duration: 3s;
+  animation-delay: 5s;
+  animation-iteration-count: infinite;
   transition: all 0.1s ease-in-out;
   &:hover {
     background: transparent;
     color: $gray-darker;
     border: 3px solid $gray-darker;
   }
+}
+
+@keyframes levitate {
+  0% {transform: translateY(0px)}
+  5% {transform: translateY(-5px)}
+  10% {transform: translateY(0px)}
+  15% {transform: translateY(-5px)}
+  20% {transform: translateY(0px)}
+  100% {transform: translateY(0px)}
 }
 
 .scroll-down-container {
@@ -114,7 +127,7 @@ input#location_location {
 
 // VIEW 3 ONWARDS //////////////////////////////////////////////////////////////////////
 .home-banner {
-  height: 90vh;
+  height: 95vh;
   width: 100%;
 }
 
@@ -132,8 +145,16 @@ input#location_location {
 
 .home-title {
   font-family: $brand-font;
-  font-size: 20px;
-  margin-bottom: 15px;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: $brand-green;
+}
+
+.home-subtitle {
+  font-family: $base-font;
+  font-weight: 600;
+  margin-top: 15px;
+  font-size: 15px;
 }
 
 .home-content {
