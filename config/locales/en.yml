@@ -18,6 +18,7 @@ en:
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam itaque cum,
         officiis, possimus necessitatibus aliquid in cupiditate sapiente eaque veritatis,
         molestias perferendis et vero aperiam, recusandae velit laborum modi odio.
+      features: "Our features"
     nomads_around:
       nomad_number:
         zero: "There's no digital nomads around you... yet! Sign-up to be the first to ckeck in here"

@@ -3,7 +3,9 @@
 <!-- VIEW 1 -->
   <div class="row">
     <div class="col-xs-12 no-padding">
-      <div class="landing-banner" style="background-image: linear-gradient(-225deg, rgba(143, 247, 167, 0.85) 50%, rgba(143, 247, 167, 0.85) 50%), url(<%= asset_path "landing.jpg" %>);">
+      <div class="landing-banner" style="background-image:
+        linear-gradient(-225deg, rgba(143, 247, 167, 0.85) 50%, rgba(143, 247, 167, 0.85) 50%),
+        url(<%= asset_path "landing.jpg" %>);">
 
         <div class="brand-container">
           <h2 id="brand-home"> <%= t('pages.home.brand') %> </h2>
@@ -47,7 +49,6 @@
     </div>
   </div>
 
-</div>
 <!-- VIEW 3 -->
   <div class="row">
     <div class="col-xs-12 no-padding">
@@ -57,6 +58,18 @@
       </div>
     </div>
   </div>
+
+<!-- VIEW 4 -->
+  <div class="row">
+    <div class="col-xs-12 no-padding">
+      <div class="features-banner">
+        <p> <%= t('pages.home.features') %> </p>
+      </div>
+    </div>
+  </div>
+
+<!-- END OF CONTAINER FLUID -->
+</div>
 
 
 <!-- SCRIPT TYPED JS -->
