@@ -49,29 +49,31 @@
 
 </div>
 <!-- VIEW 3 -->
-<% raise %>
+  <div class="row">
+    <div class="col-xs-12 no-padding">
+      <div class="nomad-banner">
+        <h2> <%= t('pages.home.what_is_nomad') %> </h2>
+        <p> <%= t('pages.home.what_is_nomad_text') %> </p>
+      </div>
+    </div>
+  </div>
 
 
 <!-- SCRIPT TYPED JS -->
 <%= content_for :after_js do %>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.4/typed.min.js"></script>
   <script>
-      $(function(){
-          $(".element").typed({
-            strings: (<%= raw @typed_js %>),
-            typeSpeed: 40,
-            startDelay: 3000,
-            // backspacing speed
-            backSpeed: 10,
-            // time before backspacing
-            backDelay: 1000,
-            // loop
-            loop: true,
-            // show cursor
-            showCursor: false,
-            // either html or text
-            contentType: 'text'
-          });
+    $(function(){
+      $(".element").typed({
+        strings: (<%= raw @typed_js %>),
+        typeSpeed: 40,
+        startDelay: 3000,
+        backSpeed: 10,
+        backDelay: 1000,
+        loop: true,
+        showCursor: false,
+        contentType: 'text'
       });
+    });
   </script>
 <% end %>
