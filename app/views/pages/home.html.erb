@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid no-padding">
 
 <!-- VIEW 1 -->
   <div class="row">
@@ -13,7 +13,7 @@
         </div>
 
         <div class="cta-container">
-          <span id="cta"> <%= t('pages.home.cta') %> </span>
+          <span class="box-shadow" id="cta"> <%= t('pages.home.cta') %> </span>
         </div>
 
         <div class="scroll-down-container">
@@ -49,30 +49,38 @@
     </div>
   </div>
 
+<div class="custom-hr"></div>
+
 <!-- VIEW 3 -->
   <div class="row">
     <div class="col-xs-12 no-padding">
-      <div class="nomad-banner">
-        <div class="col-xs-5 background-image" style="background-image:
+      <div class="home-banner">
+        <div class="col-xs-5 background-image hidden-xs box-shadow" style="background-image:
           url(<%= asset_path "landing.jpg" %>)"></div>
 
-        <div class="col-xs-7">
-          <h2> <%= t('pages.home.what_is_nomad') %> </h2>
-          <p> <%= t('pages.home.what_is_nomad_text') %> </p>
+        <div class="col-xs-7 no-padding">
+          <div class="home-text-container">
+            <h2 class="home-title"> <%= t('pages.home.what_is_nomad') %> </h2>
+            <p class="home-content"> <%= t('pages.home.what_is_nomad_text') %> </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
+  <div class="custom-hr"></div>
 <!-- VIEW 4 -->
   <div class="row">
     <div class="col-xs-12 no-padding">
-      <div class="features-banner">
-        <div class="col-xs-7">
-          <p> <%= t('pages.home.features') %> </p>
+      <div class="home-banner">
+
+        <div class="col-xs-7 no-padding">
+          <div class="home-text-container">
+            <p class="home-title"> <%= t('pages.home.features') %> </p>
+          </div>
         </div>
 
-        <div class="col-xs-5 background-image" style="background-image:
+        <div class="col-xs-5 background-image hidden-xs box-shadow" style="background-image:
           url(<%= asset_path "landing.jpg" %>)"></div>
 
       </div>

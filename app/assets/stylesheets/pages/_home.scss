@@ -112,8 +112,8 @@ input#location_location {
   }
 }
 
-// VIEW 3 //////////////////////////////////////////////////////////////////////
-.nomad-banner {
+// VIEW 3 ONWARDS //////////////////////////////////////////////////////////////////////
+.home-banner {
   height: 90vh;
   width: 100%;
 }
@@ -124,12 +124,30 @@ input#location_location {
   background-position: center;
 }
 
-// VIEW 4 //////////////////////////////////////////////////////////////////////
-.features-banner {
-  height: 90vh;
+.home-text-container {
   width: 100%;
+  height: inherit;
+  padding: 50px;
 }
 
+.home-title {
+  font-family: $brand-font;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.home-content {
+  padding: 5px 0;
+}
+
+.custom-hr {
+  height: 1vh;
+  background: linear-gradient(to right, $brand-green, $brand-yellow-dark);
+}
+
+.box-shadow {
+  box-shadow: 1px 1px 20px 2px rgba(0, 0, 0, 0.2);
+}
 
 // TYPED JS ////////////////////////////////////////////////////////////////////
 .typed-cursor{
