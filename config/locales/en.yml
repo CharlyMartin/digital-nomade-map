@@ -27,3 +27,9 @@ en:
       sign_up_email: "Sign up with email"
       sign_up_facebook: " "
       sign_up_google: " "
+  footer:
+    brand: "nomadmap"
+    tagline: "DIGITAL NOMAD FINDER"
+    copyright: "nomadmap 2017 ©"
+    contact: "CONTACT"
+    social: "SOCIAL"
