@@ -10,6 +10,7 @@ en:
       tagline: "meet digital nomads as you travel"
       cta: "Find them all"
       scroll_down: "Scroll down"
+      where: "Where are you?"
       form_placeholder: "Enter your current location"
       form_submit: "Find nomads"
     nomads_around:

@@ -23,7 +23,7 @@ class PagesController < ApplicationController
     Nomad.all.each do |nomad|
       list << "There's #{nomad.first_name} in #{nomad.city}"
     end
-    return list
+    return list.shuffle[0..19]
   end
 
 end
