@@ -12,7 +12,7 @@ en:
       scroll_down: "Scroll down"
       where: "Where are you?"
       form_placeholder: "Enter your current location"
-      form_submit: "Find nomads"
+      form_submit: "GO"
       what_is_nomad: "What's a digital nomad?"
       what_is_nomad_text: |
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam itaque cum,

@@ -81,6 +81,7 @@
   text-align: center;
 }
 
+
 .typed-js-container {
   height: 30vh;
   width: 100%;
@@ -88,6 +89,23 @@
   align-items: center;
   justify-content: center;
 }
+
+.typed-js-element {
+  font-style: $header-font;
+  color: $gray-darker;
+  font-weight: 100;
+  font-size: 18px;
+}
+
+
+.where {
+  margin: 50px 0 30px 0;
+  color: $brand-green;
+  font-size: 30px;
+  font-weight: 500;
+  font-family: $header-font;
+}
+
 
 .form-container-home {
   display: flex;
@@ -99,29 +117,35 @@
   margin: 0;
 }
 
+// search input container
+div.form-group.location_location {
+  width: 98%;
+  margin-right: 4px;
+}
+
 // search input
 input#location_location {
   border-radius: 40px 0 0 40px;
   padding: 0 25px;
   height: 50px;
-  width: 350px;
   box-shadow: none;
   font-weight: 300;
-  margin-right: 5px;
 }
 
 // submit button
 .form-container-home > input[name="commit"] {
   height: 50px;
+  width: 25%;
   border-radius: 0 40px 40px 0;
   padding: 0 25px;
-  background: red;
-  color: white;
-  font-weight: 300;
+  background: $brand-green;
+  color: $gray-darker;
+  // font-weight: 300;
   box-shadow: none;
   border: none;
   &:hover {
-    background: black;
+    background: $gray-darker;
+    color: $brand-green;
   }
 }
 
