@@ -5,8 +5,7 @@ class Nomad < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :first_name, :last_name, presence: true
-  validates :city, presence: true # temporary
-  # validates :address, :city, :country, presence: true
+  validates :address, :city, :country, presence: true
 
   geocoded_by :full_address
 
@@ -23,19 +22,24 @@ class Nomad < ApplicationRecord
   after_validation :geocode, if: :full_address_changed?
   after_validation :reverse_geocode
 
+  def empty? string
+    string == ""
+  end
+
   def full_name
     "#{first_name} #{last_name}"
   end
 
   def city_country
-    "#{city}, #{ISO3166::Country[country].name}"
+    "#{city}, #{ISO3166::Country[country].name unless empty? country}"
   end
 
   def full_address
-    "#{address}, #{zip_code} #{city} #{ISO3166::Country[country].name}"
+    "#{address}, #{zip_code} #{city} #{ISO3166::Country[country].name unless empty? country}"
   end
 
   def full_address_changed?
     address_changed? || zip_code_changed? || city_changed? || country_changed?
   end
+
 end

@@ -25,6 +25,15 @@
   box-shadow: 1px 1px 5px $gray-light;
 }
 
+.form-info {
+  font-style: italic;
+  font-size: 14px;
+  color: white;
+  background: rgba(10, 10, 10, 0.05);
+  display: block;
+  margin-bottom: 10px;
+}
+
 .devise-submit-btn {
   border: 3px solid $gray-darker;
   background: transparent;
@@ -47,6 +56,8 @@
     font-weight: 300;
     font-size: 15px;
     color: white;
+    display: inline-block;
+    margin: 8px;
     &:hover {
       color: $gray-darker;
     }
