@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'nomads_around', to: 'pages#nomads_around', as: 'nomads_around'
   get 'misson', to: 'pages#mission', as: 'mission'
+  get 'about', to: 'pages#about', as: "about"
 
   devise_for :nomads
 

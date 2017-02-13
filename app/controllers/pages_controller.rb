@@ -14,6 +14,9 @@ class PagesController < ApplicationController
   def mission
   end
 
+  def about
+  end
+
   private
 
   def location_params
