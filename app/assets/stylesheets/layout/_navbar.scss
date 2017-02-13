@@ -1,6 +1,5 @@
 /* Main class */
 .mynavbar {
-  // box-shadow: 0 2px $brand-grey;
   background: rgba(255, 255, 255, 0.95);
   height: 6vh;
   margin-bottom: 0;
@@ -22,19 +21,29 @@
 .navbar-container {
   display: flex;
   align-items: center;
+  padding: 0 10px;
+}
+
+.mynavbar-links {
+  color: $gray-darker;
+  font-family: $brand-font;
+  font-size: 14px;
+  margin: 0 5px;
+  transition: color 100ms ease;
+  &:hover {
+    color: $brand-green;
+  }
 }
 
 #brand-nabar {
   color: $brand-green;
-  // text-shadow: 1px 1px rgba(143, 247, 167, 1);
   font-family: $brand-font;
   font-size: 20px;
-  // letter-spacing: 1px;
-  transition: all 0.3 ease;
-  // &:hover {
-  //   transform: translateY(-1px);
-  //   text-decoration: none;
-  // }
+  transition: color 100ms ease;
+  &:hover {
+    text-decoration: none;
+    color: $gray-darker;
+  }
 }
 
 #brand-container {
