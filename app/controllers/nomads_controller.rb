@@ -4,6 +4,8 @@ class NomadsController < ApplicationController
   def index
     @nomads = Nomad.all.order(created_at: :desc).where.not(latitude: nil, longitude: nil)
 
+    @nomad_count = Nomad.count
+
     @nomads_location = Gmaps4rails.build_markers(@nomads) do |nomad, marker|
       marker.lat nomad.latitude
       marker.lng nomad.longitude

@@ -1,10 +1,9 @@
 .nomad-count {
   width: 100%;
-  background: rgba(10, 10, 10, 0.5);
+  background: $brand-green;
   font-family: $base-font;
   font-weight: 600;
-  font-size: 14px;
-  color: white;
+  font-size: 13px;
   text-align: center;
-  padding: 1vh 0;
+  padding: 2px 0;
 }

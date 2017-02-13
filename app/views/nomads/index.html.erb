@@ -1,29 +1,11 @@
-<div id="map" style="width: 100%; height: 95vh;"></div>
+<div id="map" style="width: 100%; height: 97vh;"></div>
 
 <div class="nomad-count">
-  <%=  %>
+  <%= @nomad_count %>
   NOMADS
 </div>
 
-<div class="container padded-top">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <div class="col-md-4 col-xs-12">
-        <p>
-          <%= link_to new_nomad_path, class: 'btn btn-warning' do %>
-            <i class="fa fa-plus"></i> 1. Add yourself on the map!
-          <% end %>
-        </p>
-      </div>
-      <div class="col-md-8 col-xs-12">
-        <%= link_to 'https://chrome.google.com/webstore/detail/french-digital-nomads-map/aaokjnbicmobnkgjnmbmffbnldebhgfa', class: 'btn btn-primary', target: '_blank' do %>
-          <i class="fa fa-chrome" aria-hidden="true"></i> 2. Download the chrome extension to update your location automatically
-        <% end %>
-      </div>
-
-    </div>
-  </div>
-</div>
+<!-- https://chrome.google.com/webstore/detail/french-digital-nomads-map/aaokjnbicmobnkgjnmbmffbnldebhgfa -->
 
 <!-- MAPS SCRIPT -->
 <% content_for(:after_js) do %>
