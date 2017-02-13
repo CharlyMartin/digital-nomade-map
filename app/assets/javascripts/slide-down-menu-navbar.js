@@ -1,8 +1,8 @@
-// const avatar = document.querySelector('#avatar-home'),
-//   slideMenu = document.querySelector('.slide-menu');
+const avatar = document.querySelector('#avatar-home'),
+  slideMenu = document.querySelector('.devise-container');
 
-// function toggleMenu() {
-//   slideMenu.classList.toggle('active')
-// }
+function toggleMenu() {
+  slideMenu.classList.toggle('active')
+}
 
-// avatar.addEventListener('click', toggleMenu);
+avatar.addEventListener('click', toggleMenu);

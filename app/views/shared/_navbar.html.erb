@@ -8,16 +8,27 @@
     <p> <%= link_to 'Misson', root_path, class: "mynavbar-links" %> </p>
   </div>
 
-  <div class="navbar-container pos-relative">
-    <div class="devise-container pos-absolute">
-      <%= link_to t('navbar.sign_up'), new_nomad_registration_path %>
-      <%= link_to t('navbar.sign_in'), new_nomad_session_path %>
-      <%= link_to t('navbar.edit'), edit_nomad_registration_path %>
-      <%= link_to t('navbar.logout'), destroy_nomad_session_path, method: :delete %>
-    </div>
-  </div>
+  <% if !!current_nomad %>
 
-  <div class="navbar-container" id="avatar-container">
-    <%= image_tag 'avatar.png', id: 'avatar-home', class: 'pointer' %>
-  </div>
+<!-- IF CURRENT NOMAD -->
+    <div class="navbar-container" id="avatar-container">
+      <%= image_tag 'avatar.png', id: 'avatar-home', class: 'pointer' %>
+    </div>
+
+    <div class="navbar-container pos-relative">
+      <div class="devise-container pos-absolute">
+        <%= link_to t('navbar.edit'), edit_nomad_registration_path %>
+        <%= link_to t('navbar.logout'), destroy_nomad_session_path, method: :delete %>
+      </div>
+    </div>
+
+  <% else %>
+<!-- IF NOT -->
+    <div class="navbar-container">
+      <%= link_to t('navbar.sign_in'), new_nomad_session_path, class: "mynavbar-links" %>
+      <%= link_to t('navbar.sign_up'), new_nomad_registration_path, class: "mynavbar-links" %>
+    </div>
+
+  <% end %>
+
 </div>

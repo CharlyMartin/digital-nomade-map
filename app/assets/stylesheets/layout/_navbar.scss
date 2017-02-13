@@ -63,8 +63,31 @@
 }
 
 .devise-container {
-  top: 20px;
-  right: 5px;
+  top: 25px;
+  right: -100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 200px;
+  height: 200px;
+}
+
+.devise-container > a {
+  color: $gray-darker;
+  font-weight: 400;
+  font-size: 18px;
+  margin: 6px 0;
+  padding: 5px;
+  background: $brand-green;
+  border-radius: 3px;
+  transition: background 100ms ease;
+  &:hover {
+    background: white;
+  }
+  // &:hover {
+  //   color: $gray-darker;
+  // }
 }
 
 .pos-absolute {
@@ -87,19 +110,11 @@
 
 // JS
 
-// .slide-menu {
-//   color: transparent;
-//   transition: all 0.5s ease;
-//   a {
-//     color: transparent;
-//   }
-// }
-
 .active {
-  transform: translateY(200%);
-  a {
-    color: white;
-  }
+  right: 3vh;
+  transition: right 400ms ease;
 }
+
+// MISC
 
 .mynavbar > *::before, .navbar > *::after { display: none !important; }
