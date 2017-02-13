@@ -1,5 +1,5 @@
 class NomadsController < ApplicationController
-  # skip_before_action :authenticate_nomad!
+  skip_before_action :authenticate_nomad!
 
   def index
     @nomads = Nomad.all.order(created_at: :desc).where.not(latitude: nil, longitude: nil)
@@ -9,7 +9,7 @@ class NomadsController < ApplicationController
     @nomads_location = Gmaps4rails.build_markers(@nomads) do |nomad, marker|
       marker.lat nomad.latitude
       marker.lng nomad.longitude
-      markers_picture(marker, nomad)
+      markers_picture(nomad, marker)
       marker.infowindow render_to_string(partial: "/nomads/map_box", locals: { nomad: nomad })
     end
 
@@ -24,7 +24,7 @@ class NomadsController < ApplicationController
                                   :address, :zip_code, :city, :country)
   end
 
-  def markers_picture(marker, user)
+  def markers_picture(user, marker)
     # https://github.com/apneadiving/Google-Maps-for-Rails/wiki/Markers
 
     if user == current_nomad
