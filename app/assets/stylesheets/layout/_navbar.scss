@@ -1,7 +1,7 @@
 /* Main class */
 .mynavbar {
   background: rgba(255, 255, 255, 0.95);
-  height: 6vh;
+  height: var(--navbar-height);
   margin-bottom: 0;
   padding: 0 20px 0 180px;
   display: flex;

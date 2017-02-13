@@ -26,8 +26,8 @@ class PagesController < ApplicationController
   def name_in_city_list(object)
     list = []
 
-    object.each do |item|
-      list << "There's #{item.first_name} in #{item.city}"
+    object.each do |nomad|
+      list << "There's #{nomad.first_name} in #{nomad.city}"
     end
     return list.shuffle[0..19]
   end
