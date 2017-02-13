@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: devise_params)
   end
 
+  # nomad#index after authentication
   def after_sign_in_path_for(resource)
     nomads_path
   end

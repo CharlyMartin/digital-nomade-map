@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_nomad!, only: [:home, :nomads_around]
+  skip_before_action :authenticate_nomad!, only: [:home, :nomads_around, :mission, :about]
 
   def home
     @nomads = Nomad.all
