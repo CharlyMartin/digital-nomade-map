@@ -3,6 +3,15 @@
   padding: 40px 0;
 }
 
+.background-form h2 {
+  text-align: center;
+  color: white;
+  font-family: $header-font;
+  font-weight: 100;
+  font-size: 30px;
+  margin: 20px 0;
+}
+
 .form-inputs > h3 {
   font-family: $header-font;
   font-size: 20px;
@@ -10,9 +19,36 @@
   margin-bottom: 10px;
 }
 
-.devise-submit-btn {
+.form-inputs input {
   border: none;
+  font-weight: 300;
+  box-shadow: 1px 1px 5px $gray-light;
+}
+
+.devise-submit-btn {
+  border: 3px solid $gray-darker;
+  background: transparent;
   width: 100%;
-  color: $brand-green;
+  color: $gray-darker;
   border-radius: 50px;
+  transition: all 200ms ease;
+  &:hover {
+    background: $gray-darker;
+    color: $brand-green;
+    border: 3px solid $gray-darker;
+  }
+}
+
+.form-links {
+  width: 100%;
+  text-align: center;
+  padding: 30px;
+  > a {
+    font-weight: 300;
+    font-size: 15px;
+    color: white;
+    &:hover {
+      color: $gray-darker;
+    }
+  }
 }
