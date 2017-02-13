@@ -27,6 +27,16 @@ en:
       sign_up_email: "Sign up with email"
       sign_up_facebook: " "
       sign_up_google: " "
+  placeholders:
+    first_name: "First name"
+    last_name: "Last name"
+    email: "Email"
+    password: "Password"
+    password_confirmation: "Password confirmation"
+    street: "Street address"
+    zip_code: "Zip code (optional)"
+    city: "City"
+    country: "Country"
   footer:
     brand: "nomadmap"
     tagline: "DIGITAL NOMAD FINDER"
