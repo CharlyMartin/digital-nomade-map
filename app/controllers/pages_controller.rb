@@ -3,12 +3,15 @@ class PagesController < ApplicationController
 
   def home
     @nomads = Nomad.all
-    @typed_js = name_in_city_list
+    @typed_js = name_in_city_list(@nomads)
   end
 
   def nomads_around
     location_params[:location]
     @nomads_around = Nomad.near(location_params[:location], 100).all[0..-1]
+  end
+
+  def mission
   end
 
   private
@@ -17,11 +20,11 @@ class PagesController < ApplicationController
     params.require(:location).permit(:location)
   end
 
-  def name_in_city_list
+  def name_in_city_list(object)
     list = []
 
-    Nomad.all.each do |nomad|
-      list << "There's #{nomad.first_name} in #{nomad.city}"
+    object.each do |item|
+      list << "There's #{item.first_name} in #{item.city}"
     end
     return list.shuffle[0..19]
   end
