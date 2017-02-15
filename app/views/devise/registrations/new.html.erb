@@ -14,9 +14,9 @@
 
         <div class="form-inputs">
           <h3>About you</h3>
-          <%= f.input :first_name, label: false, placeholder: t('placeholders.first_name') %>
+          <%= f.input :first_name, label: false, autofocus: true, placeholder: t('placeholders.first_name') %>
           <%= f.input :last_name, label: false, placeholder: t('placeholders.last_name') %>
-          <%= f.input :email, label: false, required: true, autofocus: true, placeholder: t('placeholders.email') %>
+          <%= f.input :email, label: false, required: true, placeholder: t('placeholders.email') %>
           <%= f.input :password, label: false, required: true, placeholder: t('placeholders.password') %>
           <%= f.input :password_confirmation, label: false, required: true, placeholder: t('placeholders.password_confirmation') %>
 
