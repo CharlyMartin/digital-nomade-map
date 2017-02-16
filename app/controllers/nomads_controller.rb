@@ -9,8 +9,7 @@ class NomadsController < ApplicationController
     @nomads_location = Gmaps4rails.build_markers(@nomads) do |nomad, marker|
       marker.lat nomad.latitude
       marker.lng nomad.longitude
-      marker.picture custom_markers(nomad, marker)
-      # markers_picture(nomad, marker)
+      # marker.picture custom_markers(nomad, marker)
       marker.infowindow render_to_string(partial: "/nomads/map_box", locals: { nomad: nomad })
     end
 
@@ -48,13 +47,13 @@ class NomadsController < ApplicationController
 
     if user == current_nomad
       marker.picture({
-        picture:     "avatar.png",
-        width:   60,
-        height:  60
+        :url    =>  "../assets/images/logo.png",
+        :width  =>  100,
+        :height =>  100
       })
     else
       marker.picture({
-        url:     'https://unsplash.it/400/400/?random',
+        url:     'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/RedDot.svg/2000px-RedDot.svg.png',
         width:   50,
         height:  50
       })
