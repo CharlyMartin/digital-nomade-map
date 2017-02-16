@@ -9,7 +9,8 @@ class NomadsController < ApplicationController
     @nomads_location = Gmaps4rails.build_markers(@nomads) do |nomad, marker|
       marker.lat nomad.latitude
       marker.lng nomad.longitude
-      markers_picture(nomad, marker)
+      gmaps4rails_marker_picture
+      # markers_picture(nomad, marker)
       marker.infowindow render_to_string(partial: "/nomads/map_box", locals: { nomad: nomad })
     end
 
@@ -47,7 +48,7 @@ class NomadsController < ApplicationController
 
     if user == current_nomad
       marker.picture({
-        url:     'https://unsplash.it/400/400/?random',
+        url:     "avatar.png",
         width:   30,
         height:  30
       })
@@ -58,6 +59,24 @@ class NomadsController < ApplicationController
         height:  50
       })
     end
+  end
+
+  def gmaps4rails_marker_picture
+   {
+    "picture" => "avatar.png",          # string,  mandatory
+     "width" =>  30,          # integer, mandatory
+     "height" => 30          # integer, mandatory
+     # "marker_anchor" => ,   # array,   facultative, [0, 0] is the upper left corner
+     #                        #                       and [width, height] is the bottom right
+     # "shadow_picture" => ,  # string,  facultative
+     # "shadow_width" => ,    # string,  facultative
+     # "shadow_height" => ,   # string,  facultative
+     # "shadow_anchor" => ,   # string,  facultative
+     # "rich_marker" =>   ,   # html, facultative
+                            # If used, all other attributes skipped except "marker_anchor". This array is used as follows:
+                            # [ anchor , flat ] : flat is a boolean, anchor is an int.
+                            # See doc here: http://google-maps-utility-library-v3.googlecode.com/svn/trunk/richmarker/docs/reference.html
+   }
   end
 
 end
