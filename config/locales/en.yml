@@ -37,6 +37,13 @@ en:
     zip_code: "Zip code (optional)"
     city: "City"
     country: "Country"
+  forms:
+    about_you: "About you (1/2)"
+    location: "Your location (2/2)"
+    disclaimer:
+      location: |
+        Your current position is translated into latitude / longitude coordinates
+        to pinpoint yourself on the map. It will NOT be shared with third-party apps.
   footer:
     brand: "nomadmap"
     tagline: "DIGITAL NOMAD FINDER"

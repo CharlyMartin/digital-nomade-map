@@ -1,15 +1,30 @@
-<h2><%= t(".sign_in") %></h2>
+<div class="background-form" style="background-image:
+  linear-gradient(to left, rgba(244, 231, 110, 0.95), rgba(143, 247, 167, 0.95));">
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+
+        <h2><%= t(".sign_in") %></h2>
+
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email, required: false, label: false, autofocus: true, placeholder: t('placeholders.email') %>
+            <%= f.input :password, required: false, label: false, placeholder: t('placeholders.password') %>
+            <%= f.input :remember_me, id: 'no-box-shadow', as: :boolean if devise_mapping.rememberable? %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, t(".sign_in"), class: 'devise-submit-btn' %>
+          </div>
+        <% end %>
+
+        <div class="form-links">
+          <%= render "devise/shared/links" %>
+        </div>
+
+      </div>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, t(".sign_in") %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

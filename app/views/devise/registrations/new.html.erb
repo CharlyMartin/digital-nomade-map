@@ -1,48 +1,48 @@
-<!-- <div class="navbar-placeholder"></div> -->
+<div class="background-form" style="background-image:
+  linear-gradient(to left, rgba(244, 231, 110, 0.95), rgba(143, 247, 167, 0.95));">
 
-      <div class="background-form" style="background-image:
-        linear-gradient(to left, rgba(244, 231, 110, 0.95), rgba(143, 247, 167, 0.95));">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <h2><%= t(".sign_up") %></h2>
 
-      <h2><%= t(".sign_up") %></h2>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
 
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
+          <div class="form-inputs">
 
-        <div class="form-inputs">
-          <h3>About you</h3>
-          <%= f.input :first_name, label: false, autofocus: true, placeholder: t('placeholders.first_name') %>
-          <%= f.input :last_name, label: false, placeholder: t('placeholders.last_name') %>
-          <%= f.input :email, label: false, required: true, placeholder: t('placeholders.email') %>
-          <%= f.input :password, label: false, required: true, placeholder: t('placeholders.password') %>
-          <%= f.input :password_confirmation, label: false, required: true, placeholder: t('placeholders.password_confirmation') %>
+            <h3> <%= t('forms.about_you') %> </h3>
+            <%= f.input :first_name, label: false, autofocus: true, placeholder: t('placeholders.first_name') %>
+            <%= f.input :last_name, label: false, placeholder: t('placeholders.last_name') %>
+            <%= f.input :email, label: false, required: true, placeholder: t('placeholders.email') %>
+            <%= f.input :password, label: false, required: true, placeholder: t('placeholders.password') %>
+            <%= f.input :password_confirmation, label: false, required: true, placeholder: t('placeholders.password_confirmation') %>
 
-          <hr>
+            <hr>
 
-          <h3>Location</h3>
-          <p class="form-info">Your address won't be shared with anyone, it's just to pinpoint you on the map</p>
-          <%= f.input :address, label: false, placeholder: t('placeholders.street') %>
-          <%= f.input :zip_code, label: false, placeholder: t('placeholders.zip_code') %>
-          <%= f.input :city, label: false, placeholder: t('placeholders.city') %>
-          <%= f.input :country, label: false, placeholder: t('placeholders.country') %>
+            <h3> <%= t('forms.location') %> </h3>
+            <p class="form-info"> <%= t('forms.disclaimer.location') %> </p>
+            <%= f.input :address, label: false, placeholder: t('placeholders.street') %>
+            <%= f.input :zip_code, label: false, placeholder: t('placeholders.zip_code') %>
+            <%= f.input :city, label: false, placeholder: t('placeholders.city') %>
+            <%= f.input :country, label: false, placeholder: t('placeholders.country') %>
+
+          </div>
+
+          <br>
+
+          <div class="form-actions">
+            <%= f.button :submit, t(".sign_up"), class: 'devise-submit-btn' %>
+          </div>
+        <% end %>
+
+        <div class="form-links">
+          <%= render "devise/shared/links" %>
         </div>
 
-        <br>
-
-        <div class="form-actions">
-          <%= f.button :submit, t(".sign_up"), class: 'devise-submit-btn' %>
-        </div>
-      <% end %>
-
-      <div class="form-links">
-        <%= render "devise/shared/links" %>
       </div>
-
     </div>
   </div>
-</div>
 
 </div>
