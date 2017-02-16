@@ -42,6 +42,9 @@ en:
   forms:
     about_you: "About you (1/2)"
     location: "Your location (2/2)"
+    edit_info: "Edit your profile"
+    edit_location: "Edit your location"
+    update: "Update"
     disclaimer:
       location: |
         Your current position is converted into latitude / longitude coordinates

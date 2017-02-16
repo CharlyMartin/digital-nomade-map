@@ -22,10 +22,6 @@ class Nomad < ApplicationRecord
   after_validation :geocode, if: :full_address_changed?
   after_validation :reverse_geocode
 
-  def empty? string
-    string == ""
-  end
-
   def full_name
     "#{first_name} #{last_name}"
   end
@@ -40,6 +36,12 @@ class Nomad < ApplicationRecord
 
   def full_address_changed?
     address_changed? || zip_code_changed? || city_changed? || country_changed?
+  end
+
+  private
+
+  def empty? string
+    string == ""
   end
 
 end

@@ -1,14 +1,15 @@
-<div class="container padded-top">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <%= simple_form_for [@nomad], url: nomad_path, method: :patch do |f| %>
-        <%= f.input :first_name, placeholder: 'Charly' %>
-        <%= f.input :last_name, placeholder: 'MARTIN' %>
-        <%= f.input :phone, placeholder: '+33 646 531 750' %>
-        <%= f.input :facebook, placeholder: 'https://www.facebook.com/charly.mrtn' %>
-        <%= f.input :email, placeholder: 'charly.martin.1207@gmail.com' %>
-        <%= f.submit class: 'btn btn-primary' %>
-      <% end %>
-    </div>
-  </div>
-</div>
+<%= render "devise/shared/responsive_background" %>
+
+  <h2> <%= t('forms.edit_info') %> </h2>
+
+  <%= simple_form_for [@nomad], url: nomad_path, method: :patch do |f| %>
+    <%= f.input :first_name, label: false, placeholder: 'Charly' %>
+    <%= f.input :last_name, label: false, placeholder: 'MARTIN' %>
+    <%= f.input :phone, label: false, placeholder: '+33 646 531 750' %>
+    <%= f.input :facebook, label: false, placeholder: 'https://www.facebook.com/charly.mrtn' %>
+    <%= f.input :email, label: false, placeholder: 'charly.martin.1207@gmail.com' %>
+    <br>
+    <%= f.submit t('forms.update'), class: 'devise-submit-btn' %>
+  <% end %>
+
+<%= render "devise/shared/closing_divs" %>
