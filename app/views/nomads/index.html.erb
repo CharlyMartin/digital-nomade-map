@@ -4,29 +4,29 @@
   <h1> <%= @nomad_count %> NOMADS </h1>
 </div>
 
-<!-- https://chrome.google.com/webstore/detail/french-digital-nomads-map/aaokjnbicmobnkgjnmbmffbnldebhgfa -->
 
 <!-- MAPS SCRIPT -->
 <% content_for(:after_js) do %>
   <script>
     $(document).ready(function() {
       var handler = Gmaps.build('Google');
-      handler.buildMap({ provider: { scrollwheel: false, zoomcontrol: true,
-      draggable: true }, internal: { id: 'map' } }, function() {
-
+      handler.buildMap({
+        provider:{
+          scrollwheel: false,
+          zoomcontrol: true,
+          draggable: true},
+        internal:{
+          id: 'map'}
+      },
+      function() {
         markers = handler.addMarkers(<%= raw @nomads_location.to_json %>);
-
         handler.bounds.extendWith(markers);
         handler.map.centerOn(<%= raw @center_point.to_json %>);
         handler.getMap().setZoom(12);
-        // handler.fitMapToBounds();
-        // if (markers.length == 0) {
-        //   handler.getMap().setZoom(2);
-        // } else if (markers.length == 1) {
-        //   handler.getMap().setZoom(14);
-        // }
-
       });
     });
   </script>
 <% end %>
+
+
+<!-- https://chrome.google.com/webstore/detail/french-digital-nomads-map/aaokjnbicmobnkgjnmbmffbnldebhgfa -->

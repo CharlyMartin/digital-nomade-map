@@ -75,16 +75,16 @@
 }
 
 .devise-container > a {
-  color: $gray-darker;
+  color: white;
   font-weight: 400;
   font-size: 18px;
   margin: 6px 0;
-  padding: 5px;
-  background: $brand-green;
+  padding: 2px 10px;
+  background: rgba(10, 10, 10, 0.4);
   border-radius: 3px;
   transition: background 100ms ease;
   &:hover {
-    background: white;
+    background: $brand-green;
   }
   // &:hover {
   //   color: $gray-darker;
@@ -112,7 +112,7 @@
 // JS
 
 .active {
-  right: 3vh;
+  right: 2vh;
   transition: right 400ms ease;
 }
 
