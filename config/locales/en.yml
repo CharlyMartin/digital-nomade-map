@@ -4,6 +4,7 @@ en:
     sign_in: "Sign-in"
     edit_info: "Edit profile"
     edit_location: "Edit location"
+    change_password: "Change password"
     logout: "Log out"
   pages:
     home:
