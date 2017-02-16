@@ -16,6 +16,23 @@ class NomadsController < ApplicationController
 
   end
 
+  def edit_info
+    @nomad = Nomad.find(params[:id])
+  end
+
+  def edit_location
+    @nomad = Nomad.find(params[:id])
+  end
+
+  def update
+    @nomad = Nomad.find(params[:id])
+    if @nomad.update(nomad_params)
+      redirect_to nomads_path, notice: "Successfully updaded"
+    else
+      render :edit
+    end
+  end
+
   private
 
   def nomad_params

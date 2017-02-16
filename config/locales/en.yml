@@ -2,7 +2,8 @@ en:
   navbar:
     sign_up: "Sign-up"
     sign_in: "Sign-in"
-    edit: "Edit profile"
+    edit_info: "Edit profile"
+    edit_location: "Edit location"
     logout: "Log out"
   pages:
     home:
@@ -42,7 +43,7 @@ en:
     location: "Your location (2/2)"
     disclaimer:
       location: |
-        Your current position is translated into latitude / longitude coordinates
+        Your current position is converted into latitude / longitude coordinates
         to pinpoint yourself on the map. It will NOT be shared with third-party apps.
   footer:
     brand: "nomadmap"

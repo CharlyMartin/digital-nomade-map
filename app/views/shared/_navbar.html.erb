@@ -19,7 +19,8 @@
     <div class="navbar-container pos-relative">
       <div class="devise-container pos-absolute">
         <%= link_to 'Map', nomads_path %>
-        <%= link_to t('navbar.edit'), edit_nomad_registration_path %>
+        <%= link_to t('navbar.edit_info'), edit_info_path(current_nomad) %>
+        <%= link_to t('navbar.edit_location'), edit_location_path(current_nomad) %>
         <%= link_to t('navbar.logout'), destroy_nomad_session_path, method: :delete %>
       </div>
     </div>

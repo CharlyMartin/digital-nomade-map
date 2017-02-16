@@ -2,12 +2,6 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <%= simple_form_for [@nomad], url: nomad_path, method: :patch do |f| %>
-        <%= f.input :first_name, placeholder: 'Charly' %>
-        <%= f.input :last_name, placeholder: 'MARTIN' %>
-        <%= f.input :phone, placeholder: '+33 646 531 750' %>
-        <%= f.input :facebook, placeholder: 'https://www.facebook.com/charly.mrtn' %>
-        <%= f.input :email, placeholder: 'charly.martin.1207@gmail.com' %>
-        <hr>
         <%= f.input :address %>
         <%= f.input :zip_code %>
         <%= f.input :city %>
