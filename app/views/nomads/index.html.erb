@@ -18,8 +18,10 @@
           styles: <%= render 'map_snazzy_style' %>
         },
         internal:{
-          id: 'map'}
+          id: 'map'
+        }
       },
+
       function() {
         markers = handler.addMarkers(<%= raw @nomads_location.to_json %>);
         handler.bounds.extendWith(markers);
