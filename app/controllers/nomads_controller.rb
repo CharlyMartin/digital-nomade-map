@@ -9,7 +9,11 @@ class NomadsController < ApplicationController
     @nomads_location = Gmaps4rails.build_markers(@nomads) do |nomad, marker|
       marker.lat nomad.latitude
       marker.lng nomad.longitude
-      # marker.picture custom_markers(nomad, marker)
+      marker.picture({
+                :url => "https://unsplash.it/200/300/?random",
+                :width   => 32,
+                :height  => 32
+               })
       marker.infowindow render_to_string(partial: "/nomads/map_box", locals: { nomad: nomad })
     end
 
