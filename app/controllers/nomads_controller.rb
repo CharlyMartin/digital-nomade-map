@@ -3,8 +3,8 @@ class NomadsController < ApplicationController
 
   def index
     @nomads = Nomad.all.order(created_at: :desc).where.not(latitude: nil, longitude: nil)
-
     @nomad_count = Nomad.count
+    @center_point = {lat: current_nomad.latitude, lng: current_nomad.longitude}.to_json
 
     @nomads_location = Gmaps4rails.build_markers(@nomads) do |nomad, marker|
       marker.lat nomad.latitude
@@ -17,7 +17,7 @@ class NomadsController < ApplicationController
       marker.infowindow render_to_string(partial: "/nomads/map_box", locals: { nomad: nomad })
     end
 
-    @center_point = {lat: current_nomad.latitude, lng: current_nomad.longitude}
+
 
   end
 
@@ -31,7 +31,8 @@ class NomadsController < ApplicationController
     if @nomad.update(nomad_params)
       redirect_to nomads_path, notice: "Successfully updaded"
     else
-      render :edit
+      # 2 possibilities for rendering, location || info. To Be Done
+      render :edit_location
     end
   end
 

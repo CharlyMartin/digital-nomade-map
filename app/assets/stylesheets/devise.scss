@@ -46,8 +46,7 @@ input[type="checkbox"] {
   border-radius: 50px;
   transition: all 200ms ease;
   &:hover {
-    background: $gray-darker;
-    color: white;
+    background: rgba(10, 10, 10, 0.1);
     border: 3px solid $gray-darker;
   }
 }
