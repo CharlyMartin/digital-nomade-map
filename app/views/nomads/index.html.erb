@@ -1,7 +1,7 @@
 <div id="map" style="width: 100%; height: 99vh;"></div>
 
 <div class="nomad-count">
-  <h1> <%= @nomad_count %> NOMADS </h1>
+  <h1> <%= @nomads.count %> NOMADS </h1>
 </div>
 
 
@@ -12,7 +12,7 @@
   const mapContainer = document.querySelector('#map');
   const options = {
     zoom: 14,
-    center: <%= raw @center_point %>,
+    center: new google.maps.LatLng(<%= current_nomad.latitude %>, <%= current_nomad.longitude %>),
     styles: <%= render 'map_style.js' %>,
     scrollwheel: false
   };
@@ -20,12 +20,14 @@
   function initMap() {
     const map = new google.maps.Map(mapContainer, options);
 
-    new google.maps.Marker({
-      position: <%= raw @center_point %>,
-      icon: '<%= image_url("icon.png") %>',
-      map: map,
-      title: 'Uluru (Ayers Rock)'
-    });
+    <% @nomads.each do |nomad| %>
+      new google.maps.Marker({
+        position: new google.maps.LatLng(<%= nomad.latitude %>, <%= nomad.longitude %>),
+        icon: '<%= image_url("icon.png") %>',
+        map: map,
+      });
+    <% end %>
+
 
     // var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
     // var icons = {

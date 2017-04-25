@@ -3,22 +3,17 @@ class NomadsController < ApplicationController
 
   def index
     @nomads = Nomad.all.order(created_at: :desc).where.not(latitude: nil, longitude: nil)
-    @nomad_count = Nomad.count
-    @center_point = {lat: current_nomad.latitude, lng: current_nomad.longitude}.to_json
 
-    @nomads_location = Gmaps4rails.build_markers(@nomads) do |nomad, marker|
-      marker.lat nomad.latitude
-      marker.lng nomad.longitude
-      marker.picture({
-                :url => "https://unsplash.it/200/300/?random",
-                :width   => 32,
-                :height  => 32
-               })
-      marker.infowindow render_to_string(partial: "/nomads/map_box", locals: { nomad: nomad })
-    end
-
-
-
+    # @nomads_location = Gmaps4rails.build_markers(@nomads) do |nomad, marker|
+    #   marker.lat nomad.latitude
+    #   marker.lng nomad.longitude
+    #   marker.picture({
+    #             :url => "https://unsplash.it/200/300/?random",
+    #             :width   => 32,
+    #             :height  => 32
+    #            })
+    #   marker.infowindow render_to_string(partial: "/nomads/map_box", locals: { nomad: nomad })
+    # end
   end
 
   def edit_info
@@ -47,22 +42,21 @@ class NomadsController < ApplicationController
                                   :address, :zip_code, :city, :country)
   end
 
-  def custom_markers(user, marker)
-    # https://github.com/apneadiving/Google-Maps-for-Rails/wiki/Markers
+  # def creating_json(object)
+  #   json_array = []
 
-    if user == current_nomad
-      marker.picture({
-        :url    =>  "../assets/images/logo.png",
-        :width  =>  100,
-        :height =>  100
-      })
-    else
-      marker.picture({
-        url:     'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/RedDot.svg/2000px-RedDot.svg.png',
-        width:   50,
-        height:  50
-      })
-    end
-  end
+  #   object.each do |item|
+  #     json_array << {
+  #       id: item.id,
+  #       first_name: item.first_name,
+  #       last_name: item.last_name,
+  #       email: item.email,
+  #       lat: item.latitude,
+  #       lng: item.longitude
+  #     }.to_json
+  #   end
+
+  #   return json_array
+  # end
 
 end
