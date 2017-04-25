@@ -8,142 +8,56 @@
 <!-- MAPS SCRIPT -->
 <% content_for(:after_js) do %>
 
-<script>
-  const mapContainer = document.querySelector('#map');
-  const options = {
-    zoom: 14,
-    center: new google.maps.LatLng(<%= current_nomad.latitude %>, <%= current_nomad.longitude %>),
-    styles: <%= render 'map_style.js' %>,
-    scrollwheel: false
-  };
+  <script src="<% asset_url('markerclusterer.js') %>"></script>
 
-  function initMap() {
-    const map = new google.maps.Map(mapContainer, options);
+  <script>
+    const mapContainer = document.querySelector('#map');
+    const options = {
+      zoom: 2,
+      center: new google.maps.LatLng(<%= current_nomad.latitude %>, <%= current_nomad.longitude %>),
+      styles: <%= render 'map_style.js' %>,
+      scrollwheel: false
+    };
+    const nomads = [];
 
-    <% @nomads.each do |nomad| %>
-      new google.maps.Marker({
-        position: new google.maps.LatLng(<%= nomad.latitude %>, <%= nomad.longitude %>),
-        icon: '<%= image_url("icon.png") %>',
-        map: map,
-      });
-    <% end %>
+    function initMap() {
+      const map = new google.maps.Map(mapContainer, options);
 
-
-    // var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
-    // var icons = {
-    //   parking: {
-    //     icon: iconBase + 'parking_lot_maps.png'
-    //   },
-    //   library: {
-    //     icon: iconBase + 'library_maps.png'
-    //   },
-    //   info: {
-    //     icon: iconBase + 'info-i_maps.png'
-    //   }
-    // };
-
-    // function addMarker(feature) {
-    //   var marker = new google.maps.Marker({
-    //     position: feature.position,
-    //     icon: icons[feature.type].icon,
-    //     map: map
-    //   });
-    // }
-
-    // var features = [
-    //   {
-    //     position: new google.maps.LatLng(-33.91721, 151.22630),
-    //     type: 'info'
-    //   }, {
-    //     position: new google.maps.LatLng(-33.91539, 151.22820),
-    //     type: 'info'
-    //   }, {
-    //     position: new google.maps.LatLng(-33.91747, 151.22912),
-    //     type: 'info'
-    //   }, {
-    //     position: new google.maps.LatLng(-33.91910, 151.22907),
-    //     type: 'info'
-    //   }, {
-    //     position: new google.maps.LatLng(-33.91725, 151.23011),
-    //     type: 'info'
-    //   }, {
-    //     position: new google.maps.LatLng(-33.91872, 151.23089),
-    //     type: 'info'
-    //   }, {
-    //     position: new google.maps.LatLng(-33.91784, 151.23094),
-    //     type: 'info'
-    //   }, {
-    //     position: new google.maps.LatLng(-33.91682, 151.23149),
-    //     type: 'info'
-    //   }, {
-    //     position: new google.maps.LatLng(-33.91790, 151.23463),
-    //     type: 'info'
-    //   }, {
-    //     position: new google.maps.LatLng(-33.91666, 151.23468),
-    //     type: 'info'
-    //   }, {
-    //     position: new google.maps.LatLng(-33.916988, 151.233640),
-    //     type: 'info'
-    //   }, {
-    //     position: new google.maps.LatLng(-33.91662347903106, 151.22879464019775),
-    //     type: 'parking'
-    //   }, {
-    //     position: new google.maps.LatLng(-33.916365282092855, 151.22937399734496),
-    //     type: 'parking'
-    //   }, {
-    //     position: new google.maps.LatLng(-33.91665018901448, 151.2282474695587),
-    //     type: 'parking'
-    //   }, {
-    //     position: new google.maps.LatLng(-33.919543720969806, 151.23112279762267),
-    //     type: 'parking'
-    //   }, {
-    //     position: new google.maps.LatLng(-33.91608037421864, 151.23288232673644),
-    //     type: 'parking'
-    //   }, {
-    //     position: new google.maps.LatLng(-33.91851096391805, 151.2344058214569),
-    //     type: 'parking'
-    //   }, {
-    //     position: new google.maps.LatLng(-33.91818154739766, 151.2346203981781),
-    //     type: 'parking'
-    //   }, {
-    //     position: new google.maps.LatLng(-33.91727341958453, 151.23348314155578),
-    //     type: 'library'
-    //   }
-    // ];
-
-    // for (var i = 0, feature; feature = features[i]; i++) {
-    //   addMarker(feature);
-    // }
-  }
-
-  document.addEventListener('DOMContentLoaded', initMap)
-</script>
-
-
-<!--   <script>
-    const style =
-    $(document).ready(function() {
-      var handler = Gmaps.build('Google');
-
-      handler.buildMap({
-        provider:{
-          scrollwheel: false,
-          zoomcontrol: true,
-          draggable: true,
-        },
-        internal:{
-          id: 'map'
+      // Populating the array with nomad objects
+      <% @nomads.each do |nomad| %>
+        var nomad = {
+          id: <%= nomad.id %>,
+          email: "<%= nomad.email %>",
+          lat: <%= nomad.latitude %>,
+          lgn: <%= nomad.longitude %>
         }
-      },
+        nomads.push(nomad);
+      <% end %>
 
-      function() {
-        markers = handler.addMarkers(<%= raw @nomads_location.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.map.centerOn(<%= raw @center_point.to_json %>);
-        handler.getMap().setZoom(12);
+      // Function to add a marker
+      function addNomadMarker(object) {
+        new google.maps.Marker({
+          position: new google.maps.LatLng(object.lat, object.lgn),
+          icon: '<%= image_url("icon.png") %>',
+          map: map
+        });
+      };
+
+      // Populating the map with markers
+      const nomadMarkers = nomads.forEach( nomad => {
+        addNomadMarker(nomad)
       });
-    });
-  </script> -->
+
+      // Creating marker clusters
+      const markerCluster = new MarkerClusterer(map, nomadMarkers, {
+        imagePath: '../assets/markercluster'
+        }
+      );
+    }
+
+    document.addEventListener('DOMContentLoaded', initMap);
+  </script>
+
 <% end %>
 
 <!-- https://chrome.google.com/webstore/detail/french-digital-nomads-map/aaokjnbicmobnkgjnmbmffbnldebhgfa -->
