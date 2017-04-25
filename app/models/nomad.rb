@@ -5,7 +5,7 @@ class Nomad < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :first_name, :last_name, presence: true
-  # validates :address, :city, :country, presence: true
+  validates :address, :city, :country, presence: true
 
   geocoded_by :full_address
 

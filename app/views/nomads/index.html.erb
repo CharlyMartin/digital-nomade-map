@@ -8,22 +8,29 @@
 <!-- MAPS SCRIPT -->
 <% content_for(:after_js) do %>
 
-  <script src="<% asset_url('markerclusterer.js') %>"></script>
-
   <script>
     const mapContainer = document.querySelector('#map');
-    const options = {
+    const mapOptions = {
       zoom: 2,
       center: new google.maps.LatLng(<%= current_nomad.latitude %>, <%= current_nomad.longitude %>),
       styles: <%= render 'map_style.js' %>,
       scrollwheel: false
     };
+
+    const clusterOptions = {
+      // gridSize: 30,
+      // maxZoom: 20,
+      imagePath: "<%= path_to_image('icon') %>"
+    };
+
+
+
     const nomads = [];
 
     function initMap() {
-      const map = new google.maps.Map(mapContainer, options);
+      const map = new google.maps.Map(mapContainer, mapOptions);
 
-      // Populating the array with nomad objects
+      // Populating the nomads array with JSON
       <% @nomads.each do |nomad| %>
         var nomad = {
           id: <%= nomad.id %>,
@@ -36,23 +43,18 @@
 
       // Function to add a marker
       function addNomadMarker(object) {
-        new google.maps.Marker({
+        return new google.maps.Marker({
           position: new google.maps.LatLng(object.lat, object.lgn),
-          icon: '<%= image_url("icon.png") %>',
+          icon: '<%= image_url("icon") %>',
           map: map
         });
       };
 
       // Populating the map with markers
-      const nomadMarkers = nomads.forEach( nomad => {
-        addNomadMarker(nomad)
-      });
+      const nomadMarkers = nomads.map( nomad => addNomadMarker(nomad));
 
       // Creating marker clusters
-      const markerCluster = new MarkerClusterer(map, nomadMarkers, {
-        imagePath: '../assets/markercluster'
-        }
-      );
+      const markerClusterer = new MarkerClusterer(map, nomadMarkers, clusterOptions);
     }
 
     document.addEventListener('DOMContentLoaded', initMap);
