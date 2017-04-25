@@ -20,15 +20,18 @@
     const clusterOptions = {
       // gridSize: 30,
       // maxZoom: 20,
-      imagePath: "<%= path_to_image('icon') %>"
+      imagePath: '<%= image_url("/assets/images/m") %>'
     };
 
-
-
+    // initializing variables
     const nomads = [];
+    const infowindows = [];
+    var infowindow = new google.maps.InfoWindow();
+    var lastClicked = infowindow;
 
     function initMap() {
       const map = new google.maps.Map(mapContainer, mapOptions);
+
 
       // Populating the nomads array with JSON
       <% @nomads.each do |nomad| %>
@@ -36,25 +39,49 @@
           id: <%= nomad.id %>,
           email: "<%= nomad.email %>",
           lat: <%= nomad.latitude %>,
-          lgn: <%= nomad.longitude %>
+          lgn: <%= nomad.longitude %>,
         }
         nomads.push(nomad);
       <% end %>
 
+
       // Function to add a marker
-      function addNomadMarker(object) {
+      function createNomadMarker(object) {
         return new google.maps.Marker({
           position: new google.maps.LatLng(object.lat, object.lgn),
           icon: '<%= image_url("icon") %>',
+          id: object.id,
           map: map
         });
       };
 
+
       // Populating the map with markers
-      const nomadMarkers = nomads.map( nomad => addNomadMarker(nomad));
+      const nomadMarkers = nomads.map(nomad => createNomadMarker(nomad));
+
+
+      // WORKING!!!!
+      // Creating content
+      nomads.forEach(nomad => {
+        var i = nomad.id;
+        infowindow[i] = new google.maps.InfoWindow({ content: nomad.email });
+        // infowindows.push(infowindow[i])
+      });
+
+      // event listener on markers
+      nomadMarkers.forEach(marker => marker.addListener('click', function() {
+        // close all previous ones; function to be done
+        lastClicked.close();
+        var i = this.id;
+        lastClicked = infowindow[i];
+        lastClicked.open(map, this);
+      }));
+      // WORKING!!!!
+
 
       // Creating marker clusters
       const markerClusterer = new MarkerClusterer(map, nomadMarkers, clusterOptions);
+
     }
 
     document.addEventListener('DOMContentLoaded', initMap);
