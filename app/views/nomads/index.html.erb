@@ -1,4 +1,6 @@
-<div id="map" style="width: 100%; height: 99vh;"></div>
+<div class="navbar-placeholder"></div>
+
+<div id="map" style="width: 100%; height: 94vh;"></div>
 
 <div class="nomad-count">
   <h1> <%= @nomads.count %> NOMADS </h1>
@@ -10,7 +12,7 @@
   <script>
     const mapContainer = document.querySelector('#map');
     const mapOptions = {
-      zoom: 2,
+      zoom: 13,
       center: new google.maps.LatLng(<%= current_nomad.latitude %>, <%= current_nomad.longitude %>),
       styles: <%= render 'map_style.js' %>,
       scrollwheel: false
@@ -19,12 +21,10 @@
     const clusterOptions = {
       // gridSize: 30,
       // maxZoom: 20,
-      // imagePath: ''
     };
 
     // initializing variables
     const nomads = [];
-    const infowindows = [];
     var infowindow = new google.maps.InfoWindow();
     var lastClicked = infowindow;
 
@@ -36,7 +36,10 @@
       <% @nomads.each do |nomad| %>
         var nomad = {
           id: <%= nomad.id %>,
-          email: "<%= nomad.email %>",
+          first_name: "<%= nomad.first_name %>",
+          last_name: "<%= nomad.last_name %>",
+          link: "<%= nomad_url(nomad) %>",
+          photo: "<%= image_url('avatar') %>",
           lat: <%= nomad.latitude %>,
           lgn: <%= nomad.longitude %>,
         }
@@ -54,28 +57,48 @@
         });
       };
 
+      function centerMap(LatLng) {
+        // var mapCenter = map.getCenter().toJSON();
+        // var markerPosition = LatLng.toJSON();
+        // var a = Math.round(Math.abs(mapCenter.lng - markerPosition.lng));
+        // var b = Math.round(Math.abs(mapCenter.lat - markerPosition.lat));
+        map.setCenter(LatLng);
+      }
+
+      function getMarkerPosition() {
+        var position = this.getPosition();
+        window.setTimeout( function() { centerMap(position) }, 200);
+      };
+
+      function createInfoWindow() {
+        lastClicked.close();
+        var i = this.id;
+        lastClicked = infowindow[i];
+        lastClicked.open(map, this);
+      }
+
 
       // Populating the map with markers
       const nomadMarkers = nomads.map(nomad => createNomadMarker(nomad));
 
 
-      // WORKING!!!!
       // Creating content
       nomads.forEach(nomad => {
         var i = nomad.id;
-        infowindow[i] = new google.maps.InfoWindow({ content: nomad.email });
-        // infowindows.push(infowindow[i])
+        infowindow[i] = new google.maps.InfoWindow({
+          content:
+          `<div class="iw">` +
+            `<img src="${nomad.photo}" alt="${nomad.first_name}">` +
+            `<h3 class="iw-name "> ${nomad.first_name} </h3>` +
+            `<a href="${nomad.link}"> Messsage ${nomad.first_name} </a>` +
+          `</div>`
+        });
       });
 
       // event listener on markers
-      nomadMarkers.forEach(marker => marker.addListener('click', function() {
-        // close all previous ones; function to be done
-        lastClicked.close();
-        var i = this.id;
-        lastClicked = infowindow[i];
-        lastClicked.open(map, this);
-      }));
-      // WORKING!!!!
+      nomadMarkers.forEach(marker => marker.addListener( 'click', getMarkerPosition));
+      nomadMarkers.forEach(marker => marker.addListener('click', createInfoWindow));
+
 
 
       // Creating marker clusters

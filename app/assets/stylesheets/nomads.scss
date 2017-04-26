@@ -8,7 +8,37 @@
   padding: 6px 0;
 }
 
-.map-icons {
-  width: 20px;
-  height: 20px;
+.iw {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 22px;
+  padding: 10px 0;
+}
+
+.iw > .iw-name {
+  font-size: 22px;
+  margin: 15px 0;
+  color: $brand-green;
+}
+
+.iw > a {
+  font-size: 15px;
+  font-weight: 400;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  background: $gray-light;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background: $brand-green;
+  }
+}
+
+.iw > img {
+  width: 80px;
+  height: 80px;
+  border-radius: 35px;
 }

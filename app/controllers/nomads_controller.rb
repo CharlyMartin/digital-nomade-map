@@ -1,5 +1,5 @@
 class NomadsController < ApplicationController
-  before_action :set_nomad, only: [:edit_info, :edit_location, :update]
+  before_action :set_nomad, only: [:show, :edit_info, :edit_location, :update]
 
   def index
     @nomads = Nomad.all.order(created_at: :desc).where.not(latitude: nil, longitude: nil)
@@ -14,6 +14,9 @@ class NomadsController < ApplicationController
     #            })
     #   marker.infowindow render_to_string(partial: "/nomads/map_box", locals: { nomad: nomad })
     # end
+  end
+
+  def show
   end
 
   def edit_info

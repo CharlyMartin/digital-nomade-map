@@ -11,6 +11,10 @@
   box-shadow: 1px 1px 1px $gray-lighter;
 }
 
+.navbar-placeholder {
+  height: var(--navbar-height);
+}
+
 .mynavbar-fixed {
   position: fixed;
   left: 0px;

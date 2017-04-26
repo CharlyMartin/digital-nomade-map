@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   devise_for :nomads
 
-  resources :nomads, only: %i(index update)
+  resources :nomads, only: %i(index show update)
   get 'nomads/:id/edit_info', to: 'nomads#edit_info', as: 'edit_info'
   get 'nomads/:id/edit_location', to: 'nomads#edit_location', as: 'edit_location'
 end
