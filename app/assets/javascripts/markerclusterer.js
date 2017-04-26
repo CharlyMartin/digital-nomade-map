@@ -198,7 +198,7 @@ function MarkerClusterer(map, opt_markers, opt_options) {
  * @type {string}
  * @private
  */
-MarkerClusterer.prototype.MARKER_CLUSTER_IMAGE_PATH_ = "assets/m";
+MarkerClusterer.prototype.MARKER_CLUSTER_IMAGE_PATH_ = "assets/marker-clusters/m";
 
 
 /**
