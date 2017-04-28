@@ -51,7 +51,7 @@
       function createNomadMarker(object) {
         return new google.maps.Marker({
           position: new google.maps.LatLng(object.lat, object.lgn),
-          icon: '<%= image_url("icon") %>',
+          icon: '<%= image_url("nomad-icon") %>',
           id: object.id,
           map: map
         });
