@@ -1,0 +1,16 @@
+<div>
+  <%= image_tag('flags/en.png', id: "dLabel", class: "flag", "data-toggle": "dropdown") %>
+  <ul class="dropdown-menu fit-content" aria-labelledby="dLabel">
+    <li>
+      <%= link_to url_for( locale: :en ) do %>
+        <%= image_tag("flags/en.png", class: "flag", id: "en") %>
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to url_for( locale: :fr ) do %>
+        <%= image_tag("flags/fr.png", class: "flag", id: "fr") %>
+      <% end %>
+    </li>
+  </ul>
+</div>

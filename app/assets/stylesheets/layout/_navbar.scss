@@ -44,13 +44,17 @@
 
 //
 
+img#dLabel {
+  margin-right: 10px;
+}
+
 .navbar-container {
   display: flex;
   align-items: center;
   padding: 0 10px;
 }
 
-.mynavbar-links {
+.navbar-container > a {
   color: $gray-darker;
   font-family: $brand-font;
   font-size: 14px;
@@ -74,7 +78,7 @@
   align-items: flex-end;
   justify-content: flex-start;
   flex-direction: column;
-  width: 200px;
+  width: 300px;
   height: 200px;
 }
 
@@ -84,6 +88,7 @@
   font-size: 18px;
   margin: 6px 0;
   padding: 2px 10px;
+  width: fit-content;
   background: rgba(10, 10, 10, 0.4);
   border-radius: 3px;
   transition: background 100ms ease;

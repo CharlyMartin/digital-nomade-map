@@ -4,15 +4,17 @@
   </div>
 
   <div class="navbar-container">
-    <p> <%= link_to 'Map', nomads_path, class: "mynavbar-links" %> </p>
-    <p> <%= link_to 'Misson', mission_path, class: "mynavbar-links" %> </p>
-    <p> <%= link_to 'About', about_path, class: "mynavbar-links" %> </p>
+    <%= link_to 'Map', nomads_path %>
+    <%= link_to 'Misson', mission_path %>
+    <%= link_to 'About', about_path %>
   </div>
+
 
   <% if !!current_nomad %>
 
 <!-- IF CURRENT NOMAD -->
     <div class="navbar-container" id="avatar-container">
+      <%= render 'shared/lang-dropdown' %>
       <%= image_tag 'avatar.png', id: 'avatar-home', class: 'pointer' %>
     </div>
 
@@ -29,9 +31,26 @@
   <% else %>
 <!-- IF NOT -->
     <div class="navbar-container">
-      <%= link_to t('navbar.sign_in'), new_nomad_session_path, class: "mynavbar-links" %>
+      <%= render 'shared/lang-dropdown' %>
+      <%= link_to t('navbar.sign_in'), new_nomad_session_path %>
     </div>
 
   <% end %>
 
 </div>
+
+
+<script>
+  // 1
+  const locale = "<%= I18n.locale %>";
+  const img = document.querySelector('img#dLabel');
+
+  // 2
+  function flag() {
+    // change flag according to lang
+  };
+
+  // 3
+  document.addEventListener('DOMContentLoaded', flag);
+
+</script>
