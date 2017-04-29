@@ -1,2 +1,61 @@
 fr:
-  hello: "Bonjour planete"
+  navbar:
+    sign_up: "Inscription"
+    sign_in: "Se connecter"
+    edit_info: "Modifier profil"
+    edit_location: "Modifier position"
+    change_password: "Changer mot de passe"
+    logout: "Se deconnecter"
+  pages:
+    home:
+      tagline: "trouver les nomades autour de vous"
+      cta: "Ou sont-ils ?"
+      scroll_down: "Descendre"
+      where: "Ou es-tu ?"
+      form_placeholder: "Entre ta position actuelle"
+      form_submit: "GO"
+      what_is_nomad: "Qu'est ce qu'un nomade digital?"
+      what_is_nomad_text: |
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam itaque cum,
+        officiis, possimus necessitatibus aliquid in cupiditate sapiente eaque veritatis,
+        molestias perferendis et vero aperiam, recusandae velit laborum modi odio.
+      features: "Fonctionnalités"
+      features-1: "NOTIFICATIONS"
+      features-2: "EXTENSION CHROME"
+      features-3: "MESSAGERIE"
+    nomads_around:
+      nomad_number:
+        zero: "There's no digital nomads around you... yet! Sign-up to be the first to ckeck in here"
+        one: "YAY! There's %{count} digital nomad near you. Sign-up to contact them."
+        other: "YAY! There are %{count} digital nomads around you. Sign-up to contact them."
+      sign_up_email: "Sign up with email"
+      sign_up_facebook: " "
+      sign_up_google: " "
+  placeholders:
+    first_name: "Prénom"
+    last_name: "Nom de famille"
+    email: "Email"
+    password: "Mot de passe"
+    password_confirmation: "Confirmation mot de passe"
+    street: "Adresse"
+    zip_code: "Code postal"
+    city: "Ville"
+    country: "Pays"
+  forms:
+    about_you: "A propos de toi (1/2)"
+    location: "Ta position (2/2)"
+    edit_info: "Modifier profil"
+    edit_location: "Modifier position"
+    update: "Sauvegarder"
+    disclaimer:
+      location: |
+        Your current position is converted into latitude / longitude coordinates
+        to pinpoint yourself on the map. It will NOT be shared with third-party apps.
+        Ton adresse va etre convertie en coordonées GPS pour te positioner sur la carte.
+        Elle ne sera pas partagée avec les autres nomades ou tiers.
+  footer:
+    brand: "nomadmap"
+    tagline: "DIGITAL NOMAD FINDER"
+    copyright: "nomadmap 2017 ©"
+    contact: "CONTACT"
+    social: "SOCIAL"

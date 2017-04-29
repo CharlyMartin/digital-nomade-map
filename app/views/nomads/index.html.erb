@@ -40,6 +40,7 @@
           last_name: "<%= nomad.last_name %>",
           link: "<%= nomad_url(nomad) %>",
           photo: "<%= image_url('avatar') %>",
+          icon: "<%= set_icon(nomad) %>",
           lat: <%= nomad.latitude %>,
           lgn: <%= nomad.longitude %>,
         }
@@ -51,7 +52,7 @@
       function createNomadMarker(object) {
         return new google.maps.Marker({
           position: new google.maps.LatLng(object.lat, object.lgn),
-          icon: '<%= image_url("nomad-icon") %>',
+          icon: object.icon,
           id: object.id,
           map: map
         });
@@ -84,15 +85,17 @@
 
       // Creating content
       nomads.forEach(nomad => {
-        var i = nomad.id;
-        infowindow[i] = new google.maps.InfoWindow({
-          content:
-          `<div class="iw">` +
-            `<img src="${nomad.photo}" alt="${nomad.first_name}">` +
-            `<h3 class="iw-name "> ${nomad.first_name} </h3>` +
-            `<a href="${nomad.link}"> Messsage ${nomad.first_name} </a>` +
-          `</div>`
-        });
+        if (nomad.id !== <%= current_nomad.id %>) {
+          var i = nomad.id;
+          infowindow[i] = new google.maps.InfoWindow({
+            content:
+            `<div class="iw">` +
+              `<img src="${nomad.photo}" alt="${nomad.first_name}">` +
+              `<h3 class="iw-name "> ${nomad.first_name} </h3>` +
+              `<a href="${nomad.link}"> Messsage ${nomad.first_name} </a>` +
+            `</div>`
+          });
+        };
       });
 
       // event listener on markers

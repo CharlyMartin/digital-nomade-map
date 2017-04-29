@@ -3,12 +3,11 @@ en:
     sign_up: "Sign-up"
     sign_in: "Sign-in"
     edit_info: "Edit profile"
-    edit_location: "Edit location"
+    edit_location: "Update location"
     change_password: "Change password"
     logout: "Log out"
   pages:
     home:
-      brand: "nomadmap"
       tagline: "meet digital nomads as you travel"
       cta: "Find them all"
       scroll_down: "Scroll down"
@@ -21,6 +20,9 @@ en:
         officiis, possimus necessitatibus aliquid in cupiditate sapiente eaque veritatis,
         molestias perferendis et vero aperiam, recusandae velit laborum modi odio.
       features: "Cool features"
+      features-1: "GET NOTIFIED"
+      features-2: "CHROME EXTENSION"
+      features-3: "DIRECT MESSAGE"
     nomads_around:
       nomad_number:
         zero: "There's no digital nomads around you... yet! Sign-up to be the first to ckeck in here"
