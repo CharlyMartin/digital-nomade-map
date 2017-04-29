@@ -72,11 +72,13 @@
       };
 
       function createInfoWindow() {
-        lastClicked.close();
-        var i = this.id;
-        lastClicked = infowindow[i];
-        lastClicked.open(map, this);
-      }
+        if (this.id !== <%= current_nomad.id %>) {
+          lastClicked.close();
+          var i = this.id;
+          lastClicked = infowindow[i];
+          lastClicked.open(map, this);
+        };
+      };
 
 
       // Populating the map with markers
