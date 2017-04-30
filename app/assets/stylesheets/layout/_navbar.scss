@@ -71,6 +71,10 @@ img#dLabel {
   position: relative;
 }
 
+.pos-absolute {
+  position: absolute;
+}
+
 .devise-container {
   top: 25px;
   right: -100vh;
@@ -98,10 +102,6 @@ img#dLabel {
   // &:hover {
   //   color: $gray-darker;
   // }
-}
-
-.pos-absolute {
-  position: absolute;
 }
 
 //
