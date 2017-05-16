@@ -14,7 +14,6 @@
 
 <!-- IF CURRENT NOMAD -->
     <div class="navbar-container" id="avatar-container">
-      <%= render 'shared/lang-dropdown' %>
       <%= image_tag 'avatar.png', id: 'avatar-home', class: 'pointer' %>
     </div>
 
@@ -31,27 +30,9 @@
   <% else %>
 <!-- IF NOT -->
     <div class="navbar-container">
-      <%= render 'shared/lang-dropdown' %>
       <%= link_to t('navbar.sign_in'), new_nomad_session_path %>
     </div>
 
   <% end %>
 
 </div>
-
-
-<script>
-  // 1
-  const locale = "<%= I18n.locale %>";
-  const trigger = document.querySelector('img#dLabel');
-  const flags = document.querySelectorAll('img.flag');
-
-  // 2
-  function flag() {
-    // change flag according to lang
-  };
-
-  // 3
-  document.addEventListener('DOMContentLoaded', flag);
-
-</script>

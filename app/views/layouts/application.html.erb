@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang= <%= I18n.locale %> >
   <head>
-    <!-- CODED WITH LOVE BY:
-    CHARLY MARTIN -->
+
+    <%= render "shared/signature" %>
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -36,6 +36,6 @@
     <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js" %>
     <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js" %>
     <%= javascript_include_tag 'application' %>
-    <%= yield(:after_js) %>
+    <%= yield :after_js %>
   </body>
 </html>
