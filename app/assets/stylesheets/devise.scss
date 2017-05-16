@@ -12,6 +12,7 @@
   margin: 30px 0;
 }
 
+
 .form-inputs > h3 {
   font-family: $header-font;
   font-size: 20px;
@@ -28,6 +29,7 @@
 input[type="checkbox"] {
   box-shadow: none;
 }
+
 
 .form-info {
   font-style: italic;
@@ -51,21 +53,24 @@ input[type="checkbox"] {
   }
 }
 
+
 .form-links {
   width: 100%;
   text-align: center;
   padding: 30px;
-  > a {
-    font-weight: 300;
-    font-size: 16px;
-    color: white;
-    display: inline-block;
-    margin: 7px;
-    &:hover {
-      color: $gray-darker;
-    }
+}
+
+.form-links > a {
+  font-weight: 300;
+  font-size: 16px;
+  color: white;
+  display: inline-block;
+  margin: 7px;
+  &:hover {
+    color: $gray-darker;
   }
 }
+
 
 .flashes {
   width: 100%;

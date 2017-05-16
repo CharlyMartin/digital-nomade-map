@@ -11,18 +11,29 @@ en:
       tagline: "Browse the map & meet nomads around you"
       cta: "Find them all"
       scroll_down: "Scroll down"
-      where: "Where are you?"
-      form_placeholder: "Enter your current location"
+      form_placeholder: "Where are you?"
       form_submit: "GO"
-      what_is_nomad: "What's a digital nomad?"
-      what_is_nomad_text: |
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam itaque cum,
-        officiis, possimus necessitatibus aliquid in cupiditate sapiente eaque veritatis,
-        molestias perferendis et vero aperiam, recusandae velit laborum modi odio.
+      what_is_nomad: "Why nomadmap?"
+      what_is_nomad_text_html: |
+        As digital nomads, the main driver for choosing our next destination is whether we will be able to find others nomads there.
+        As we move quite often, this question poses fairly frequently. This is where nomadmap comes handy!
+        <br>
+        <br>
+        Next time you wonder where to next?, just browse the map! You'll get access to other digital nomads' current location.
+        You can even contact them in advance. The only question will then be, who do I want to meet next?
+        <br>
+        <br>
+        What are you wainting for to sign-up?
       features: "Cool features"
-      features-1: "GET NOTIFIED"
-      features-2: "CHROME EXTENSION"
-      features-3: "DIRECT MESSAGE"
+      feature-1: "GET NOTIFIED"
+      feature-1_text_html: |
+        Receive an email when you cross path with another nomad and never miss an opportunity to meet your next friends.
+      feature-2: "CHROME EXTENSION"
+      feature-2_text_html: |
+        Let our chrome extension manage the position's update for you. You can choose the frequency of the updates.
+      feature-3: "DIRECT MESSAGE"
+      feature-3_text_html: |
+        Send instant messages to other nomads without leaving the app.
     nomads_around:
       nomad_number:
         zero: "There's no digital nomads around you... yet! Sign-up to be the first to ckeck in here"
@@ -37,7 +48,7 @@ en:
     email: "Email"
     password: "Password"
     password_confirmation: "Password confirmation"
-    street: "Street address"
+    street: "Street"
     zip_code: "Zip code (optional)"
     city: "City"
     country: "Country"
@@ -49,8 +60,8 @@ en:
     update: "Update"
     disclaimer:
       location: |
-        Your current position is converted into latitude / longitude coordinates
-        to pinpoint yourself on the map. It will NOT be shared with third-party apps.
+        Your current address is converted into latitude / longitude coordinates
+        to pinpoint your position on the map. You can edit it anytime.
   footer:
     brand: "nomadmap"
     tagline: "DIGITAL NOMAD FINDER"

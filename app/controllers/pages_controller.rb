@@ -27,7 +27,7 @@ class PagesController < ApplicationController
     list = []
 
     object.each do |nomad|
-      list << "There's #{nomad.first_name} in #{nomad.city}"
+      list << "<span class='name'>#{nomad.first_name}</span> in <span class='city'>#{nomad.city}</span>"
     end
     return list.shuffle[0..19]
   end

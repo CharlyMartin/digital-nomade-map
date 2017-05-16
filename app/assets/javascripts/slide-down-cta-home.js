@@ -5,7 +5,7 @@ const page = $('html, body'),
 
 function scrollDown() {
   page.animate(
-    {scrollTop: $('#here').offset().top},
+    {scrollTop: $('.scroll-down-container').offset().top},
     500);
   };
 
