@@ -10,7 +10,6 @@ gem 'redis'
 gem 'devise'
 gem 'devise-i18n'
 gem 'coffee-rails'
-gem 'gmaps4rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-underscore'
