@@ -66,3 +66,28 @@ input[type="checkbox"] {
     }
   }
 }
+
+.flashes {
+  width: 100%;
+  z-index: 2;
+  color: white;
+  position: fixed;
+  top: var(--navbar-height);
+  text-align: center;
+  padding: 3px 20px;
+}
+
+.flashes .delete {
+  position: absolute;
+  right: 10px;
+  top: 6px;
+  cursor: pointer;
+}
+
+.flash-notice {
+  background: $brand-green;
+}
+
+.flash-alert {
+  background: $brand-blue;
+}
