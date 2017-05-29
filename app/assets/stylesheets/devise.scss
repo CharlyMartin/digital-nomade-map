@@ -30,6 +30,10 @@ input[type="checkbox"] {
   box-shadow: none;
 }
 
+.form-control:focus {
+  border-color: $brand-green;
+}
+
 
 .form-info {
   font-style: italic;
