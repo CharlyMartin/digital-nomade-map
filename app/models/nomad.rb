@@ -1,11 +1,10 @@
 class Nomad < ApplicationRecord
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  # :confirmable, :lockable,  :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable, :timeoutable
+  devise :omniauthable, :omniauth_providers => [:facebook]
 
-  validates :first_name, :last_name, presence: true
-  validates :address, :city, :country, presence: true
+  validates :first_name, :last_name, :address, :city, :country, presence: true
 
   geocoded_by :full_address
 
