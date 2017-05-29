@@ -244,11 +244,15 @@ Devise.setup do |config|
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
 
+
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :facebook, 'FB_ID', 'FB_SECRET', callback_url: "#{request.base_url}/nomads"
-  #, scope: 'user,public_repo'
+  config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"],
+  #scope: 'email, first_name, last_name',
+  callback_url: (Rails.env == 'production' ? 'https://www.nomadmap.co' : 'http://localhost:3000') + '/nomads',
+  secure_image_url: true,
+  image_size: 'normal'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
