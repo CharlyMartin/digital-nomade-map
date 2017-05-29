@@ -8,6 +8,7 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'redis'
 gem 'devise'
+gem 'omniauth-facebook'
 gem 'devise-i18n'
 gem 'coffee-rails'
 
