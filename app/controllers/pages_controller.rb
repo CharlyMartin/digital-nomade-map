@@ -3,11 +3,10 @@ class PagesController < ApplicationController
 
   def home
     @nomads = Nomad.all
-    @typed_js = name_in_city_list(@nomads)
+    @typed_js = name_in_city_list(@nomads.shuffle[0..14])
   end
 
   def nomads_around
-    location_params[:location]
     @nomads_around = Nomad.near(location_params[:location], 100).all[0..-1]
   end
 
@@ -24,12 +23,9 @@ class PagesController < ApplicationController
   end
 
   def name_in_city_list(object)
-    list = []
-
-    object.each do |nomad|
-      list << "<span class='name'>#{nomad.first_name}</span> in <span class='city'>#{nomad.city}</span>"
+    object.map do |nomad|
+      "<span class='name'>#{nomad.first_name}</span> in <span class='city'>#{nomad.city}</span>"
     end
-    return list.shuffle[0..19]
   end
 
 end

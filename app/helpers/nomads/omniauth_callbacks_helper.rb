@@ -1,0 +1,2 @@
+module Nomads::OmniauthCallbacksHelper
+end

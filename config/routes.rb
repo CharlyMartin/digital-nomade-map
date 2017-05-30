@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   put 'api/update'
-  devise_for :nomads
+  devise_for :nomads, :controllers => { :omniauth_callbacks => "nomads/omniauth_callbacks" }
 
   scope '(:locale)', locale: /en|fr/ do
     root to: 'pages#home'

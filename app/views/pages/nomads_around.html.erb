@@ -3,6 +3,8 @@
 <br>
 <br>
 
+<img href="https://giphy.com/gifs/adventure-latin-flinch-VGG8UY1nEl66Y">
+
 <%= @nomads_around.count %>
 
 <br>
@@ -12,9 +14,8 @@
 <% end %>
 
 <p> <%= t('pages.nomads_around.nomad_number', count: @nomads_around.count) %> </p>
+<br>
 <%= link_to t('pages.nomads_around.sign_up_email'), new_nomad_registration_path %>
-
-<p>or</p>
-<p>sign-in with Facebok</p>
-<p>sign-in with Google</p>
+<br>
+<%= link_to "Sign in with Facebook", nomad_facebook_omniauth_authorize_path %>
 
