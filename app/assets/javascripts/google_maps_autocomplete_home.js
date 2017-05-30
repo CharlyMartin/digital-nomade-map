@@ -17,12 +17,6 @@ $(document).ready(function() {
 function onPlaceChanged() {
   var place = this.getPlace();
   var components = getAddressComponents(place);
-  // $('#location_location').trigger('blur').val(components);
-  // $('#nomad_zip_code').val(components.zip_code);
-  // $('#nomad_city').val(components.city);
-  // if (components.country_code) {
-  //   $('#nomad_country').val(components.country_code);
-  // }
 };
 
 function storeAddress() {

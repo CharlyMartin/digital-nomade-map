@@ -1,5 +1,6 @@
 $(document).ready(function() {
   var nomad_address = $('#nomad_address').get(0);
+  var session = sessionStorage.getItem('address');
 
   if (nomad_address) {
     var autocomplete = new google.maps.places.Autocomplete(nomad_address, { types: ['geocode'] });
@@ -10,6 +11,12 @@ $(document).ready(function() {
       }
     });
   }
+
+  if (session) {
+    var components = JSON.parse(session);
+    prefillForm(components);
+  };
+
 });
 
 function onPlaceChanged() {
@@ -21,6 +28,15 @@ function onPlaceChanged() {
   $('#nomad_city').val(components.city);
   if (components.country_code) {
     $('#nomad_country').val(components.country_code);
+  }
+}
+
+function prefillForm(object) {
+  $('#nomad_address').val(object.address);
+  $('#nomad_zip_code').val(object.zip_code);
+  $('#nomad_city').val(object.city);
+  if (object.country_code) {
+    $('#nomad_country').val(object.country_code);
   }
 }
 
