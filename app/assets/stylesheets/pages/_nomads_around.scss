@@ -1,0 +1,48 @@
+.page-container {
+  height: 94vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.email-login {
+  padding: 15px 25px;
+  margin: 10px;
+  border-radius: 25px;
+  background: $gray-darker;
+  color: white;
+  box-shadow: 1px 1px 10px rgba(10, 10, 10, 0.2);
+  cursor: pointer;
+  &:hover {
+    color: white;
+    opacity: 0.95;
+    transform: translateY(1px);
+  }
+}
+
+.facebook-login {
+  padding: 15px 25px;
+  margin: 10px;
+  border-radius: 25px;
+  background: rgba(59, 89, 152, 1.00);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 10px rgba(10, 10, 10, 0.2);
+  cursor: pointer;
+  &:hover {
+    opacity: 0.95;
+    transform: translateY(1px);
+  }
+}
+
+.facebook-login i {
+  margin-right: 10px;
+  color: white;
+}
+
+.facebook-login a {
+  color: white;
+}

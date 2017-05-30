@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_nomad!, only: [:home, :nomads_around, :mission, :about]
+  skip_before_action :authenticate_nomad!, only: [:home, :nomads_around, :mission]
 
   def home
     @nomads = Nomad.all
@@ -8,12 +8,10 @@ class PagesController < ApplicationController
 
   def nomads_around
     @nomads_around = Nomad.near(location_params[:location], 100).all[0..-1]
+    session[:location] = location_params[:location]
   end
 
   def mission
-  end
-
-  def about
   end
 
   private

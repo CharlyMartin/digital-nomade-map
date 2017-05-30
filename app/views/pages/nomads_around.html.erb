@@ -1,21 +1,12 @@
-<br>
-<br>
-<br>
-<br>
+<div class="navbar-placeholder"></div>
 
-<img href="https://giphy.com/gifs/adventure-latin-flinch-VGG8UY1nEl66Y">
-
-<%= @nomads_around.count %>
-
-<br>
-
-<% @nomads_around.each do |nomad| %>
-  <% nomad.first_name %>
-<% end %>
-
-<p> <%= t('pages.nomads_around.nomad_number', count: @nomads_around.count) %> </p>
-<br>
-<%= link_to t('pages.nomads_around.sign_up_email'), new_nomad_registration_path %>
-<br>
-<%= link_to "Sign in with Facebook", nomad_facebook_omniauth_authorize_path %>
+<div class="page-container">
+  <img href="https://giphy.com/gifs/adventure-latin-flinch-VGG8UY1nEl66Y" alt="not working">
+  <p> <%= t('pages.nomads_around.nomad_number', count: @nomads_around.count) %> </p>
+  <%= link_to t('pages.nomads_around.sign_up_email'), new_nomad_registration_path, class: "email-login slideUp" %>
+  <span class="facebook-login slideDown">
+    <i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i>
+    <%= link_to "Continue with Facebook", nomad_facebook_omniauth_authorize_path %>
+  </span>
+</div>
 
