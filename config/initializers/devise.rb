@@ -154,7 +154,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  config.password_length = 8..64
+  config.password_length = 8..80
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
@@ -249,7 +249,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"],
-  #scope: 'email, first_name, last_name',
+  scope: 'email, first_name, last_name',
   callback_url: (Rails.env == 'production' ? 'https://www.nomadmap.co' : 'http://localhost:3000') + '/nomads',
   secure_image_url: true,
   image_size: 'normal'

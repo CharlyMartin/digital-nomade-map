@@ -1,19 +1,9 @@
 class NomadsController < ApplicationController
   before_action :set_nomad, only: [:show, :edit_info, :edit_location, :update]
+  #skip_before_action :authenticate_nomad!
 
   def index
     @nomads = Nomad.all.order(created_at: :desc).where.not(latitude: nil, longitude: nil)
-
-    # @nomads_location = Gmaps4rails.build_markers(@nomads) do |nomad, marker|
-    #   marker.lat nomad.latitude
-    #   marker.lng nomad.longitude
-    #   marker.picture({
-    #             :url => "https://unsplash.it/200/300/?random",
-    #             :width   => 32,
-    #             :height  => 32
-    #            })
-    #   marker.infowindow render_to_string(partial: "/nomads/map_box", locals: { nomad: nomad })
-    # end
   end
 
   def show
