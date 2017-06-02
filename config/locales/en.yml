@@ -39,9 +39,9 @@ en:
         zero: "There's <span class='box-shadow-inset'>no digital nomads around</span>... yet! Sign-up to be the first here &#x1F44A"
         one: "There's <span class='box-shadow-inset'>%{count} digital nomad around</span> you! Sign-up to find out who &#x1F648"
         other: "There are <span class='box-shadow-inset'>%{count} digital nomads around</span> you! Sign-up and contact them &#x1F44B"
+      sign_up: "Sign up"
       sign_up_email: "Sign up with email"
-      sign_up_facebook: " "
-      sign_up_google: " "
+      sign_up_facebook: "Continue with Facebook"
   placeholders:
     first_name: "First name"
     last_name: "Last name"

@@ -173,14 +173,17 @@ input#location_location {
   color: $brand-green;
 }
 
-.home-text-container a {
-  display: inline-block;
-  background: $brand-green;
+.home-text-container #sign-up {
+  padding: 15px 25px;
+  border-radius: 25px;
+  background: $gray-darker;
   color: white;
-  padding: 10px 15px;
-  border-radius: 20px;
+  box-shadow: 1px 1px 10px rgba(10, 10, 10, 0.2);
+  cursor: pointer;
   &:hover {
-    background: black;
+    color: white;
+    opacity: 0.95;
+    transform: translateY(1px);
   }
 }
 

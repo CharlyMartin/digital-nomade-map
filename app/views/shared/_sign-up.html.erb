@@ -1,0 +1,8 @@
+<!-- Email -->
+<%= link_to t('pages.nomads_around.sign_up_email'), new_nomad_registration_path, class: "email-login slideUp" %>
+
+<!-- Facebook -->
+<%= link_to nomad_facebook_omniauth_authorize_path, class: "facebook-login slideDown" do %>
+  <i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i>
+  <span> <%= t('pages.nomads_around.sign_up_facebook') %> </span>
+<% end %>
