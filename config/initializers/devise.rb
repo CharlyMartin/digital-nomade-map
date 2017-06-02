@@ -250,7 +250,8 @@ Devise.setup do |config|
   # up on your models and hooks.
   config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"],
   scope: 'email, first_name, last_name',
-  callback_url: (Rails.env == 'production' ? 'https://www.nomadmap.co' : 'http://localhost:3000') + '/nomads',
+  # callback_url: (Rails.env == 'production' ? 'https://www.nomadmap.co' : 'http://localhost:3000') + '/nomads',
+  callback_url: 'http://localhost:3000/nomads',
   secure_image_url: true,
   image_size: 'normal'
 

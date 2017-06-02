@@ -36,7 +36,6 @@ class Nomad < ApplicationRecord
   end
 
   def self.find_for_facebook_oauth(auth)
-    raise
     nomad_params = auth.slice(:provider, :uid)
     nomad_params.merge! auth.info.slice(:email, :first_name, :last_name)
     nomad_params[:facebook_picture_url] = auth.info.image
