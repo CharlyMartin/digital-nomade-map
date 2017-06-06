@@ -4,12 +4,6 @@ function scrollDown() {
     500);
   };
 
-// layout
-
-// $(document).ready(function() {
-
-// });
-
 $(document).ready(function() {
     console.log( "ready!" );
     $('#cta').click(scrollDown);
