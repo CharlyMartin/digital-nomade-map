@@ -249,10 +249,10 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"],
-  scope: 'email, first_name, last_name',
-  # callback_url: (Rails.env == 'production' ? 'https://www.nomadmap.co' : 'http://localhost:3000') + '/nomads',
-  callback_url: 'http://localhost:3000/nomads',
-  secure_image_url: true,
+  scope: 'email',
+  info_fields: 'email, first_name, last_name',
+  callback_url: (Rails.env == 'production' ? 'https://www.nomadmap.co' : 'http://localhost:3000') + '/nomads/auth/facebook/callback',
+  secure_image_url: {width: 200, height: 200},
   image_size: 'normal'
 
   # ==> Warden configuration
