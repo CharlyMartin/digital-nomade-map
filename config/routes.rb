@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get 'nomads_around', to: 'pages#nomads_around', as: 'nomads_around'
     get 'misson', to: 'pages#mission', as: 'mission'
     get 'about', to: 'pages#about', as: "about"
+    get 'privacy', to: 'pages#privacy', as: 'privacy'
 
     resources :nomads, only: %i(index show update)
     get 'nomads/:id/edit_info', to: 'nomads#edit_info', as: 'edit_info'

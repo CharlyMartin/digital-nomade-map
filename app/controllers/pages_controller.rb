@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_nomad!, only: [:home, :nomads_around, :mission]
+  skip_before_action :authenticate_nomad!, only: [:home, :nomads_around, :mission, :privacy]
 
   def home
     @nomads = Nomad.all
@@ -11,6 +11,9 @@ class PagesController < ApplicationController
   end
 
   def mission
+  end
+
+  def privacy
   end
 
   private
