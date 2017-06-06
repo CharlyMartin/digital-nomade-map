@@ -11,16 +11,3 @@
     <i class="fa fa-times-circle delete" aria-hidden="true"></i>
   </div>
 <% end %>
-
-<script>
-  // 1.
-  const closeButton = document.querySelector('i.delete');
-
-  // 2.
-  function deleteFlash() {
-    this.parentNode.remove();
-  };
-
-  // 3.
-  closeButton.addEventListener('click', deleteFlash)
-</script>
