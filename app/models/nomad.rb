@@ -1,11 +1,14 @@
 class Nomad < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable,  :recoverable, :rememberable, :trackable, :validatable
   devise :database_authenticatable, :registerable, :timeoutable, :omniauthable, omniauth_providers: [:facebook]
 
-  validates :first_name, :last_name, :address, :city, :country, presence: true
+  validates :first_name, :last_name, :password, :address, :city, :country, presence: true
+  validates :email, presence: true, uniqueness: :true
 
+  # Ruby Geocoder methods
   geocoded_by :full_address
+  after_validation :geocode, if: :full_address_changed?
+  after_validation :reverse_geocode
+
   reverse_geocoded_by :latitude, :longitude do |obj,results|
     if geo = results.first
       puts geo.address
@@ -16,19 +19,12 @@ class Nomad < ApplicationRecord
     end
   end
 
-  after_validation :geocode, if: :full_address_changed?
-  after_validation :reverse_geocode
-
   def full_name
-    "#{first_name} #{last_name}"
-  end
-
-  def city_country
-    "#{city}, #{ISO3166::Country[country].name unless empty? country}"
+    [first_name, last_name.upcase].join(' ')
   end
 
   def full_address
-    "#{address}, #{zip_code} #{city} #{ISO3166::Country[country].name unless empty? country}"
+    [address, zip_code, city, country_name(country)].compact.join(', ')
   end
 
   def full_address_changed?
@@ -58,8 +54,8 @@ class Nomad < ApplicationRecord
 
   private
 
-  def empty? string
-    string == ""
+  def country_name(country_code)
+    ISO3166::Country[country_code].name unless country_code.empty?
   end
 
 end
