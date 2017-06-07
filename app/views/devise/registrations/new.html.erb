@@ -15,10 +15,15 @@
       <%= f.input :password_confirmation, label: false, required: true, placeholder: t('placeholders.password_confirmation') %>
 
       <hr>
-
       <h3> <%= t('forms.location') %> </h3>
       <p class="form-info"> <%= t('forms.disclaimer.location') %> </p>
-      <%= render "devise/shared/location_form", f: f %>
+      <div class="col-xs-6 no-left-padding">
+        <%= f.input :latitude, label: false, input_html: {value: session[:coords]['latitude']}, placeholder: t('placeholders.first_name') %>
+      </div>
+
+      <div class="col-xs-6 no-padding">
+        <%= f.input :longitude, label: false, input_html: {value: session[:coords]['longitude']}, placeholder: t('placeholders.first_name') %>
+      </div>
     </div>
 
     <br>

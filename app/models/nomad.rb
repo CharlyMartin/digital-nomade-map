@@ -1,34 +1,29 @@
 class Nomad < ApplicationRecord
-  devise :database_authenticatable, :registerable, :timeoutable, :omniauthable, omniauth_providers: [:facebook]
+  devise :database_authenticatable, :registerable, :timeoutable, :omniauthable,
+  omniauth_providers: [:facebook]
 
-  validates :first_name, :last_name, :password, :address, :city, :country, presence: true
+  validates :first_name, :last_name, :password, :latitude, :longitude, presence: true
   validates :email, presence: true, uniqueness: :true
 
   # Ruby Geocoder methods
-  geocoded_by :full_address
-  after_validation :geocode, if: :full_address_changed?
+  geocoded_by :full_address # LAT / LGN
+  reverse_geocoded_by :latitude, :longitude
+
+  after_validation :geocode, if: :full_address_changed? # Find out what after validation does
   after_validation :reverse_geocode
 
-  reverse_geocoded_by :latitude, :longitude do |obj,results|
-    if geo = results.first
-      puts geo.address
-      obj.address = geo.address
-      obj.city    = geo.city
-      obj.zip_code = geo.postal_code
-      obj.country = geo.country_code
-    end
-  end
-
-  def full_name
-    [first_name, last_name.upcase].join(' ')
-  end
+  # reverse_geocoded_by :latitude, :longitude do |obj,results|
+  #   if geo = results.first
+  #     puts geo.address
+  #     obj.address = geo.address
+  #     obj.city    = geo.city
+  #     obj.zip_code = geo.postal_code
+  #     obj.country = geo.country_code
+  #   end
+  # end
 
   def full_address
     [address, zip_code, city, country_name(country)].compact.join(', ')
-  end
-
-  def full_address_changed?
-    address_changed? || zip_code_changed? || city_changed? || country_changed?
   end
 
   def self.find_for_facebook_oauth(auth)
@@ -56,6 +51,10 @@ class Nomad < ApplicationRecord
 
   def country_name(country_code)
     ISO3166::Country[country_code].name unless country_code.empty?
+  end
+
+  def full_address_changed?
+    address_changed? || zip_code_changed? || city_changed? || country_changed?
   end
 
 end
