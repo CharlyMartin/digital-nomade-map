@@ -60,10 +60,12 @@
     // 1.
     const mapContainer = document.querySelector('#map');
     const updateButton = document.querySelector('#update-map');
+    const latInput = document.querySelector('input#nomad_latitude');
+    const lngInput = document.querySelector('input#nomad_longitude');
 
     let userCoords = getCoords();
     let mapOptions = {
-        zoom: 9,
+        zoom: 12,
         center: userCoords,
         styles: <%= render 'nomads/map_style.js' %>,
         scrollwheel: false
@@ -71,15 +73,20 @@
 
     // 2.
     function getCoords() {
-      let lat = Number(document.querySelector('input#nomad_latitude').value);
-      let lng = Number(document.querySelector('input#nomad_longitude').value);
+      let lat = Number(latInput.value);
+      let lng = Number(lngInput.value);
       return {lat: lat, lng: lng}
     }
 
     function success(position) {
       let newCoords = {lat: position.coords.latitude, lng: position.coords.longitude}
+      // Updating userCoords with browser's position
       userCoords.lat = newCoords.lat;
-      userCoords.lgn = newCoords.lng;
+      userCoords.lng = newCoords.lng;
+      // Updating form inputs with browser's position
+      latInput.value = newCoords.lat;
+      lngInput.value = newCoords.lng;
+      // Updating the map with the new values
       initMap();
     }
 
