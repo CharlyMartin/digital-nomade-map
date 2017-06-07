@@ -11,7 +11,6 @@ class PagesController < ApplicationController
     coords_hash = {latitude: coords_array[0], longitude: coords_array[1]}
     session[:coords] = coords_hash
     @nomads_around = Nomad.near(coords_array, 100)[0..-1]
-    @nomad_loc = Nomad.new(coords_hash)
   end
 
   def mission

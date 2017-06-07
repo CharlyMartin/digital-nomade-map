@@ -49,9 +49,11 @@ en:
     password: "Password"
     password_confirmation: "Password confirmation"
     street: "Street"
-    zip_code: "Zip code (optional)"
+    zip_code: "Zip code"
     city: "City"
     country: "Country"
+    latitude: "Latitude"
+    longitude: "Longitude"
   forms:
     about_you: "About you (1/2)"
     location: "Your location (2/2)"
@@ -60,8 +62,8 @@ en:
     update: "Update"
     disclaimer:
       location: |
-        Your current address is converted into latitude / longitude coordinates
-        to pinpoint your position on the map. You can edit it anytime.
+        These are your current GPS coordinates. How cool is that!? If not accurate, you can refine your position
+        by clicking the button below.
   footer:
     brand: "nomadmap"
     tagline: "DIGITAL NOMAD FINDER"

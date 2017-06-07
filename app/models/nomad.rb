@@ -6,21 +6,11 @@ class Nomad < ApplicationRecord
   validates :email, presence: true, uniqueness: :true
 
   # Ruby Geocoder methods
-  geocoded_by :full_address # LAT / LGN
+  geocoded_by :full_address
   reverse_geocoded_by :latitude, :longitude
 
   after_validation :geocode, if: :full_address_changed? # Find out what after validation does
   after_validation :reverse_geocode
-
-  # reverse_geocoded_by :latitude, :longitude do |obj,results|
-  #   if geo = results.first
-  #     puts geo.address
-  #     obj.address = geo.address
-  #     obj.city    = geo.city
-  #     obj.zip_code = geo.postal_code
-  #     obj.country = geo.country_code
-  #   end
-  # end
 
   def full_address
     [address, zip_code, city, country_name(country)].compact.join(', ')

@@ -1,42 +1,110 @@
-<%= render "devise/shared/responsive_background" %>
+<div class="background-form" style="background-image:
+  linear-gradient(to left, rgba(244, 231, 110, 1), rgba(143, 247, 167, 1));">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 
-  <h2><%= t(".sign_up") %></h2>
+        <h2><%= t(".sign_up") %></h2>
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <h3> <%= t('forms.about_you') %> </h3>
+            <%= f.input :first_name, label: false, autofocus: true, placeholder: t('placeholders.first_name') %>
+            <%= f.input :last_name, label: false, placeholder: t('placeholders.last_name') %>
+            <%= f.input :email, label: false, required: true, placeholder: t('placeholders.email') %>
+            <%= f.input :password, label: false, required: true, placeholder: t('placeholders.password') %>
+            <%= f.input :password_confirmation, label: false, required: true, placeholder: t('placeholders.password_confirmation') %>
+
+            <hr>
+
+            <h3> <%= t('forms.location') %> </h3>
+            <div class="col-xs-6 no-left-padding">
+              <%= f.input :latitude, label: false, input_html: {value: session[:coords]['latitude']}, placeholder: t('placeholders.latitude') %>
+            </div>
+            <div class="col-xs-6 no-padding">
+              <%= f.input :longitude, label: false, input_html: {value: session[:coords]['longitude']}, placeholder: t('placeholders.longitude') %>
+            </div>
+            <br>
+            <p class="form-info"> <%= t('forms.disclaimer.location') %> </p>
+            <div id="map" style="width: 100%; height: 30vh;"></div>
 
 
-    <div class="form-inputs">
-      <h3> <%= t('forms.about_you') %> </h3>
-      <%= f.input :first_name, label: false, autofocus: true, placeholder: t('placeholders.first_name') %>
-      <%= f.input :last_name, label: false, placeholder: t('placeholders.last_name') %>
-      <%= f.input :email, label: false, required: true, placeholder: t('placeholders.email') %>
-      <%= f.input :password, label: false, required: true, placeholder: t('placeholders.password') %>
-      <%= f.input :password_confirmation, label: false, required: true, placeholder: t('placeholders.password_confirmation') %>
+            <br>
+            <div id="update-map"></div>
 
-      <hr>
-      <h3> <%= t('forms.location') %> </h3>
-      <p class="form-info"> <%= t('forms.disclaimer.location') %> </p>
-      <div class="col-xs-6 no-left-padding">
-        <%= f.input :latitude, label: false, input_html: {value: session[:coords]['latitude']}, placeholder: t('placeholders.first_name') %>
-      </div>
+            <hr>
+          </div>
 
-      <div class="col-xs-6 no-padding">
-        <%= f.input :longitude, label: false, input_html: {value: session[:coords]['longitude']}, placeholder: t('placeholders.first_name') %>
+          <br>
+
+          <div class="form-actions">
+            <%= f.button :submit, t(".sign_up"), class: 'devise-submit-btn' %>
+          </div>
+
+
+        <% end %>
+
+        <div class="form-links">
+          <%= render "devise/shared/links" %>
+        </div>
+
       </div>
     </div>
-
-    <br>
-
-    <div class="form-actions">
-      <%= f.button :submit, t(".sign_up"), class: 'devise-submit-btn' %>
-    </div>
-
-
-  <% end %>
-
-  <div class="form-links">
-    <%= render "devise/shared/links" %>
   </div>
+</div>
 
-<%= render "devise/shared/closing_divs" %>
+<% content_for(:after_js) do %>
+  <script>
+    // 1.
+    const mapContainer = document.querySelector('#map');
+    const updateButton = document.querySelector('#update-map');
+
+    let userCoords = getCoords();
+    let mapOptions = {
+        zoom: 9,
+        center: userCoords,
+        styles: <%= render 'nomads/map_style.js' %>,
+        scrollwheel: false
+      };
+
+    // 2.
+    function getCoords() {
+      let lat = Number(document.querySelector('input#nomad_latitude').value);
+      let lng = Number(document.querySelector('input#nomad_longitude').value);
+      return {lat: lat, lng: lng}
+    }
+
+    function success(position) {
+      let newCoords = {lat: position.coords.latitude, lng: position.coords.longitude}
+      userCoords.lat = newCoords.lat;
+      userCoords.lgn = newCoords.lng;
+      initMap();
+    }
+
+    function error() {
+      alert("You did not give access to your position")
+    }
+
+    function updatePosition() {
+      if (!navigator.geolocation){
+        alert("Geolocation is not supported by your browser");
+        return;
+      }
+      navigator.geolocation.getCurrentPosition(success, error)
+    }
+
+    function initMap() {
+      var map = new google.maps.Map(mapContainer, mapOptions);
+      var marker = new google.maps.Marker({
+        position: userCoords,
+        map: map
+      });
+    };
+
+    // 3.
+    document.addEventListener('DOMContentLoaded', initMap);
+    updateButton.addEventListener('click', updatePosition)
+  </script>
+<% end %>

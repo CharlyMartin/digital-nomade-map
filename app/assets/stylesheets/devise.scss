@@ -36,10 +36,9 @@ input[type="checkbox"] {
 
 
 .form-info {
-  font-style: italic;
-  font-size: 14px;
+  font-size: 15px;
   color: white;
-  background: rgba(10, 10, 10, 0.05);
+  background: rgba(10, 10, 10, 0.04);
   display: block;
   margin-bottom: 10px;
 }
@@ -99,4 +98,10 @@ input[type="checkbox"] {
 
 .flash-alert {
   background: $brand-blue;
+}
+
+#update-map {
+  width: 50px;
+  height: 50px;
+  background: red;
 }
