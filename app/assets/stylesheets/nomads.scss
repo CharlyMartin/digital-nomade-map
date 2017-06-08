@@ -1,6 +1,6 @@
 .nomad-count {
   width: 100%;
-  background: $brand-green;
+  background: $green;
   font-family: $base-font;
   font-weight: 600;
   font-size: 13px;
@@ -21,7 +21,7 @@
 .iw > .iw-name {
   font-size: 22px;
   margin: 15px 0;
-  color: $brand-green;
+  color: $green;
 }
 
 .iw > a {
@@ -33,7 +33,7 @@
   background: $gray-light;
   transition: all 0.2s ease-in-out;
   &:hover {
-    background: $brand-green;
+    background: $green;
   }
 }
 

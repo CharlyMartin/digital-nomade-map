@@ -4,23 +4,19 @@
 // Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Comfortaa:300,400,700");
 
-
-$brand-font: "Comfortaa", "Helvetica", "cursive";
-
-$header-font: "Roboto", "Helvetica", "sans-serif";
+// Font-family
+$header-font: "Comfortaa", "Helvetica", "cursive";
 $base-font: "Open Sans", "Helvetica", "sans-serif";
 
-// Font-size and line-height
+// Font-size
 $base-size: 16px;
 $base-height: 1.5;
 
-// Scheme
-$brand-grey: #757761; // rgba(117, 119, 97, 1)
-$brand-yellow-dark: #F4E76E; // rgba(244, 231, 110, 1)
-$brand-yellow-light: #F7FE72; // rgba(247, 254, 114, 1)
-$brand-green: #8FF7A7; // rgba(143, 247, 167, 1)
-$brand-green-dark: #2C9E4B;
-$brand-blue: #51BBFE; // rgba(81, 187, 254, 1)
+// Brand Colors
+$yellow: rgba(255, 242, 117, 0);
+$blue: rgba(106, 127, 219, 0);
+$green: rgba(99, 226, 99, 1);
+$orange: rgba(255, 140, 66, 1);
 
 // Gray scale
 $gray-darker:  lighten(#000, 13.5%); // #222

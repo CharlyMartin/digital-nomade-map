@@ -31,7 +31,7 @@ input[type="checkbox"] {
 }
 
 .form-control:focus {
-  border-color: $brand-green;
+  border-color: $green;
 }
 
 
@@ -93,11 +93,11 @@ input[type="checkbox"] {
 }
 
 .flash-notice {
-  background: $brand-green;
+  background: $green;
 }
 
 .flash-alert {
-  background: $brand-blue;
+  background: $blue;
 }
 
 .secondary-button {

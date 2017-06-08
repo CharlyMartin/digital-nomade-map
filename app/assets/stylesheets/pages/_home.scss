@@ -19,7 +19,7 @@
 }
 
 #brand-home {
-  font-family: $brand-font;
+  font-family: $header-font;
   font-size: 40px;
   margin-bottom: 15px;
 }
@@ -44,7 +44,7 @@
   font-weight: 600;
   border-radius: 30px;
   border: 3px solid transparent;
-  color: $brand-green;
+  color: $green;
   cursor: pointer;
   animation: levitate;
   animation-duration: 3s;
@@ -100,7 +100,7 @@
 }
 
 .typed-js-container .city {
-  box-shadow: inset 0 -5px $brand-green;
+  box-shadow: inset 0 -5px $green;
 }
 
 
@@ -135,7 +135,7 @@ input#location_location {
   width: 25%;
   border-radius: 0 40px 40px 0;
   padding: 0 25px;
-  background: $brand-green;
+  background: $green;
   color: white;
   font-weight: bold;
   box-shadow: none;
@@ -143,8 +143,8 @@ input#location_location {
   transition: all 0.3s ease;
   &:hover {
     background: transparent;
-    border: 1px solid $brand-green;
-    color: $brand-green;
+    border: 1px solid $green;
+    color: $green;
   }
 }
 
@@ -167,10 +167,10 @@ input#location_location {
 }
 
 .home-title {
-  font-family: $brand-font;
+  font-family: $header-font;
   font-size: 30px;
   margin-bottom: 30px;
-  color: $brand-green;
+  color: $green;
 }
 
 .home-text-container #sign-up {
@@ -211,7 +211,7 @@ input#location_location {
 
 .custom-hr {
   height: 1vh;
-  background: linear-gradient(to right, $brand-green, $brand-yellow-dark);
+  // background: linear-gradient(to right, $green, $brand-yellow-dark);
 }
 
 .box-shadow {

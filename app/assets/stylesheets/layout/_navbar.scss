@@ -26,8 +26,8 @@
 //
 
 #brand-nabar {
-  color: $brand-green;
-  font-family: $brand-font;
+  color: $green;
+  font-family: $header-font;
   font-size: 20px;
   transition: color 100ms ease;
   &:hover {
@@ -56,12 +56,12 @@ img#dLabel {
 
 .navbar-container > a {
   color: $gray-darker;
-  font-family: $brand-font;
+  font-family: $header-font;
   font-size: 14px;
   margin: 0 5px;
   transition: color 100ms ease;
   &:hover {
-    color: $brand-green;
+    color: $green;
   }
 }
 
@@ -97,7 +97,7 @@ img#dLabel {
   border-radius: 3px;
   transition: background 100ms ease;
   &:hover {
-    background: $brand-green;
+    background: $green;
   }
   // &:hover {
   //   color: $gray-darker;
