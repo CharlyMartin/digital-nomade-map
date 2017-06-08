@@ -2,7 +2,7 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Roboto:100,400,500|Comfortaa");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Comfortaa:300,400,700");
 
 
 $brand-font: "Comfortaa", "Helvetica", "cursive";
@@ -14,16 +14,6 @@ $base-font: "Open Sans", "Helvetica", "sans-serif";
 $base-size: 16px;
 $base-height: 1.5;
 
-/* -------------------------------------
- * Colors
- * ------------------------------------- */
-// Scheme
-// $brand-color-blue: #0A4650;
-// $brand-color-green-dark: #2C9E4B;
-// $brand-color-green-light: #9ED763;
-// $brand-color-yellow-dark: #FDDA16;
-// $brand-color-yellow-light: #FFF2B2;
-
 // Scheme
 $brand-grey: #757761; // rgba(117, 119, 97, 1)
 $brand-yellow-dark: #F4E76E; // rgba(244, 231, 110, 1)
@@ -32,13 +22,6 @@ $brand-green: #8FF7A7; // rgba(143, 247, 167, 1)
 $brand-green-dark: #2C9E4B;
 $brand-blue: #51BBFE; // rgba(81, 187, 254, 1)
 
-// Bootsrap
-$red: #EE5F5B;
-$blue: #469AE0;
-$yellow: #FDB631;
-$orange: #E67E22;
-$green: #32B796;
-
 // Gray scale
 $gray-darker:  lighten(#000, 13.5%); // #222
 $gray-dark:    lighten(#000, 20%);   // #333
@@ -46,8 +29,9 @@ $gray:         lighten(#000, 33.5%); // #555
 $gray-light:   lighten(#000, 46.7%); // #777
 $gray-lighter: lighten(#000, 93.5%); // #eee
 
-
-// Height
-// :root {
-//   --navbar-height: 6px;
-// }
+// Bootsrap
+$bootstrap-red: #EE5F5B;
+$bootstrap-blue: #469AE0;
+$bootstrap-yellow: #FDB631;
+$bootstrap-orange: #E67E22;
+$bootstrap-green: #32B796;

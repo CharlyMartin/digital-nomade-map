@@ -60,6 +60,7 @@ en:
     edit_info: "Edit your profile"
     edit_location: "Edit your location"
     update: "Update"
+    refine: "Refine location"
     disclaimer:
       location: |
         These are your current GPS coordinates. How cool is that!? If not accurate, you can refine your position
