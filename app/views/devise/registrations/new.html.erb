@@ -24,18 +24,15 @@
             <%= f.input :latitude, as: :hidden, input_html: {value: session[:coords]['latitude']} %>
             <%= f.input :longitude, as: :hidden, input_html: {value: session[:coords]['longitude']} %>
             <div id="map" style="width: 100%; height: 30vh;"></div>
-            <p id="update-map-message"></p>
-
-
             <br>
-            <div class="secondary-button" id="update-map">
-              <%= t('forms.refine') %>
+            <div class="form-button">
+              <p class="secondary-button" id="update-map"> <%= t('forms.refine') %> </p>
             </div>
           </div>
 
           <hr>
 
-          <div class="form-submit">
+          <div class="form-button">
             <%= f.button :submit, t(".sign_up"), class: 'primary-button' %>
           </div>
 
