@@ -20,14 +20,8 @@
             <hr>
 
             <h3> <%= t('forms.location') %> </h3>
-            <div class="col-xs-6 no-left-padding">
-              <%= f.input :latitude, label: false, input_html: {value: session[:coords]['latitude']}, placeholder: t('placeholders.latitude') %>
-            </div>
-            <div class="col-xs-6 no-padding">
-              <%= f.input :longitude, label: false, input_html: {value: session[:coords]['longitude']}, placeholder: t('placeholders.longitude') %>
-            </div>
-            <br>
-            <p class="form-info"> <%= t('forms.disclaimer.location') %> </p>
+            <%= f.input :latitude, as: :hidden, input_html: {value: session[:coords]['latitude']} %>
+            <%= f.input :longitude, as: :hidden, input_html: {value: session[:coords]['longitude']} %>
             <div id="map" style="width: 100%; height: 30vh;"></div>
             <p id="update-map-message"></p>
 
@@ -36,11 +30,9 @@
             <div class="secondary-button" id="update-map">
               <%= t('forms.refine') %>
             </div>
-
-            <hr>
           </div>
 
-          <br>
+
 
           <%= f.button :submit, t(".sign_up"), class: 'primary-button' %>
 
