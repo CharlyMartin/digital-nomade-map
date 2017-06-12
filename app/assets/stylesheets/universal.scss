@@ -1,3 +1,7 @@
+body {
+  background: rgba(99, 226, 99, 0.02);
+}
+
 a {
   text-decoration: none !important;
 }
@@ -9,4 +13,38 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.box-shadow {
+  box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.1);
+}
+
+.primary-button {
+  padding: 10px 25px;
+  font-family: $header-font;
+  font-size: 20px;
+  font-weight: 700;
+  background: transparent;
+  color: $green;
+  border: 3px solid $green;
+  border-radius: 50px;
+  cursor: pointer;
+  &:hover {
+    background: $green;
+    color: white;
+    border: 3px solid $green;
+  }
+}
+
+.secondary-button {
+  font: $base-font;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: inset 0px -4px $yellow;
+  display: inline;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    box-shadow: inset 0px -20px $yellow;
+  }
 }

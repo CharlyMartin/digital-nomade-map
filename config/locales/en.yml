@@ -8,7 +8,8 @@ en:
     logout: "Log out"
   pages:
     home:
-      tagline: "Browse the map & meet nomads around you"
+      headline: "digital nomads everywhere"
+      caption: "Browse the map & meet nomads around you"
       cta: "Find them all"
       scroll_down: "Scroll down"
       form_placeholder: "Where are you?"

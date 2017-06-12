@@ -1,6 +1,6 @@
 // VIEW 1 //////////////////////////////////////////////////////////////////////
 .landing-banner {
-  height: 100vh;
+  height: 94vh;
   background-size: cover !important;
   background-position: center;
   display: flex;
@@ -18,16 +18,18 @@
   flex-direction: column;
 }
 
-#brand-home {
+#headline {
   font-family: $header-font;
-  font-size: 40px;
+  font-size: 45px;
+  font-weight: 600;
   margin-bottom: 15px;
+  text-align: center;
 }
 
-#tagline {
-  color: white;
+#caption {
+  color: $gray-light;
   font-family: $header-font;
-  font-size: 35px;
+  font-size: 25px;
   font-weight: 300;
 }
 
@@ -38,25 +40,26 @@
   justify-content: center;
 }
 
-#cta{
-  padding: 14px 28px;
-  background: $gray-darker;
-  font-weight: 600;
-  border-radius: 30px;
-  border: 3px solid transparent;
-  color: $green;
-  cursor: pointer;
-  animation: levitate;
-  animation-duration: 3s;
-  animation-delay: 5s;
-  animation-iteration-count: infinite;
-  transition: all 0.1s ease-in-out;
-  &:hover {
-    background: transparent;
-    color: $gray-darker;
-    border: 3px solid $gray-darker;
-  }
-}
+// #cta{
+//   padding: 15px 30px;
+//   background: $green;
+//   font-family: $header-font;
+//   font-weight: 600;
+//   font-size: 18px;
+//   border-radius: 35px;
+//   color: white;
+//   cursor: pointer;
+//   // animation: levitate;
+//   // animation-duration: 3s;
+//   // animation-delay: 5s;
+//   // animation-iteration-count: infinite;
+//   transition: all 0.1s ease-in-out;
+//   &:hover {
+//     background: transparent;
+//     color: $gray-darker;
+//     border: 3px solid $gray-darker;
+//   }
+// }
 
 @keyframes levitate {
   0% {transform: translateY(0px)}
@@ -72,18 +75,18 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: white;
+  color: $blue;
   margin-bottom: 10px;
 }
 
 
 // VIEW 2 ///////////////////////////////////////////////////////////////////////
 .form-banner {
-  height: 90vh;
+  height: 94vh;
   width: 100%;
   text-align: center;
+  background: $blue;
 }
-
 
 .typed-js-container {
   height: 45vh;
@@ -94,13 +97,14 @@
 }
 
 .typed-js-container p {
-  font-style: $header-font;
+  font-family: $header-font;
+  color: white;
   font-weight: 400;
   font-size: 22px;
 }
 
 .typed-js-container .city {
-  box-shadow: inset 0 -5px $green;
+  box-shadow: inset 0 -3px $orange;
 }
 
 
@@ -123,28 +127,33 @@ div.form-group.location_location {
 // search input
 input#location_location {
   border-radius: 40px 0 0 40px;
+  border: 1px solid white;
   padding: 0 25px;
   height: 60px;
   box-shadow: none;
   font-weight: 300;
+  &:focus {
+    border: 1px solid white;
+    color: $blue;
+  }
 }
 
 // submit button
 .form-container-home > input[name="commit"] {
-  height: 61px;
+  height: 60px;
+  border: 3px solid white;
+  background: white;
   width: 25%;
   border-radius: 0 40px 40px 0;
   padding: 0 25px;
-  background: $green;
-  color: white;
+  color: $blue;
   font-weight: bold;
   box-shadow: none;
-  border: none;
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
   &:hover {
     background: transparent;
-    border: 1px solid $green;
-    color: $green;
+    border: 3px solid white;
+    color: white;
   }
 }
 
@@ -209,14 +218,6 @@ input#location_location {
   margin-bottom: 15px;
 }
 
-.custom-hr {
-  height: 1vh;
-  // background: linear-gradient(to right, $green, $brand-yellow-dark);
-}
-
-.box-shadow {
-  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
-}
 
 // TYPED JS ////////////////////////////////////////////////////////////////////
 .typed-cursor{

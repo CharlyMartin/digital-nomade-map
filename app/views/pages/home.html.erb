@@ -1,19 +1,17 @@
-<div class="container-fluid no-padding">
+<div class="navbar-placeholder"></div>
 
 <!-- VIEW 1 -->
   <div class="row">
     <div class="col-xs-12 no-padding">
-      <div class="landing-banner" style="background-image:
-        linear-gradient(to left, rgba(244, 231, 110, 0.60), rgba(143, 247, 167, 0.70)),
-        url(<%= asset_path "landing4.jpg" %>);">
+      <div class="landing-banner">
 
         <div class="brand-container">
-          <h2 id="brand-home"> nomadmap </h2>
-          <h1 id="tagline" class="hidden-xs"> <%= t('pages.home.tagline') %> </h1>
+          <h2 id="headline"> <%= t('pages.home.headline') %> </h2>
+          <h3 id="caption" class="hidden-xs"> <%= t('pages.home.caption') %> </h3>
         </div>
 
         <div class="cta-container">
-          <span class="box-shadow" id="cta"> <%= t('pages.home.cta') %> </span>
+          <span class="primary-button" id="cta"> <%= t('pages.home.cta') %> </span>
         </div>
 
         <div class="scroll-down-container">
@@ -47,36 +45,13 @@
     </div>
   </div>
 
-<div class="custom-hr"></div>
-
 <!-- VIEW 3 -->
+<div class="container">
   <div class="row">
-    <div class="col-xs-12 no-padding">
-      <div class="home-banner">
-        <div class="col-md-5 hidden-xs hidden-sm hidden-md background-image box-shadow" style="background-image:
-          url(<%= asset_path "view-3.jpg" %>)"></div>
 
-        <div class="col-lg-7 col-xs-12 no-padding">
-          <div class="home-text-container">
-            <h2 class="home-title"> <%= t('pages.home.what_is_nomad') %> </h2>
-            <p class="home-content"> <%= t('pages.home.what_is_nomad_text_html') %> </p>
-            <br>
-            <span id="sign-up">
-              <%= t('pages.nomads_around.sign_up') %>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="custom-hr"></div>
-<!-- VIEW 4 -->
-  <div class="row">
-    <div class="col-xs-12 no-padding">
+    <div class="col-lg-4 col-xs-12 no-padding">
       <div class="home-banner">
 
-        <div class="col-lg-7 col-xs-12 no-padding">
           <div class="home-text-container">
             <p class="home-title"> <%= t('pages.home.features') %> </p>
             <p class="home-subtitle"> <%= t('pages.home.feature-1') %> </p>
@@ -91,17 +66,13 @@
             <span class="soon-tag">Coming soon</span>
             <p class="home-content"> <%= t('pages.home.feature-3_text_html') %> </p>
           </div>
-        </div>
-
-        <div class="col-md-5 hidden-xs hidden-sm hidden-md background-image box-shadow" style="background-image:
-          url(<%= asset_path "view-4.jpg" %>)"></div>
 
       </div>
     </div>
-  </div>
 
-<!-- END OF CONTAINER FLUID -->
+  </div>
 </div>
+<!-- END OF CONTAINER FLUID -->
 
 
 <!-- SCRIPT TYPED JS -->
