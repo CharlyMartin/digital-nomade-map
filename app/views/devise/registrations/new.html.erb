@@ -59,7 +59,8 @@
     const latInput = document.querySelector('input#nomad_latitude');
     const lngInput = document.querySelector('input#nomad_longitude');
 
-    let userCoords = getCoords();
+    let userCoords = sessionStorageData() || getCoords();
+
     let mapOptions = {
         zoom: 12,
         center: userCoords,
@@ -68,6 +69,16 @@
       };
 
     // 2.
+    function sessionStorageData() {
+      // If lat and lng don't exist, the function return
+      if (!sessionStorage.lat && !sessionStorage.lng) return;
+      let lat = Number(sessionStorage.lat);
+      let lng = Number(sessionStorage.lng);
+      latInput.value = lat;
+      lngInput.value = lng;
+      return {lat: lat, lng: lng};
+    }
+
     function getCoords() {
       let lat = Number(latInput.value);
       let lng = Number(lngInput.value);
@@ -83,8 +94,12 @@
       // Updating the map with the new values
       latInput.value = newCoords.lat;
       lngInput.value = newCoords.lng;
+      // Saving new coords in client session
+      sessionStorage.setItem('lat', newCoords.lat);
+      sessionStorage.setItem('lng', newCoords.lng);
       // Refreshing the map with the new coords
       initMap();
+      // Button text back to initial value
       updateButton.innerText = "<%= t('forms.refine') %>";
     }
 
@@ -110,6 +125,7 @@
     };
 
     // 3.
+    document.addEventListener('DOMContentLoaded', sessionStorageData);
     document.addEventListener('DOMContentLoaded', initMap);
     updateButton.addEventListener('click', updatePosition)
   </script>
