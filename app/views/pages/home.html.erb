@@ -22,18 +22,26 @@
 
 <!-- VIEW 2 -->
 <div class="form-banner">
+
   <div class="typed-js-container">
     <p> There is <span class="typed-js-element"></span></p>
   </div>
 
   <%= simple_form_for :location, url: :nomads_around, method: :get do |f| %>
-    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
-      <span class="form-container-home">
-        <%= f.input :location, label: false, placeholder: t('pages.home.form_placeholder'), class: 'form-input' %>
-        <%= f.button :submit, t('pages.home.form_submit'), class: 'form-input' %>
-      </span>
+    <div class="container-fuild">
+      <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+
+          <div class="form-container-home">
+            <%= f.input :location, label: false, placeholder: t('pages.home.form_placeholder'), class: 'form-input' %>
+            <%= f.button :submit, t('pages.home.form_submit'), class: 'form-input' %>
+          </div>
+
+        </div>
+      </div>
     </div>
   <% end %>
+
 </div>
 
 <!-- VIEW 3 -->
