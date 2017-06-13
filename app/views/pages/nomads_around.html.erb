@@ -1,6 +1,8 @@
 <div class="navbar-placeholder"></div>
 
 <div class="page-container">
-  <p class="result"> <%= t('pages.nomads_around.nomad_number_html', count: @nomads_around.count) %> </p>
+  <p class="result">
+    <%= t('pages.nomads_around.nomad_number_html', count: @nomads_around.count, place: params[:location][:location]) %>
+  </p>
   <%= render 'shared/sign-up' %>
 </div>

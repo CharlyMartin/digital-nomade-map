@@ -37,9 +37,15 @@ en:
         Send instant messages to other nomads without leaving the app. Things are about the get real!
     nomads_around:
       nomad_number_html:
-        zero: "There's <span class='box-shadow-inset'>no digital nomads around</span>... yet! Sign-up to be the first here &#x1F44A"
-        one: "There's <span class='box-shadow-inset'>%{count} digital nomad near</span> you! Sign-up to find out who &#x1F648"
-        other: "There are <span class='box-shadow-inset'>%{count} digital nomads around</span> you! Sign-up and contact them &#x1F44B"
+        zero: |
+          There's <span class='nomad-number'>no digital nomads</span> around <span class='place'>%{place}</span>... yet!
+          <br> Sign-up to be the first here &#x1F44A
+        one: |
+          There's <span class='nomad-number'>%{count} digital nomad</span> near <span class='place'>%{place}</span>!
+          <br> Sign-up to find out who &#x1F648
+        other: |
+          There are <span class='nomad-number'>%{count} digital nomads</span> around <span class='place'>%{place}</span>!
+          <br> Sign-up and contact them &#x1F44B
       sign_up_email: "Sign up with email"
       sign_up_facebook: "Continue with Facebook"
   placeholders:
