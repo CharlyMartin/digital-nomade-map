@@ -26,21 +26,20 @@ en:
         <br>
         What are you wainting for to sign-up?
       features: "Cool features"
-      feature-1: "GET NOTIFIED"
-      feature-1_text_html: |
-        Receive an email when you cross path with another nomad and never miss an opportunity to meet your next friends.
-      feature-2: "CHROME EXTENSION"
-      feature-2_text_html: |
+      feature-1: "Get Notified"
+      feature-1_text: |
+        Receive an email when you cross path with another nomad. Never miss an opportunity to meet a new nomad.
+      feature-2: "Chrome Extension"
+      feature-2_text: |
         Let our chrome extension manage the position's update for you. You can choose the frequency of the updates.
-      feature-3: "DIRECT MESSAGE"
-      feature-3_text_html: |
-        Send instant messages to other nomads without leaving the app.
+      feature-3: "Instant Message"
+      feature-3_text: |
+        Send instant messages to other nomads without leaving the app. Things are about the get real!
     nomads_around:
       nomad_number_html:
         zero: "There's <span class='box-shadow-inset'>no digital nomads around</span>... yet! Sign-up to be the first here &#x1F44A"
         one: "There's <span class='box-shadow-inset'>%{count} digital nomad near</span> you! Sign-up to find out who &#x1F648"
         other: "There are <span class='box-shadow-inset'>%{count} digital nomads around</span> you! Sign-up and contact them &#x1F44B"
-      sign_up: "Sign up"
       sign_up_email: "Sign up with email"
       sign_up_facebook: "Continue with Facebook"
   placeholders:

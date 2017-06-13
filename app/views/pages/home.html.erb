@@ -1,79 +1,86 @@
 <div class="navbar-placeholder"></div>
 
 <!-- VIEW 1 -->
-  <div class="row">
-    <div class="col-xs-12 no-padding">
-      <div class="landing-banner">
 
-        <div class="brand-container">
-          <h2 id="headline"> <%= t('pages.home.headline') %> </h2>
-          <h3 id="caption" class="hidden-xs"> <%= t('pages.home.caption') %> </h3>
-        </div>
+<div class="landing-banner">
 
-        <div class="cta-container">
-          <span class="primary-button" id="cta"> <%= t('pages.home.cta') %> </span>
-        </div>
-
-        <div class="scroll-down-container">
-          <p class="scroll-down pointer"> <%= t('pages.home.scroll_down') %> </p>
-          <i class="fa fa-angle-down pointer" aria-hidden="true" id="scroll-down-stop"></i>
-        </div>
-
-      </div>
-    </div>
+  <div class="brand-container">
+    <h2 id="headline"> <%= t('pages.home.headline') %> </h2>
+    <h3 id="caption" class="hidden-xs"> <%= t('pages.home.caption') %> </h3>
   </div>
+
+  <div class="cta-container">
+    <span class="primary-button" id="cta"> <%= t('pages.home.cta') %> </span>
+  </div>
+
+  <div class="scroll-down-container">
+    <p class="scroll-down pointer"> <%= t('pages.home.scroll_down') %> </p>
+    <i class="fa fa-angle-down pointer" aria-hidden="true" id="scroll-down-stop"></i>
+  </div>
+
+</div>
 
 <!-- VIEW 2 -->
-  <div class="row">
-    <div class="col-xs-12 col no-padding">
-      <div class="form-banner">
-
-        <div class="typed-js-container">
-          <p>There's currently <span class="typed-js-element"></span></p>
-        </div>
-
-        <%= simple_form_for :location, url: :nomads_around, method: :get do |f| %>
-          <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
-            <span class="form-container-home">
-              <%= f.input :location, label: false, placeholder: t('pages.home.form_placeholder'), class: 'form-input' %>
-              <%= f.button :submit, t('pages.home.form_submit'), class: 'form-input' %>
-            </span>
-          </div>
-        <% end %>
-
-      </div>
-    </div>
+<div class="form-banner">
+  <div class="typed-js-container">
+    <p> There is <span class="typed-js-element"></span></p>
   </div>
 
+  <%= simple_form_for :location, url: :nomads_around, method: :get do |f| %>
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+      <span class="form-container-home">
+        <%= f.input :location, label: false, placeholder: t('pages.home.form_placeholder'), class: 'form-input' %>
+        <%= f.button :submit, t('pages.home.form_submit'), class: 'form-input' %>
+      </span>
+    </div>
+  <% end %>
+</div>
+
 <!-- VIEW 3 -->
-<div class="container">
+<div class="title-container">
+  <h4 class="home-title"> <%= t('pages.home.features') %> </h4>
+</div>
+
+
+<div class="container-fluid">
   <div class="row">
 
-    <div class="col-lg-4 col-xs-12 no-padding">
-      <div class="home-banner">
+    <div class="col-md-4 col-sm-12">
+      <div class="home-feature">
+        <div class="i-container">
+          <i class="fa fa-flag-o fa-4x" aria-hidden="true"></i>
+        </div>
+        <h4> <%= t('pages.home.feature-1') %> </h4>
+        <p> <%= t('pages.home.feature-1_text') %> </p>
+      </div>
+    </div>
 
-          <div class="home-text-container">
-            <p class="home-title"> <%= t('pages.home.features') %> </p>
-            <p class="home-subtitle"> <%= t('pages.home.feature-1') %> </p>
-            <span class="soon-tag">Coming soon</span>
-            <p class="home-content"> <%= t('pages.home.feature-1_text_html') %> </p>
+    <div class="col-md-4 col-sm-12">
+      <div class="home-feature">
+        <div class="i-container">
+          <i class="fa fa-chrome fa-4x" aria-hidden="true"></i>
+        </div>
+        <h4> <%= t('pages.home.feature-2') %> </h4>
+        <p> <%= t('pages.home.feature-2_text') %> </p>
+      </div>
+    </div>
 
-            <p class="home-subtitle"> <%= t('pages.home.feature-2') %> </p>
-            <span class="soon-tag">Coming soon</span>
-            <p class="home-content"> <%= t('pages.home.feature-2_text_html') %> </p>
-
-            <p class="home-subtitle"> <%= t('pages.home.feature-3') %> </p>
-            <span class="soon-tag">Coming soon</span>
-            <p class="home-content"> <%= t('pages.home.feature-3_text_html') %> </p>
-          </div>
-
+    <div class="col-md-4 col-sm-12">
+      <div class="home-feature">
+        <div class="i-container">
+          <i class="fa fa-comments fa-4x" aria-hidden="true"></i>
+        </div>
+        <h4> <%= t('pages.home.feature-3') %> </h4>
+        <p> <%= t('pages.home.feature-3_text') %> </p>
       </div>
     </div>
 
   </div>
 </div>
-<!-- END OF CONTAINER FLUID -->
 
+<div class="title-container">
+  <p class="secondary-button" id="sign-up"> <%= t('navbar.sign-up') %> </p>
+</div>
 
 <!-- SCRIPT TYPED JS -->
 <%= content_for :after_js do %>
