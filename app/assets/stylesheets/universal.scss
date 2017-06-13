@@ -22,29 +22,32 @@ a {
 .primary-button {
   padding: 10px 25px;
   font-family: $header-font;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   background: transparent;
   color: $green;
-  border: 3px solid $green;
+  border: 3.5px solid $green;
   border-radius: 50px;
   cursor: pointer;
   &:hover {
     background: $green;
     color: white;
-    border: 3px solid $green;
+    border: 3.5px solid $green;
   }
 }
 
 .secondary-button {
-  font: $header-font;
-  font-size: 16px;
-  font-weight: 600;
-  box-shadow: inset 0px -4px $yellow;
+  font-family: $header-font;
+  padding: 10px 15px;
+  font-size: 15px;
+  color: $blue;
   display: inline;
+  border: 1px solid $blue;
+  border-radius: 50px;
   cursor: pointer;
-  transition: all 0.1s ease-in-out;
   &:hover {
-    box-shadow: inset 0px -20px $yellow;
+    background: $blue;
+    color: white;
+    border: 1px solid $blue;
   }
 }
