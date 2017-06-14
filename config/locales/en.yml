@@ -71,10 +71,6 @@ en:
     edit_location: "Edit your location"
     update: "Update"
     refine: "Refine location"
-    disclaimer:
-      location: |
-        These are your current GPS coordinates. How cool is that!? If not accurate, you can refine your position
-        by clicking the button below.
   footer:
     brand: "nomadmap"
     tagline: "digital nomads finder"
