@@ -10,23 +10,26 @@
 <% content_for(:after_js) do %>
 
   <script>
+    // initializing variables
+    const nomads = [];
+    var isDraggable = $(document).width() > 480 ? 'auto' : 'cooperative';
+    var infowindow = new google.maps.InfoWindow();
+    var lastClicked = infowindow;
+
+
+    // Map Options
     const mapContainer = document.querySelector('#map');
     const mapOptions = {
       zoom: 13,
       center: new google.maps.LatLng(<%= current_nomad.latitude %>, <%= current_nomad.longitude %>),
       styles: <%= render 'map_style.js' %>,
-      scrollwheel: false
+      scrollwheel: false,
+      gestureHandling: isDraggable
     };
-
     const clusterOptions = {
       // gridSize: 30,
       // maxZoom: 20,
     };
-
-    // initializing variables
-    const nomads = [];
-    var infowindow = new google.maps.InfoWindow();
-    var lastClicked = infowindow;
 
     function initMap() {
       const map = new google.maps.Map(mapContainer, mapOptions);
