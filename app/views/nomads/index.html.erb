@@ -3,7 +3,7 @@
 <div id="map" style="width: 100%; height: 94vh;"></div>
 
 <div class="nomad-count">
-  <h1> <%= @nomads.count %> NOMADS </h1>
+  <h2> <%= t('nomads.index.total_nomads', count: @nomads.count) %> </h2>
 </div>
 
 <!-- MAPS SCRIPT -->

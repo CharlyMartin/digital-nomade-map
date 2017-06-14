@@ -48,6 +48,12 @@ en:
           <br> Sign-up and contact them &#x1F44B
       sign_up_email: "Sign up with email"
       sign_up_facebook: "Continue with Facebook"
+  nomads:
+    index:
+      total_nomads:
+        zero: "No one is here yet!"
+        one: "%{count} digital nomad"
+        other: "%{count} digital nomads"
   placeholders:
     first_name: "First name"
     last_name: "Last name"
