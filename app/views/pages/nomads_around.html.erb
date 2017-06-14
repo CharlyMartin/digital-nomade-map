@@ -2,7 +2,7 @@
 
 <div class="page-container">
   <p class="result">
-    <%= t('pages.nomads_around.nomad_number_html', count: @nomads_around.count, place: params[:location][:location]) %>
+    <%= t('pages.nomads_around.nomad_number_html', count: @nomads_around.count, location: params[:location][:location]) %>
   </p>
   <%= render 'shared/sign-up' %>
 </div>
