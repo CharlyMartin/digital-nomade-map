@@ -1,0 +1,37 @@
+.page-title-container {
+  height: 35vh;
+  width: 100%;
+  background: $blue;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 30px;
+  color: white;
+}
+
+.page-content-container {
+  min-height: 65vh;
+  padding: 60px
+}
+
+.page-content-container p {
+  font-size: 18px;
+}
+
+.back-to-sign-up {
+  width: 100%;
+  height: 10vh;
+  background: $blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background: $green;
+  }
+}
+
+.back-to-sign-up p {
+  font-family: $header-font;
+  color: white;
+  font-size: 20px;
+}
