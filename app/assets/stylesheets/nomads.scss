@@ -20,8 +20,15 @@
 
 .iw > .iw-name {
   font-size: 22px;
-  margin: 15px 0;
   color: $green;
+}
+
+.iw > .iw-occupation {
+  font-size: 16px;
+  color: $gray-light;
+  font-family: $base-font;
+  font-weight: 400;
+  margin: 5px 0 20px 0;
 }
 
 .iw > a {
@@ -30,15 +37,9 @@
   color: white;
   padding: 10px;
   border-radius: 4px;
-  background: $gray-light;
+  background: rgba(210, 210, 210, 1);
   transition: all 0.2s ease-in-out;
   &:hover {
     background: $green;
   }
-}
-
-.iw > img {
-  width: 80px;
-  height: 80px;
-  border-radius: 35px;
 }
