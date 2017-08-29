@@ -7,8 +7,7 @@
 </div>
 
 <!-- MAPS SCRIPT -->
-<% content_for(:after_js) do %>
-
+<% content_for :after_js do %>
   <script>
     // VARIABLES ///////////////////////////////////////////////////////////////
     const nomads = <%= raw @nomads %>;
@@ -94,7 +93,6 @@
     document.addEventListener('DOMContentLoaded', init);
     // document.addEventListener('click', centerMapOn(map, currentNomad));
   </script>
-
 <% end %>
 
 <!-- https://chrome.google.com/webstore/detail/french-digital-nomads-map/aaokjnbicmobnkgjnmbmffbnldebhgfa -->

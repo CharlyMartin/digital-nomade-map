@@ -1,0 +1,78 @@
+<script>
+  // VARIABLES /////////////////////////////////////////////////////////////////
+  const mapContainer = document.querySelector('#map');
+  const updateButton = document.querySelector('#update-map');
+  const latInput = document.querySelector('input#nomad_latitude');
+  const lngInput = document.querySelector('input#nomad_longitude');
+
+  let userCoords = sessionStorageData() || getCoords();
+
+  let mapOptions = {
+      zoom: 12,
+      center: userCoords,
+      styles: <%= render 'nomads/map_style.js' %>,
+      scrollwheel: false
+    };
+
+
+  // FUNCTIONS /////////////////////////////////////////////////////////////////
+  function sessionStorageData() {
+    // If lat and lng don't exist, the function return
+    if (!sessionStorage.lat && !sessionStorage.lng) return;
+    let lat = Number(sessionStorage.lat);
+    let lng = Number(sessionStorage.lng);
+    latInput.value = lat;
+    lngInput.value = lng;
+    return {lat: lat, lng: lng};
+  }
+
+  function getCoords() {
+    let lat = Number(latInput.value);
+    let lng = Number(lngInput.value);
+    return {lat: lat, lng: lng}
+  }
+
+  function success(position) {
+    // Updating userCoords with browser's position
+    let newCoords = {lat: position.coords.latitude, lng: position.coords.longitude}
+    // Updating form inputs with browser's position
+    userCoords.lat = newCoords.lat;
+    userCoords.lng = newCoords.lng;
+    // Updating the map with the new values
+    latInput.value = newCoords.lat;
+    lngInput.value = newCoords.lng;
+    // Saving new coords in client session
+    sessionStorage.setItem('lat', newCoords.lat);
+    sessionStorage.setItem('lng', newCoords.lng);
+    // Refreshing the map with the new coords
+    init();
+    // Button text back to initial value
+    updateButton.innerText = "<%= t('forms.refine') %>";
+  }
+
+  function error() {
+    alert("You did not give access to your position")
+  }
+
+  function updatePosition() {
+    if (!navigator.geolocation){
+      alert("Geolocation is not supported by your browser");
+      return;
+    }
+    updateButton.innerText = "Don't move! We're geofinding you..."
+    navigator.geolocation.getCurrentPosition(success, error)
+  }
+
+  function init() {
+    var map = new google.maps.Map(mapContainer, mapOptions);
+    var marker = new google.maps.Marker({
+      position: userCoords,
+      map: map
+    });
+  };
+
+  // EVENTS ////////////////////////////////////////////////////////////////////
+  document.addEventListener('DOMContentLoaded', sessionStorageData);
+  document.addEventListener('DOMContentLoaded', init);
+  updateButton.addEventListener('click', updatePosition)
+</script>

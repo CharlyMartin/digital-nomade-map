@@ -8,23 +8,32 @@
         <h2> <%= t('forms.edit_info') %> </h2>
 
         <%= simple_form_for @nomad, url: nomad_path, method: :patch do |f| %>
+
           <div class="form-inputs">
+            <h3> <%= t('forms.about_you') %> </h3>
             <%= f.input :first_name, label: false, placeholder: t('placeholders.first_name') %>
             <%= f.input :last_name, label: false, placeholder: t('placeholders.last_name') %>
             <%= f.input :occupation, label: false, placeholder: t('placeholders.occupation') %>
             <%= f.input :email, label: false, placeholder: t('placeholders.email') %>
             <% f.input :facebook, label: false, placeholder: t('placeholders.facebook') %>
             <br>
-            <%= f.input :latitude, label: false, placeholder: t('placeholders.first_name') %>
-            <%= f.input :longitude, label: false, placeholder: t('placeholders.last_name') %>
+
+            <hr>
+            <%= render 'shared/geolocation-form', f: f %>
           </div>
+
           <br>
           <div class="form-button">
             <%= f.submit t('forms.update'), class: 'primary-button' %>
           </div>
+
         <% end %>
 
       </div>
     </div>
   </div>
 </div>
+
+<% content_for :after_js do %>
+  <% render 'shared/geolocation-script'  %>
+<% end %>
