@@ -14,6 +14,8 @@
     const nomads = <%= raw @nomads %>;
     const current_nomad = <%= raw @current_nomad %>
     const mapContainer = document.querySelector('#map');
+    const nomadBlue = 'https://github.com/CharlyMartin/icons/blob/master/nomad-blue.png'
+    const nomadGreen = 'https://github.com/CharlyMartin/icons/blob/master/nomad-green.png'
 
     let isDraggable = $(document).width() > 480 ? 'auto' : 'cooperative';
     let infowindow = new google.maps.InfoWindow();
@@ -40,7 +42,7 @@
         position: {lat: nomad.latitude, lng: nomad.longitude},
         map: map_object,
         id: nomad.id,
-        icon: nomad.icon
+        icon: nomadGreen
       });
       console.log(nomad.id)
     };
