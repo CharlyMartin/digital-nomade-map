@@ -30,7 +30,8 @@ class NomadsController < ApplicationController
   end
 
   def nomad_params
-    params.require(:nomad).permit(:first_name, :last_name, :phone, :facebook, :email,
-                                  :address, :zip_code, :city, :country, :occupation)
+    params.require(:nomad).permit(:first_name, :last_name, :latitude, :longitude,
+                                  :phone, :facebook, :email, :occupation,
+                                  :address, :zip_code, :city, :country)
   end
 end

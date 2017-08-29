@@ -41,7 +41,7 @@
     // Updating the map with the new values
     latInput.value = newCoords.lat;
     lngInput.value = newCoords.lng;
-    // Saving new coords in client session
+    // Saving new coords in session
     sessionStorage.setItem('lat', newCoords.lat);
     sessionStorage.setItem('lng', newCoords.lng);
     // Refreshing the map with the new coords
@@ -72,7 +72,7 @@
   };
 
   // EVENTS ////////////////////////////////////////////////////////////////////
-  document.addEventListener('DOMContentLoaded', sessionStorageData);
+  // document.addEventListener('DOMContentLoaded', sessionStorageData);
   document.addEventListener('DOMContentLoaded', init);
   updateButton.addEventListener('click', updatePosition)
 </script>
