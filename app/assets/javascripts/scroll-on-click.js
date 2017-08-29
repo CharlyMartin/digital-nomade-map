@@ -5,7 +5,6 @@ function scrollDown() {
   };
 
 $(document).ready(function() {
-    console.log( "ready!" );
     $('#cta').click(scrollDown);
     $('.scroll-down.pointer').click(scrollDown);
     $('#sign-up').click(scrollDown);

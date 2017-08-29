@@ -10,7 +10,7 @@
 <% content_for(:after_js) do %>
 
   <script>
-    // Variables ///////////////////////////////////////////////////////////////
+    // VARIABLES ///////////////////////////////////////////////////////////////
     const nomads = <%= raw @nomads %>;
     const currentNomad = <%= raw @current_nomad %>
     const mapContainer = document.querySelector('#map');
@@ -18,8 +18,7 @@
     const markerGreen = "<%= image_url('markers/nomad-green.png') %>";
 
     let isDraggable = $(document).width() > 480 ? 'auto' : 'cooperative';
-    let infowindow = new google.maps.InfoWindow();
-    let lastClicked = infowindow;
+    let lastClicked = new google.maps.InfoWindow();
 
 
     // Map Options
@@ -31,88 +30,60 @@
       gestureHandling: isDraggable
     };
 
-    const clusterOptions = {
-      // gridSize: 30,
-      // maxZoom: 20,
-    };
 
-    // Functions ///////////////////////////////////////////////////////////////
-    function createMarkersFor(nomad, map_object) {
-      return new google.maps.Marker({
+    // FUNCTIONS ///////////////////////////////////////////////////////////////
+    function createMarkerFor(nomad, map, iconColor) {
+      let marker = new google.maps.Marker({
         position: {lat: nomad.latitude, lng: nomad.longitude},
-        map: map_object,
-        id: nomad.id,
-        icon: markerGreen
+        map: map,
+        icon: iconColor,
+        id: nomad.id
       });
+
+      toggleIW(nomad, marker);
+      return marker;
     };
 
-    function createMarkerFor(currentNomad, map_object) {
-      return new google.maps.Marker({
-        position: {lat: currentNomad.latitude, lng: currentNomad.longitude},
-        map: map_object,
-        id: currentNomad.id,
-        icon: markerBlue
+    function toggleIW(nomad, marker) {
+      let infowindow = createIWFor(nomad);
+      marker.addListener('click', function() {
+        lastClicked.close();
+        infowindow.open(map, marker);
+        lastClicked = infowindow;
       });
     }
 
-    function centerMap(LatLng) {
-      // var mapCenter = map.getCenter().toJSON();
-      // var markerPosition = LatLng.toJSON();
-      // var a = Math.round(Math.abs(mapCenter.lng - markerPosition.lng));
-      // var b = Math.round(Math.abs(mapCenter.lat - markerPosition.lat));
-      map.setCenter(LatLng);
-    };
+    // function centerMapOn(map, nomad) {
+    //   let LatLng = {lat: nomad.latitude, lng: nomad.longitude}
+    //   window.setTimeout( function() { map.setCenter(LatLng) }, 200);
+    // };
 
-    function getMarkerPosition(nomad) {
-      var position = nomad.getPosition();
-      window.setTimeout( function() { centerMap(position) }, 200);
-    };
-
-    function linkIW(object) {
-      if (object.id !== currentNomad.id) {
-        lastClicked.close();
-        var i = object.id;
-        lastClicked = infowindow[i];
-        lastClicked.open(map, object);
-      };
-    };
-
-    // Use the renderer and create a partial.
-    function createIW(nomad) {
-      if (nomad.id !== currentNomad.id) {
-        var i = nomad.id;
-        infowindow[i] = new google.maps.InfoWindow({
-          content:
+    function createIWFor(nomad) {
+      return new google.maps.InfoWindow({
+        content:
           `<div class="iw">` +
-            `<img src="${nomad.photo}" alt="${nomad.first_name}">` +
-            `<h3 class="iw-name "> ${nomad.first_name} </h3>` +
-            `<a href="mailto:${nomad.link}"> Email ${nomad.first_name} </a>` +
+            `<h3 class="iw-name"> ${nomad.first_name} </h3>` +
+            `<p class="iw-occupation"> ${nomad.first_name} </p>` +
+            `<a href="mailto:${nomad.email}"> Email ${nomad.first_name} </a>` +
           `</div>`
-        });
-      };
+      });
     };
-
 
     function init() {
+      console.log("init map");
+      // Creating the map object
       const map = new google.maps.Map(mapContainer, mapOptions);
-      const nomadMarkers = nomads.map(nomad => createMarkersFor(nomad, map));
-      const currentNomadMarker = createMarkerFor(currentNomad,  map);
-      // const markerClusterer = new MarkerClusterer(map, nomadMarkers, clusterOptions);
 
-
-
-      // Creating infowindows
-      // nomads.forEach(nomad => createIW(nomad));
-      // nomads.forEach(nomad => linkIW(nomad));
-
-      // event listener on markers
-      // nomadMarkers.forEach(marker => marker.addListener( 'click', getMarkerPosition));
-      // nomadMarkers.forEach(marker => marker.addListener('click', createInfoWindow));
+      // Creating markers and clusters
+      const nomadMarkers = nomads.map(nomad => createMarkerFor(nomad, map, markerGreen));
+      createMarkerFor(currentNomad,  map, markerBlue);
+      new MarkerClusterer(map, nomadMarkers);
     };
 
 
-    // Event Listeners //////////////////////////////////////////////////////////
+    // EVENTS //////////////////////////////////////////////////////////////////
     document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('click', centerMapOn(map, currentNomad));
   </script>
 
 <% end %>
