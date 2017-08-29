@@ -17,7 +17,8 @@ module NomadsHelper
   end
 
   def avatar_url
-    current_nomad.facebook_picture_url or asset_path 'avatar.png'
+    # current_nomad.facebook_picture_url || asset_path 'avatar.png'
+    asset_path 'avatar.png'
   end
 
 end

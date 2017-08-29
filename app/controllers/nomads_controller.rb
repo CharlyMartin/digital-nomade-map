@@ -3,7 +3,10 @@ class NomadsController < ApplicationController
   #skip_before_action :authenticate_nomad!
 
   def index
-    @nomads = Nomad.all.order(created_at: :desc).where.not(latitude: nil, longitude: nil)
+    nomads = Nomad.all.where.not(id: current_nomad.id)
+    @count = nomads.count + 1
+    @nomads = nomads.to_json
+    @current_nomad = current_nomad.to_json
   end
 
   def show
@@ -53,3 +56,19 @@ class NomadsController < ApplicationController
   # end
 
 end
+
+
+      # // <% @nomads.each do |nomad| %>
+      # //   var nomad = {
+      # //     id: <%= nomad.id %>,
+      # //     first_name: "<%= nomad.first_name %>",
+      # //     last_name: "<%= nomad.last_name %>",
+      # //     // link: "<%= nomad_url(nomad) %>",
+      # //     link: "<%= nomad.email %>",
+      # //     photo: "<%= image_url('avatar') %>",
+      # //     icon: "<%= set_icon(nomad) %>",
+      # //     lat: <%= nomad.latitude %>,
+      # //     lgn: <%= nomad.longitude %>,
+      # //   }
+      # //   nomads.push(nomad);
+      # // <% end %>
