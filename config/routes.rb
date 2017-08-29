@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     get 'privacy', to: 'pages#privacy', as: 'privacy'
 
     resources :nomads, only: %i(index show update)
-    get 'nomads/:id/edit_info', to: 'nomads#edit_info', as: 'edit_info'
-    get 'nomads/:id/edit_location', to: 'nomads#edit_location', as: 'edit_location'
+    get 'nomads/:id/edit', to: 'nomads#edit', as: 'edit'
+    # get 'nomads/:id/edit_location', to: 'nomads#edit_location', as: 'edit_location'
   end
 end

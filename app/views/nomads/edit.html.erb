@@ -7,12 +7,16 @@
 
         <h2> <%= t('forms.edit_info') %> </h2>
 
-        <%= simple_form_for [@nomad], url: nomad_path, method: :patch do |f| %>
+        <%= simple_form_for @nomad, url: nomad_path, method: :patch do |f| %>
           <div class="form-inputs">
             <%= f.input :first_name, label: false, placeholder: t('placeholders.first_name') %>
             <%= f.input :last_name, label: false, placeholder: t('placeholders.last_name') %>
+            <%= f.input :occupation, label: false, placeholder: t('placeholders.occupation') %>
             <%= f.input :email, label: false, placeholder: t('placeholders.email') %>
-            <%= f.input :facebook, label: false, placeholder: t('placeholders.facebook') %>
+            <% f.input :facebook, label: false, placeholder: t('placeholders.facebook') %>
+            <br>
+            <%= f.input :latitude, label: false, placeholder: t('placeholders.first_name') %>
+            <%= f.input :longitude, label: false, placeholder: t('placeholders.last_name') %>
           </div>
           <br>
           <div class="form-button">

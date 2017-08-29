@@ -2,7 +2,7 @@ en:
   navbar:
     sign_up: "Sign-up"
     sign_in: "Sign-in"
-    edit_info: "Edit profile"
+    edit_profile: "Edit profile"
     edit_location: "Update location"
     change_password: "Change password"
     logout: "Log out"
