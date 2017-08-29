@@ -15,7 +15,7 @@
     const currentNomad = <%= raw @current_nomad %>
     const mapContainer = document.querySelector('#map');
     const markerBlue = "<%= raw image_url('markers/nomad-blue.png') %>";
-    const markerGreen = "<%= image_url('markers/nomad-green.png') %>";
+    const markerGreen = "<%= raw image_url('markers/nomad-green.png') %>";
 
     let isDraggable = $(document).width() > 480 ? 'auto' : 'cooperative';
     let lastClicked = new google.maps.InfoWindow();
@@ -71,7 +71,7 @@
           content:
             `<div class="iw">` +
               `<h3 class="iw-name"> ${nomad.first_name} </h3>` +
-              `<p class="iw-occupation"> ${nomad.first_name} </p>` +
+              `<p class="iw-occupation"> ${nomad.occupation} </p>` +
               `<a href="mailto:${nomad.email}"> Email ${nomad.first_name} </a>` +
             `</div>`
         });
