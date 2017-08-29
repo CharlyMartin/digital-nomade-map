@@ -12,7 +12,7 @@
   <script>
     // Variables ///////////////////////////////////////////////////////////////
     const nomads = <%= raw @nomads %>;
-    const current_nomad = <%= raw @current_nomad %>
+    const currentNomad = <%= raw @current_nomad %>
     const mapContainer = document.querySelector('#map');
     const markerBlue = "<%= raw image_url('markers/nomad-blue.png') %>";
     const markerGreen = "<%= image_url('markers/nomad-green.png') %>";
@@ -25,7 +25,7 @@
     // Map Options
     const mapOptions = {
       zoom: 3,
-      center: new google.maps.LatLng(current_nomad.latitude, current_nomad.longitude),
+      center: new google.maps.LatLng(currentNomad.latitude, currentNomad.longitude),
       styles: <%= render 'map_style.js' %>,
       scrollwheel: false,
       gestureHandling: isDraggable
@@ -44,8 +44,16 @@
         id: nomad.id,
         icon: markerGreen
       });
-      console.log(nomad.id)
     };
+
+    function createMarkerFor(currentNomad, map_object) {
+      return new google.maps.Marker({
+        position: {lat: currentNomad.latitude, lng: currentNomad.longitude},
+        map: map_object,
+        id: currentNomad.id,
+        icon: markerBlue
+      });
+    }
 
     function centerMap(LatLng) {
       // var mapCenter = map.getCenter().toJSON();
@@ -61,7 +69,7 @@
     };
 
     function linkIW(object) {
-      if (object.id !== current_nomad.id) {
+      if (object.id !== currentNomad.id) {
         lastClicked.close();
         var i = object.id;
         lastClicked = infowindow[i];
@@ -71,7 +79,7 @@
 
     // Use the renderer and create a partial.
     function createIW(nomad) {
-      if (nomad.id !== current_nomad.id) {
+      if (nomad.id !== currentNomad.id) {
         var i = nomad.id;
         infowindow[i] = new google.maps.InfoWindow({
           content:
@@ -88,6 +96,7 @@
     function init() {
       const map = new google.maps.Map(mapContainer, mapOptions);
       const nomadMarkers = nomads.map(nomad => createMarkersFor(nomad, map));
+      const currentNomadMarker = createMarkerFor(currentNomad,  map);
       // const markerClusterer = new MarkerClusterer(map, nomadMarkers, clusterOptions);
 
 
