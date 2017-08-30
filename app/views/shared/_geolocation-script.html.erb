@@ -5,7 +5,7 @@
   const latInput = document.querySelector('input#nomad_latitude');
   const lngInput = document.querySelector('input#nomad_longitude');
 
-  let userCoords = sessionStorageData() || getCoords();
+  let userCoords = getCoordsForm();
 
   let mapOptions = {
     zoom: 12,
@@ -16,7 +16,7 @@
 
 
   // FUNCTIONS /////////////////////////////////////////////////////////////////
-  function sessionStorageData() {
+  function getCoordsSession() {
     // If lat and lng don't exist, the function return
     if (!sessionStorage.lat && !sessionStorage.lng) return;
     let lat = Number(sessionStorage.lat);
@@ -24,7 +24,7 @@
     return {lat: lat, lng: lng};
   }
 
-  function getCoords() {
+  function getCoordsForm() {
     let lat = Number(latInput.value);
     let lng = Number(lngInput.value);
     return {lat: lat, lng: lng}
@@ -75,7 +75,7 @@
   };
 
   // EVENTS ////////////////////////////////////////////////////////////////////
-  // document.addEventListener('DOMContentLoaded', sessionStorageData);
+  // document.addEventListener('DOMContentLoaded', getCoordsSession);
   document.addEventListener('DOMContentLoaded', init);
   updateButton.addEventListener('click', updatePosition)
 </script>
