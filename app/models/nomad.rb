@@ -4,7 +4,7 @@ class Nomad < ApplicationRecord
   devise :database_authenticatable, :validatable, :registerable, :timeoutable, :omniauthable,
   omniauth_providers: [:facebook]
 
-  validates :first_name, :last_name, :latitude, :longitude, :password, presence: true
+  validates :first_name, :last_name, :latitude, :longitude, presence: true
   validates :email, presence: true, uniqueness: :true
 
   # Ruby Geocoder methods
