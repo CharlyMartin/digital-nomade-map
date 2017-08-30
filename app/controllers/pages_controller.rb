@@ -8,8 +8,8 @@ class PagesController < ApplicationController
 
   def nomads_around
     coords_array = Geocoder.coordinates(location_params[:location])
-    coords_hash = {latitude: coords_array[0], longitude: coords_array[1]}
-    session[:coords] = coords_hash
+    session[:lat] = coords_array[0]
+    session[:lng] = coords_array[1]
     @nomads_around = Nomad.near(coords_array, 100)[0..-1]
   end
 

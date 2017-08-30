@@ -24,7 +24,7 @@
     const mapOptions = {
       zoom: 12,
       center: new google.maps.LatLng(currentNomad.latitude, currentNomad.longitude),
-      styles: <%= render 'map_style.js' %>,
+      styles: <%= render 'shared/map_style.js' %>,
       scrollwheel: false,
       gestureHandling: isDraggable
     };
