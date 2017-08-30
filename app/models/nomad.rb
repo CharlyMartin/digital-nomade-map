@@ -9,12 +9,12 @@ class Nomad < ApplicationRecord
 
   # Ruby Geocoder methods
   geocoded_by :full_address
-  reverse_geocoded_by :latitude, :longitude do |nomad,results|
+  reverse_geocoded_by :latitude, :longitude do |n,results|
     if geo = results.first
-      nomad.address   = geo.street_number + ", " + geo.route
-      nomad.city      = geo.city
-      nomad.zip_code  = geo.postal_code
-      nomad.country   = geo.country
+      (n.address   = geo.street_number + ", " + geo.route) if (geo.street_number && geo.route)
+      (n.city      = geo.city) if geo.city
+      (n.zip_code  = geo.postal_code) if geo.postal_code
+      (n.country   = geo.country) if geo.country
     end
   end
 

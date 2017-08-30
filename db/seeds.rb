@@ -29,8 +29,8 @@ puts "Creating randies"
     # zip_code: Faker::Address.postcode,
     # city: Faker::Address.city,
     # country: Faker::Address.country,
-    latitude: rand(-90.0...90.0),
-    longitude: rand(-180.0...180.0)
+    latitude: rand(45..50),
+    longitude: rand(5..30)
   )
   puts "- nomad #{nomad.id} created!"
 end

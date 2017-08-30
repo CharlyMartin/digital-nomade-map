@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20170829044832) do
     t.string   "token"
     t.datetime "token_expiry"
     t.string   "occupation",              default: "I love using nomadmap!"
+    t.integer  "gender",                  default: 0
     t.index ["email"], name: "index_nomads_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_nomads_on_reset_password_token", unique: true, using: :btree
   end
