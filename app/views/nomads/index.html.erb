@@ -62,6 +62,8 @@
         return new google.maps.InfoWindow({
           content:
           `<div class="iw">` +
+            `<h3 class="iw-name"> ${nomad.first_name} </h3>` +
+            `<p class="iw-occupation"> ${nomad.occupation} </p>` +
             `<p class="iw-occupation"> This is yourself &#x1F601 </p>` +
           `</div>`
         });
@@ -71,7 +73,7 @@
             `<div class="iw">` +
               `<h3 class="iw-name"> ${nomad.first_name} </h3>` +
               `<p class="iw-occupation"> ${nomad.occupation} </p>` +
-              `<a href="mailto:${nomad.email}"> Email ${nomad.first_name} </a>` +
+              `<a href="mailto:${nomad.email}?subject=&#x1F44B ${nomad.first_name}&body=Hi ${nomad.first_name}, I found you on https://nomadmap.co/nomads &#x1F680" target="_blank"> Email ${nomad.first_name} </a>` +
             `</div>`
         });
       }
