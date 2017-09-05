@@ -1,5 +1,5 @@
 function scrollDown() {
-  $('body').animate(
+  $('body, html').animate(
     {scrollTop: $('#scroll-down-stop').offset().top},
     500);
   };
