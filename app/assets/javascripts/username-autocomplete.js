@@ -1,11 +1,13 @@
 // 1.
-let userFirst = "", userLast = "";
-let properFirst, properLast;
+let userFirst = "";
+let userLast = "";
+let properFirst;
+let properLast;
 
-const firstNameInput = document.querySelector('input#nomad_first_name'),
-      lastNameInput = document.querySelector('input#nomad_last_name'),
-      userNameInput = document.querySelector('input#nomad_username');
-      pathname = window.location.pathname
+const firstNameInput = document.querySelector('input#nomad_first_name');
+const lastNameInput = document.querySelector('input#nomad_last_name');
+const userNameInput = document.querySelector('input#nomad_username');
+const pathname = window.location.pathname;
 
 // 2.
 function upcase(string) {
