@@ -38,6 +38,7 @@ class Nomad < ApplicationRecord
 
   # Ruby Geocoder methods
   geocoded_by :full_address
+
   reverse_geocoded_by :latitude, :longitude do |n,results|
     if geo = results.first
       (n.address   = geo.street_number + ", " + geo.route) if (geo.street_number && geo.route)
@@ -67,5 +68,4 @@ class Nomad < ApplicationRecord
     self.first_name = self.first_name.capitalize
     self.last_name = self.last_name.upcase
   end
-
 end

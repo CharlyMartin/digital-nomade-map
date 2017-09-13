@@ -10,8 +10,10 @@ puts "Creating myself"
 Nomad.create(
   first_name: "Charly",
   last_name: "Martin",
+  username: "CharlyMartin",
+  gender: 2,
   email: "charly.martin.1207@gmail.com",
-  password: "RueTurenne90",
+  password: "123soleil",
   latitude: -33.880428,
   longitude: 151.2004518
 )
@@ -40,4 +42,3 @@ puts "Creating randies"
 end
 
 puts "All Done"
-

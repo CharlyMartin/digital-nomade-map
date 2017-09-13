@@ -1,7 +1,10 @@
 class Api::V1::NomadsController < Api::V1::BaseController
+  def index
+    @nomads = Nomad.all
+  end
+
   def show
-    # binding.pry
-    @nomad = Nomad.find(params[:id])
+    @nomad = Nomad.find_by_username(params[:id])
   end
 
   def update
