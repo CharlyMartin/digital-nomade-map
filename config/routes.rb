@@ -10,8 +10,8 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      get 'nomads/:email', to: 'nomads#show', as: 'api_v1_nomad'
-      post 'nomads/:email', to: 'nomads#update', , as: 'api_v1_nomad'
+      get 'nomads/:email', to: 'nomads#show'
+      post 'nomads/:email', to: 'nomads#update'
     end
   end
 
