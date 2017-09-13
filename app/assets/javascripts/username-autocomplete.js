@@ -9,7 +9,8 @@ const firstNameInput = document.querySelector('input#nomad_first_name'),
 
 // 2.
 function upcase(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+  var lowString = string.toLowerCase()
+  return lowString.charAt(0).toUpperCase() + lowString.slice(1);
 };
 
 function storeFirst(e) {
@@ -35,7 +36,7 @@ function createUsermane() {
 };
 
 // 3.
-if (pathname === '/nomads/sign_up' && ) {
+if (pathname === '/nomads/sign_up') {
   firstNameInput.addEventListener('blur', storeFirst);
   lastNameInput.addEventListener('blur', storeLast);
 };

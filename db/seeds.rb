@@ -5,24 +5,28 @@ puts "Destroying all nomads"
 Nomad.destroy_all
 
 
-
-# puts "Creating myself"
-# # Myself
-# Nomad.create(
-#   first_name: "Charly",
-#   last_name: "Martin",
-#   email: "charly.martin.1207@gmail.com",
-#   password: "RueTurenne90",
-#   latitude: -33.880428,
-#   longitude: 151.2004518
-# )
+puts "Creating myself"
+# Myself
+Nomad.create(
+  first_name: "Charly",
+  last_name: "Martin",
+  email: "charly.martin.1207@gmail.com",
+  password: "RueTurenne90",
+  latitude: -33.880428,
+  longitude: 151.2004518
+)
 
 puts "Creating randies"
 # Random Users
-100.times do
+50.times do
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
+
   nomad = Nomad.create(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
+    first_name: first_name,
+    last_name: last_name,
+    username: first_name.capitalize + last_name.capitalize,
+    gender: rand(1..2),
     email: Faker::Internet.email,
     password: Faker::Crypto.md5,
     # address: Faker::Address.street_address,
