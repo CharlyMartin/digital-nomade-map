@@ -1,6 +1,7 @@
 class Api::V1::NomadsController < Api::V1::BaseController
   def show
-    @nomad = Nomad.find(params[:email])
+    # binding.pry
+    @nomad = Nomad.find(params[:id])
   end
 
   def update
