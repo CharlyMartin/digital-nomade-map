@@ -13,8 +13,7 @@
     const nomads = <%= raw @nomads %>;
     const currentNomad = <%= raw @current %>
     const mapContainer = document.querySelector('#map');
-    const markerBlue = "<%= raw image_url('markers/nomad-blue.png') %>";
-    const markerGreen = "<%= raw image_url('markers/nomad-green.png') %>";
+    const iconBaseURL = "https://raw.githubusercontent.com/CharlyMartin/nomadmap-icons/master/nomad-";
 
     let isDraggable = $(document).width() > 480 ? 'auto' : 'cooperative';
     let lastClicked = new google.maps.InfoWindow();
@@ -35,7 +34,7 @@
       let marker = new google.maps.Marker({
         position: {lat: nomad.latitude, lng: nomad.longitude},
         map: map,
-        icon: iconColor,
+        icon: iconBaseURL + iconColor + ".png",
         id: nomad.id
       });
 
@@ -85,8 +84,8 @@
       const map = new google.maps.Map(mapContainer, mapOptions);
 
       // Creating markers and clusters
-      const nomadMarkers = nomads.map(nomad => createMarkerFor(nomad, map, markerGreen));
-      createMarkerFor(currentNomad,  map, markerBlue);
+      const nomadMarkers = nomads.map(nomad => createMarkerFor(nomad, map, "green"));
+      createMarkerFor(currentNomad,  map, "blue");
       new MarkerClusterer(map, nomadMarkers);
     };
 
