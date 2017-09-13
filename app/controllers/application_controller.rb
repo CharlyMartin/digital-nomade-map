@@ -5,7 +5,10 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   def configure_permitted_parameters
-    devise_params = [:first_name, :last_name, :gender, :occupation, :latitude, :longitude]
+    devise_params = [
+      :first_name, :last_name, :username, :gender, :occupation, :latitude,
+      :longitude
+    ]
 
     devise_parameter_sanitizer.permit(:sign_up, keys: devise_params)
     devise_parameter_sanitizer.permit(:account_update, keys: devise_params)

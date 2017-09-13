@@ -13,6 +13,7 @@
             <h3> <%= t('forms.about_you') %> </h3>
             <%= f.input :first_name, label: false, placeholder: t('placeholders.first_name') %>
             <%= f.input :last_name, label: false, placeholder: t('placeholders.last_name') %>
+            <%= f.input :username, label: false, placeholder: t('placeholders.username') %>
             <%= f.input :gender, label: false, collection: Nomad.genders.keys[1..2] %>
             <%= f.input :occupation, label: false, placeholder: t('placeholders.occupation') %>
             <%= f.input :email, label: false, placeholder: t('placeholders.email') %>
