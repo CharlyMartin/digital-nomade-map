@@ -1,20 +1,45 @@
 // 1.
-const firstInput = document.querySelector('input#nomad_first_name');
-const lastInput = document.querySelector('input#nomad_last_name');
-const usernameInput = document.querySelector('input#nomad_username');
+let userFirst,
+    userLast,
+    properFirst,
+    properLast;
+
+const firstNameInput = document.querySelector('input#nomad_first_name'),
+      lastNameInput = document.querySelector('input#nomad_last_name'),
+      userNameInput = document.querySelector('input#nomad_username');
+      url = window.location.href
 
 // 2.
-function store(e) {
-  let name = e.target.value
-  usernameInput.value = name;
+function storeFirst(e) {
+  text = e.target.value.trim();
+  userFirst = text;
+  createUsermane();
+};
 
+function storeLast(e) {
+  text = e.target.value.trim();
+  userLast = text;
+  createUsermane();
+};
+
+function createUsermane() {
+  console.log(userFirst, userLast);
+  userNameInput.value = ""
+  if (userFirst !== undefined) {
+    properFirst = userFirst.charAt(0).toUpperCase() + userFirst.slice(1);
+  };
+
+  if (userLast !== undefined) {
+    properLast = userLast.charAt(0).toUpperCase() + userLast.slice(1);
+  };
+
+  let username = properFirst + properLast;
+  // The thing to fill
+  userNameInput.value = username;
 };
 
 // 3.
-if (firstInput) {
-  firstInput.addEventListener('blur', store)
-};
-
-// if (lastInput) {
-//   lastInput.addEventListener('keyup', test)
-// }
+// if (url === 'https://www.nomadmap.co/nomads/sign_up' && 'https://www.nomadmap.co/nomads') {
+  firstNameInput.addEventListener('blur', storeFirst);
+  lastNameInput.addEventListener('blur', storeLast);
+// };
