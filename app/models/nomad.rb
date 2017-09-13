@@ -5,6 +5,7 @@ class Nomad < ApplicationRecord
   omniauth_providers: [:facebook]
 
   validates :first_name, :last_name, :latitude, :longitude, presence: true
+  validates :username, presence: true, uniqueness: :true
   validates :email, presence: true, uniqueness: :true
 
   # Ruby Geocoder methods
