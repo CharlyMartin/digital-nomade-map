@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :nomads, only: %i(show update)
+      resources :nomads, only: %i(index show update)
     end
   end
 

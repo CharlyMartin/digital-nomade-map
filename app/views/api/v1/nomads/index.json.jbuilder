@@ -1,3 +1,3 @@
-json.array! @nomad do |nomad|
-  json.extract! nomad, :id, :name, :address
+json.array! @nomads do |nomad|
+  json.extract! nomad, :id, :first_name, :email, :occupation, :latitude, :longitude
 end
