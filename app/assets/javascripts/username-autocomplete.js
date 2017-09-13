@@ -1,8 +1,8 @@
 // 1.
-let userFirst = "";
-let userLast = "";
-let properFirst;
-let properLast;
+var userFirst = "";
+var userLast = "";
+var properFirst;
+var properLast;
 
 const firstNameInput = document.querySelector('input#nomad_first_name');
 const lastNameInput = document.querySelector('input#nomad_last_name');
