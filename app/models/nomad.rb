@@ -1,6 +1,7 @@
 class Nomad < ApplicationRecord
   enum gender: { not_given: 0, female: 1, male: 2 }
 
+  acts_as_token_authenticatable
   devise :database_authenticatable, :validatable, :registerable, :timeoutable, :omniauthable,
   omniauth_providers: [:facebook]
 
