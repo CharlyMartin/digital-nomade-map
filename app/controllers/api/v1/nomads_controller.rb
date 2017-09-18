@@ -10,13 +10,11 @@ class Api::V1::NomadsController < Api::V1::BaseController
   end
 
   def update
-    if @nomad = Nomad.find_by(username: params[:id])
-      @nomad.update(
-        latitude: api_params[:latitude],
-        longitude: api_params[:longitude],
-        last_chrome_update_date: Time.zone.now
-      )
-      render json: @nomad
+    @nomad = Nomad.find_by(username: params[:id])
+    if @nomad.update(latitude: api_params[:latitude], longitude: api_params[:longitude], last_chrome_update_date: Time.zone.now)
+      render :show
+    else
+      render_error
     end
   end
 
@@ -24,6 +22,11 @@ class Api::V1::NomadsController < Api::V1::BaseController
 
   def nomad_params
     params.require(:nomad).permit(:latitude, :longitude, :last_chrome_update_date)
+  end
+
+  def render_error
+    render json: { errors: @restaurant.errors.full_messages },
+      status: :unprocessable_entity
   end
 end
 
