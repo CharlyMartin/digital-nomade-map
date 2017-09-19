@@ -1,6 +1,5 @@
 class NomadsController < ApplicationController
   before_action :set_nomad, only: [:show, :edit, :update]
-  #skip_before_action :authenticate_nomad!
 
   def index
     nomads = Nomad.all.where.not(id: current_nomad.id)
