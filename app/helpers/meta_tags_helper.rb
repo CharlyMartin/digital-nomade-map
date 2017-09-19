@@ -12,7 +12,10 @@ module MetaTagsHelper
   end
 
   def meta_image
-    meta_image = DEFAULT_META["meta_image"]
-    absolute_path(meta_image)
+    DEFAULT_META["meta_image"]
+  end
+
+  def meta_fb_id
+    DEFAULT_META["facebook_app_id"]
   end
 end
