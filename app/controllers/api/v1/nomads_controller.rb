@@ -1,17 +1,16 @@
 class Api::V1::NomadsController < Api::V1::BaseController
   require "time"
   acts_as_token_authentication_handler_for Nomad, only: [ :update ]
+  before_action :set_nomad, only: [ :show, :update ]
 
   def index
     @nomads = Nomad.all
   end
 
   def show
-    @nomad = Nomad.find_by(username: params[:id])
   end
 
   def update
-    @nomad = Nomad.find_by(username: params[:id])
     if @nomad.update(latitude: api_params[:latitude], longitude: api_params[:longitude], last_chrome_update_date: Time.zone.now)
       render :show
     else
@@ -20,6 +19,10 @@ class Api::V1::NomadsController < Api::V1::BaseController
   end
 
   private
+
+  def set_nomad
+    @nomad = Nomad.find_by(username: params[:id])
+  end
 
   def nomad_params
     params.require(:nomad).permit(:latitude, :longitude, :last_chrome_update_date)
