@@ -1,5 +1,6 @@
 class Api::V1::NomadsController < Api::V1::BaseController
   require "time"
+  acts_as_token_authentication_handler_for Nomad, only: [ :update ]
 
   def index
     @nomads = Nomad.all
