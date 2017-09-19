@@ -24,7 +24,7 @@ class Api::V1::NomadsController < Api::V1::BaseController
   end
 
   def nomad_params
-    params.require(:nomad).permit(:latitude, :longitude, :latest_chrome_update)
+    params.require(:nomad).permit(:latitude, :longitude)
   end
 
   def render_error
@@ -32,8 +32,5 @@ class Api::V1::NomadsController < Api::V1::BaseController
     status: :unprocessable_entity
   end
 end
-
-
-# protect_from_forgery with: :null_session
 
 
