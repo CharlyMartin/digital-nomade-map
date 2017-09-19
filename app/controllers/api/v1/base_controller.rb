@@ -1,6 +1,4 @@
 class Api::V1::BaseController < ActionController::Base
-  before_action :authenticate_nomad!
-
   rescue_from StandardError,                with: :internal_server_error
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 

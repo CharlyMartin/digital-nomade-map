@@ -32,7 +32,7 @@ SimpleTokenAuthentication.configure do |config|
   #   Then both the header names identifier key and default value are modified accordingly:
   #     `config.header_names = { super_admin: { phone_number: 'X-SuperAdmin-PhoneNumber' } }`
   #
-  # config.header_names = { user: { authentication_token: 'X-User-Token', email: 'X-User-Email' } }
+  config.header_names = { nomad: { authentication_token: 'X-User-Token', email: 'X-User-Email' } }
 
   # Configure the name of the attribute used to identify the user for authentication.
   # That attribute must exist in your model.
@@ -50,7 +50,7 @@ SimpleTokenAuthentication.configure do |config|
   #
   #   `config.identifiers = { super_admin: 'phone_number', user: 'uuid' }`
   #
-  # config.identifiers = { user: 'email' }
+  config.identifiers = { nomad: 'email' }
 
   # Configure the Devise trackable strategy integration.
   #
@@ -60,5 +60,5 @@ SimpleTokenAuthentication.configure do |config|
   # If false, given Devise trackable is configured for the relevant model,
   # then signing in through token authentication will be tracked as any other sign in.
   #
-  # config.skip_devise_trackable = true
+  config.skip_devise_trackable = false
 end

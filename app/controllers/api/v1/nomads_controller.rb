@@ -1,7 +1,5 @@
 class Api::V1::NomadsController < Api::V1::BaseController
   acts_as_token_authentication_handler_for Nomad, only: [ :update ]
-
-  skip_before_action :authenticate_nomad!
   before_action :set_nomad, only: [ :show, :update ]
 
   def index
@@ -12,7 +10,7 @@ class Api::V1::NomadsController < Api::V1::BaseController
   end
 
   def update
-    if @nomad.update(latitude: api_params[:latitude], longitude: api_params[:longitude], last_chrome_update_date: Time.zone.now)
+    if @nomad.update(latitude: nomad_params[:latitude], longitude: nomad_params[:longitude], last_chrome_update_date: Time.zone.now)
       render :show
     else
       render_error
