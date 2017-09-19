@@ -1,6 +1,7 @@
 class Api::V1::NomadsController < Api::V1::BaseController
-  require "time"
   acts_as_token_authentication_handler_for Nomad, only: [ :update ]
+
+  skip_before_action :authenticate_nomad!
   before_action :set_nomad, only: [ :show, :update ]
 
   def index
@@ -30,7 +31,7 @@ class Api::V1::NomadsController < Api::V1::BaseController
 
   def render_error
     render json: { errors: @restaurant.errors.full_messages },
-      status: :unprocessable_entity
+    status: :unprocessable_entity
   end
 end
 
