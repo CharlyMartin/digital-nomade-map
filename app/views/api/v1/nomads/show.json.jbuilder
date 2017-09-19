@@ -1,1 +1,1 @@
-json.extract! @nomad, :first_name, :last_name, :username, :email
+json.extract! @nomad, :username, :email, :latitude, :longitude, :latest_chrome_update

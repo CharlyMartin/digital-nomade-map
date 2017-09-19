@@ -10,7 +10,7 @@ class Api::V1::NomadsController < Api::V1::BaseController
   end
 
   def update
-    if @nomad.update(latitude: nomad_params[:latitude], longitude: nomad_params[:longitude], last_chrome_update_date: Time.zone.now)
+    if @nomad.update(latitude: nomad_params[:latitude], longitude: nomad_params[:longitude], latest_chrome_update: Time.zone.now)
       render :show
     else
       render_error
@@ -24,7 +24,7 @@ class Api::V1::NomadsController < Api::V1::BaseController
   end
 
   def nomad_params
-    params.require(:nomad).permit(:latitude, :longitude, :last_chrome_update_date)
+    params.require(:nomad).permit(:latitude, :longitude, :latest_chrome_update)
   end
 
   def render_error
