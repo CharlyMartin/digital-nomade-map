@@ -1,7 +1,7 @@
 module ApplicationHelper
 
-  def image_url(image)
-    URI.join(root_url, image_path(image))
+  def absolute_path(asset)
+    URI.join(root_url, asset_path('avatar'))
   end
 
 end
