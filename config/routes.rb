@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   get 'nomads_around', to: 'pages#nomads_around', as: 'nomads_around'
-  get 'misson', to: 'pages#mission', as: 'mission'
+  get 'about', to: 'pages#mission', as: 'about'
   get 'privacy', to: 'pages#privacy', as: 'privacy'
 
   resources :nomads, only: %i(index show edit update)
@@ -13,6 +13,4 @@ Rails.application.routes.draw do
       resources :nomads, only: %i(index show update)
     end
   end
-
-  put 'api/update'
 end

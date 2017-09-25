@@ -13,7 +13,7 @@ class PagesController < ApplicationController
     @nomads_around = Nomad.near(coords_array, 100)[0..-1]
   end
 
-  def mission
+  def about
   end
 
   def privacy

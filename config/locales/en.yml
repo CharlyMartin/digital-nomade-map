@@ -1,5 +1,8 @@
 en:
   navbar:
+    map: "Map"
+    about: "About"
+    contact: "Contact"
     sign_up: "Sign-up"
     sign_in: "Sign-in"
     edit_profile: "Profile"
@@ -16,18 +19,17 @@ en:
       form_submit: "GO"
       what_is_nomad: "Why nomadmap?"
       what_is_nomad_text_html: |
-        As digital nomads, one of drivers for choosing our next destination
-        is whether there  will be other digital nomads around us &#x1F64B Loneliness and isolation
-        are no fun when you travel alone &#x1F613 And as we move quite often, this question poses
-        fairly frequently. This is where nomadmap comes handy &#x1F64C
-        <br>
-        <br>
-        Next time you wonder where to next? just browse the map! You'll get access
-        to the real-time position of other digital nomads &#x1F389 You can get their contact details
-        and have a chat or catch up! Then, the only remaining question is, who do I want to meet next? &#x1F680
-        <br>
-        <br>
-        So, wanna meet your peers? Sign-up &#x1F447
+        The world has opened up! :rocket: For us lucky digital nomads, home is where
+        the WiFi works :raised_hands: …ain’t it grand!? And while exploring is fun and
+        anonymity is sometimes part of the charm, it’s nice to have the option of connecting
+        with other nomads once in a while.
+        Enter Nomadmap! [little icon here] Nomadmap helps you locate and connect with other
+        nomads near you. You can also use Nomadmap to determine your next location if you want
+        more nomads to network and connect with :tada:.
+        Nomadmap gives you access to the real-time position of other digital nomads then so
+        you can connect with a nomad near you! :raising_hand: You can get their contact details
+        and arrange a catch up or simply exchange information about your location.
+        Want to connect? Sign-up :point_down:
       features: "Cool features"
       feature-1: "Get Notified"
       feature-1_text: |

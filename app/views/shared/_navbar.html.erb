@@ -4,9 +4,9 @@
   </div>
 
   <div class="navbar-container">
-    <%= link_to 'Map', nomads_path, class: "hidden-xs hidden-sm" %>
-    <%= link_to 'Mission', mission_path, class: "hidden-xs hidden-sm" %>
-    <a href="mailto:charly.martin.1207@gmail.com?subject=I &#x1F60D Nomadmap" class="hidden-xs hidden-sm">Contact</a>
+    <%= link_to t('navbar.map'), nomads_path, class: "hidden-xs hidden-sm" %>
+    <%= link_to t('navbar.about'), about_path, class: "hidden-xs hidden-sm" %>
+    <a href="mailto:charly.martin.1207@gmail.com?subject=I &#x1F60D Nomadmap" class="hidden-xs hidden-sm"><%= t('navbar.contact') %></a>
   </div>
 
 
@@ -19,7 +19,7 @@
 
     <div class="navbar-container pos-relative">
       <div class="devise-container pos-absolute">
-        <%= link_to 'Map', nomads_path %>
+        <%= link_to t('navbar.map'), nomads_path %>
         <%= link_to t('navbar.edit_profile'), edit_nomad_path(current_nomad) %>
         <%= link_to t('navbar.change_password'), edit_nomad_registration_path %>
         <%= link_to t('navbar.logout'), destroy_nomad_session_path, method: :delete %>
