@@ -5,7 +5,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-underscore'
 end
 
-gem 'rails', '5.0.0'
+gem 'rails', '5.1.1'
 gem 'puma'
 gem 'pg'
 
