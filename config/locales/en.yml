@@ -19,17 +19,23 @@ en:
       form_submit: "GO"
       what_is_nomad: "Why nomadmap?"
       what_is_nomad_text_html: |
-        The world has opened up! :rocket: For us lucky digital nomads, home is where
-        the WiFi works :raised_hands: …ain’t it grand!? And while exploring is fun and
+        The world has opened up! &#x1F680 For us lucky digital nomads, home is where
+        the WiFi works &#x1F64C …ain’t it grand!? And while exploring is fun and
         anonymity is sometimes part of the charm, it’s nice to have the option of connecting
         with other nomads once in a while.
-        Enter Nomadmap! [little icon here] Nomadmap helps you locate and connect with other
+        <br>
+        <br>
+        Enter Nomadmap! &#x1F389 Nomadmap helps you locate and connect with other
         nomads near you. You can also use Nomadmap to determine your next location if you want
-        more nomads to network and connect with :tada:.
+        more nomads to network and connect with.
+        <br>
+        <br>
         Nomadmap gives you access to the real-time position of other digital nomads then so
-        you can connect with a nomad near you! :raising_hand: You can get their contact details
+        you can connect with a nomad near you! &#x1F64B You can get their contact details
         and arrange a catch up or simply exchange information about your location.
-        Want to connect? Sign-up :point_down:
+        <br>
+        <br>
+        Want to connect? Sign-up &#x1F447
       features: "Cool features"
       feature-1: "Get Notified"
       feature-1_text: |

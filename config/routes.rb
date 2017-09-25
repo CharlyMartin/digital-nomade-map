@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   get 'nomads_around', to: 'pages#nomads_around', as: 'nomads_around'
-  get 'about', to: 'pages#mission', as: 'about'
+  get 'about', to: 'pages#about', as: 'about'
   get 'privacy', to: 'pages#privacy', as: 'privacy'
 
   resources :nomads, only: %i(index show edit update)
