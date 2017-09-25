@@ -26,6 +26,7 @@ gem 'simple_form'
 gem 'geocoder'
 gem 'country_select'
 gem 'autoprefixer-rails'
+gem 'forest_liana'
 
 group :development, :test do
   gem 'binding_of_caller'

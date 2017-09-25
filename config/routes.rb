@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount ForestLiana::Engine => '/forest'
   devise_for :nomads, controllers: { omniauth_callbacks: 'nomads/omniauth_callbacks' }
 
   root to: 'pages#home'
