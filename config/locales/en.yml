@@ -84,6 +84,8 @@ en:
     longitude: "Longitude"
     facebook: "Facebook profile"
   forms:
+    sign_in_html: "Welcome back &#x1F44B"
+    sign_up_html: "Welcome aboard &#x1F680"
     about_you: "About you (1/2)"
     location: "Your location (2/2)"
     edit_info: "Edit your profile"
