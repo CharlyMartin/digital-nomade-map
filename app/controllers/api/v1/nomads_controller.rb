@@ -10,7 +10,7 @@ class Api::V1::NomadsController < Api::V1::BaseController
   end
 
   def update
-    if @nomad.update(latitude: nomad_params[:latitude], longitude: nomad_params[:longitude], latest_chrome_update: Time.zone.now)
+    if @nomad.update(latitude: nomad_params[:latitude], longitude: nomad_params[:longitude], latest_chrome_update: Time.now)
       render :show
     else
       render_error
@@ -32,5 +32,3 @@ class Api::V1::NomadsController < Api::V1::BaseController
     status: :unprocessable_entity
   end
 end
-
-
