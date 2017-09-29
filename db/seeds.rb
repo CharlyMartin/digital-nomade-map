@@ -13,7 +13,7 @@ Nomad.create(
   username: "CharlyMartin",
   gender: 2,
   email: "charly.martin.1207@gmail.com",
-  password: "123soleil",
+  password: "RueTurenne",
   latitude: -33.880428,
   longitude: 151.2004518
 )

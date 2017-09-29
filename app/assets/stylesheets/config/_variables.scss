@@ -5,15 +5,21 @@
 $header-font: "Comfortaa", "Helvetica", "cursive";
 $base-font: "Open Sans", "Helvetica", "sans-serif";
 
+
 // Font-size
 $base-size: 16px;
 $base-height: 1.5;
 
+
+// Background color
+$gray-transparent: rgba(20, 20, 20, 0.001);
+
+
 // Brand Colors
-$yellow: rgba(255, 242, 117, 1);
 $blue: rgba(106, 127, 219, 1);
 $green: rgba(99, 226, 99, 1);
-$orange: rgba(255, 140, 66, 1);
+$white: rgba(220, 220, 220, 1);
+
 
 // Gray scale
 $gray-darker:  rgba(20, 20, 20, 0.9); // #222
@@ -22,8 +28,6 @@ $gray:         rgba(20, 20, 20, 0.5); // #555
 $gray-light:   rgba(20, 20, 20, 0.3); // #777
 $gray-lighter: rgba(20, 20, 20, 0.1); // #eee
 
-// Background color
-$gray-transparent: rgba(20, 20, 20, 0.001);
 
 // Device breakpoints
 $breakpoint-phone: 320px;
