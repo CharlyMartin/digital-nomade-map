@@ -10,6 +10,10 @@
   cursor: pointer;
 }
 
+.text-centered {
+  text-align: center;
+}
+
 // Positions
 .pos-relative {
   position: relative;
@@ -17,4 +21,20 @@
 
 .pos-absolute {
   position: absolute;
+}
+
+// Flex
+.flex {
+  display: flex;
+}
+
+.vertical-centered {
+  justify-content: center;
+  align-items: center;
+}
+
+.horizontal-centered {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

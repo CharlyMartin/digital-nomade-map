@@ -9,6 +9,7 @@
   border: 3.5px solid $green;
   border-radius: 50px;
   cursor: pointer;
+  max-width: fit-content;
   &:hover {
     background: $green;
     color: white;
@@ -25,6 +26,7 @@
   border: 1px solid $blue;
   border-radius: 50px;
   cursor: pointer;
+  max-width: fit-content;
   &:hover {
     background: $blue;
     color: white;

@@ -1,42 +1,34 @@
-<div class="navbar-placeholder"></div>
-
-<!-- VIEW 1 -->
-
-<div class="banner-home">
-  <div class="container-resp">
+<div class="banner-home pos-relative">
+  <div class="container-resp flex horizontal-centered">
     <h1 id="headline"> <%= t('pages.home.headline') %> </h1>
     <h2 id="caption" class="hidden-xs"> <%= t('pages.home.caption') %> </h2>
     <span class="primary-button" id="cta"> <%= t('pages.home.cta') %> </span>
   </div>
 
-  <div class="scroll-down-container">
-    <p class="scroll-down pointer"> <%= t('pages.home.scroll_down') %> </p>
+  <div class="scroll-down-container pos-absolute flex horizontal-centered">
+    <span class="scroll-down pointer"> <%= t('pages.home.scroll_down') %> </span>
     <i class="fa fa-angle-down pointer" aria-hidden="true" id="sign-up"></i>
   </div>
 </div>
 
 <!-- VIEW 2 -->
-<div class="form-banner">
+<div class="wrapper-green">
+  <div class="container-resp">
 
-  <div class="typed-js-container">
-    <p> There is <span class="typed-js-element"></span></p>
-  </div>
-
-  <%= simple_form_for :location, url: :nomads_around, method: :get do |f| %>
-    <div class="container-fuild">
-      <div class="row">
-        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
-
-          <div class="form-container-home">
-            <%= f.input :location, label: false, placeholder: t('pages.home.form_placeholder'), class: 'form-input' %>
-            <%= f.button :submit, t('pages.home.form_submit'), class: 'form-input' %>
-          </div>
-
-        </div>
-      </div>
+    <div class="typed-js-container flex vertical-centered">
+      <p> There is <span class="typed-js-element"></span></p>
     </div>
-  <% end %>
 
+    <div class="form-container-home">
+      <%= simple_form_for :location, url: :nomads_around, method: :get do |f| %>
+        <div class="inputs-container-home flex vertical-centered">
+          <%= f.input :location, label: false, placeholder: t('pages.home.form_placeholder'), class: 'form-input' %>
+          <%= f.button :submit, t('pages.home.form_submit'), class: 'form-input' %>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
 </div>
 
 <!-- VIEW 3 -->

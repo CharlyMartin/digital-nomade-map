@@ -1,18 +1,8 @@
-// VIEW 1 //////////////////////////////////////////////////////////////////////
-.brand-container {
-  padding-top: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
+// LANDING PAGE
 #headline {
   font-family: $header-font;
   font-size: 45px;
   font-weight: 600;
-  margin-bottom: 15px;
-  text-align: center;
   color: $gray-darker;
 }
 
@@ -21,58 +11,70 @@
   font-family: $header-font;
   font-size: 25px;
   font-weight: 300;
+  margin-bottom: 50px;
 }
 
-.cta-container {
-  padding-bottom: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .scroll-down-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: $blue;
+  color: $gray;
   margin-bottom: 10px;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
 
-// VIEW 2 ///////////////////////////////////////////////////////////////////////
-.form-banner {
-  height: 100vh;
-  width: 100%;
-  text-align: center;
-  background: $blue;
-}
-
+// TYPED JS
 .typed-js-container {
-  height: 45vh;
+  height: 50%;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .typed-js-container p {
   font-family: $header-font;
-  color: white;
+  color: $gray-dark;
   font-weight: 400;
   font-size: 24px;
 }
 
 .typed-js-container .city, .typed-js-container .name {
-  color: $orange;
+  color: white;
 }
 
 
+// WHERE ARE YOU FORM
 .form-container-home {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
+  text-align: center;
+}
+
+.inputs-container-home {
+  width: 50%;
+  margin: 0 auto;
+}
+
+@media (min-width : $breakpoint-phone) {
+  .inputs-container-home {
+    width: 100%;
+  }
+}
+
+@media (min-width : $breakpoint-phablet) {
+  .inputs-container-home {
+    width: 90%;
+  }
+}
+
+@media (min-width : $breakpoint-tablet) {
+  .inputs-container-home {
+    width: 70%;
+  }
+}
+
+@media (min-width : $breakpoint-desktop) {
+  .inputs-container-home {
+    width: 60%;
+  }
 }
 
 .form-group.location_location {
@@ -91,23 +93,23 @@ input#location_location {
   border: 1px solid white;
   padding: 0 25px;
   height: 60px;
+  font-size: 16px;
   box-shadow: none;
   font-weight: 300;
   &:focus {
-    border: 1px solid white;
-    color: $blue;
+    border: 2px solid white;
   }
 }
 
 // submit button
-.form-container-home > input[name="commit"] {
+.inputs-container-home > input[name="commit"] {
   height: 60px;
   border: 3px solid white;
   background: white;
   width: 25%;
   border-radius: 0 40px 40px 0;
-  padding: 0 25px;
-  color: $blue;
+  color: $green;
+  font-size: 16px;
   font-weight: bold;
   box-shadow: none;
   transition: all 0.1s ease;
@@ -116,56 +118,6 @@ input#location_location {
     border: 3px solid white;
     color: white;
   }
-}
-
-// VIEW 3 ONWARDS //////////////////////////////////////////////////////////////////////
-
-.title-container {
-  width: 100%;
-  height: 25vh;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.home-title {
-  font-family: $header-font;
-  font-size: 30px;
-}
-
-.home-feature {
-  min-height: 40vh;
-  border-radius: 4px;
-  width: 100%;
-  background: $gray-lighter;
-  margin: 15px 0;
-  padding: 20px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.i-container {
-  padding: 40px;
-}
-
-.home-feature i {
-  color: $blue;
-}
-
-.home-feature h4 {
-  font-family: $header-font;
-  color: $blue;
-  font-size: 20px;
-  margin: 20px;
-}
-
-.home-feature p {
-  font-family: $base-font;
-  font-size: 14px;
 }
 
 
