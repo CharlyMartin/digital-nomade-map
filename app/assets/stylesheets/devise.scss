@@ -28,7 +28,17 @@ input[type="checkbox"] {
   padding: 30px
 }
 
+.form-links-container {
+  width: 100%;
+  text-align: center;
+  padding: 10px
+}
+
+.form-links-container a {
+  color: $gray
+}
+
 .form-control:focus {
-  border-color: $gray-light;
+  border-color: $gray;
   box-shadow: none;
 }
