@@ -2,11 +2,10 @@ en:
   navbar:
     map: "Map"
     about: "About"
-    contact: "Contact"
+    auto_update: "Auto-update"
     sign_up: "Sign-up"
     sign_in: "Sign-in"
     edit_profile: "Profile"
-    edit_location: "Update location"
     change_password: "Change password"
     logout: "Log out"
   pages:
@@ -17,8 +16,11 @@ en:
       scroll_down: "Scroll down"
       form_placeholder: "Where are you?"
       form_submit: "GO"
-      what_is_nomad: "Why nomadmap?"
-      what_is_nomad_text_html: |
+    auto-update:
+
+    about:
+      title: "Why nomadmap?"
+      content_html: |
         The world has opened up! &#x1F680 For us lucky digital nomads, home is where
         the WiFi works &#x1F64C …ain’t it grand!? And while exploring is fun and
         anonymity is sometimes part of the charm, it’s nice to have the option of connecting
@@ -36,16 +38,6 @@ en:
         <br>
         <br>
         Want to connect? Sign-up &#x1F447
-      features: "Cool features"
-      feature-1: "Get Notified"
-      feature-1_text: |
-        Receive an email when you cross path with another nomad. Never miss an opportunity to meet a new nomad.
-      feature-2: "Chrome Extension"
-      feature-2_text: |
-        Let our chrome extension manage the position's update for you. You can choose the frequency of the updates.
-      feature-3: "Instant Message"
-      feature-3_text: |
-        Send instant messages to other nomads without leaving the app. Things are about the get real!
     nomads_around:
       nomad_number_html:
         zero: |
@@ -65,6 +57,16 @@ en:
         zero: "No one is here yet!"
         one: "%{count} digital nomad"
         other: "%{count} digital nomads around you!"
+  forms:
+    sign_in_html: "Welcome back &#x1F44B"
+    sign_up_html: "Welcome aboard &#x1F680"
+    about_you: "About you (1/2)"
+    location: "Your location (2/2)"
+    edit_info: "Edit your profile"
+    edit_password: "Update password"
+    edit_location: "Edit your location"
+    update: "Update"
+    refine: "Refine location"
   placeholders:
     first_name: "First name"
     last_name: "Last name"
@@ -83,17 +85,6 @@ en:
     latitude: "Latitude"
     longitude: "Longitude"
     facebook: "Facebook profile"
-  forms:
-    sign_in_html: "Welcome back &#x1F44B"
-    sign_up_html: "Welcome aboard &#x1F680"
-    about_you: "About you (1/2)"
-    location: "Your location (2/2)"
-    edit_info: "Edit your profile"
-    edit_password: "Update password"
-    edit_location: "Edit your location"
-    update: "Update"
-    refine: "Refine location"
   footer:
     brand: "nomadmap"
-    tagline: "digital nomads finder"
-    copyright: "nomadmap 2017 ©"
+    contact: "Contact"

@@ -1,6 +1,6 @@
 // Your footer style
 .myfooter {
-  min-height: 40vh;
+  min-height: 30vh;
   background: $gray-darker;
   padding: 30px;
   display: flex;
@@ -15,4 +15,11 @@
   font-size: 25px;
   color: white;
   margin: 10px;
+}
+
+.footer-contact {
+  color: $green;
+  &:hover {
+    color: white;
+  }
 }
