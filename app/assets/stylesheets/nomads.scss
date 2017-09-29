@@ -1,12 +1,17 @@
 .nomad-count {
   width: 100%;
   background: $green;
-  color: white;
   font-family: $header-font;
-  font-size: 16px;
   text-align: center;
-  padding: 8px 0;
+  padding: 10px 0;
 }
+
+.nomad-count h2 {
+  font-size: 16px;
+  margin: 0;
+  color: white;
+}
+
 
 .iw {
   width: fit-content;
@@ -19,13 +24,14 @@
 }
 
 .iw > .iw-name {
+  font-family: $header-font;
   font-size: 22px;
   color: $green;
 }
 
 .iw > .iw-occupation {
   font-size: 16px;
-  color: $gray-light;
+  color: $gray-dark;
   font-family: $base-font;
   font-weight: 400;
   margin: 5px 0 20px 0;
@@ -37,7 +43,7 @@
   color: white;
   padding: 10px;
   border-radius: 4px;
-  background: rgba(210, 210, 210, 1);
+  background: $gray;
   transition: all 0.2s ease-in-out;
   &:hover {
     background: $green;
