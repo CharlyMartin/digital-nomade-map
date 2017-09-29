@@ -1,24 +1,5 @@
-/* -------------------------------------
- * Utilities classes
- * These are examples of utilities classes
- * Feel free to change them and create your own
- * ------------------------------------- */
-
-// Variables
-
-:root {
-  --navbar-height: 6vh;
-}
-
-
-// Universals
-h1, h2, h3, h4, h5, h6, p {
-  margin: 0;
-  font-size: inherit;
-}
-
-* {
-  text-decoration: none !important;
+.box-shadow {
+  box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.1);
 }
 
 .fit-content {

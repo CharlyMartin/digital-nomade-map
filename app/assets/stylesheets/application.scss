@@ -1,6 +1,5 @@
 // Graphical variables
-@import "config/variables";
-@import "config/bootstrap_variables";
+@import "config/index";
 
 // External libraries
 @import "bootstrap-sprockets";
@@ -15,4 +14,3 @@
 @import "vendor/index";
 @import "nomads";
 @import "devise";
-@import "universal"
