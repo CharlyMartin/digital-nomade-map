@@ -1,6 +1,6 @@
 function scrollDown() {
   $('body, html').animate(
-    {scrollTop: $('#scroll-down-stop').offset().top},
+    {scrollTop: $('#sign-up').offset().top},
     500);
   };
 

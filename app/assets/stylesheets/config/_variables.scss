@@ -16,11 +16,14 @@ $green: rgba(99, 226, 99, 1);
 $orange: rgba(255, 140, 66, 1);
 
 // Gray scale
-$gray-darker:  lighten(#000, 13.5%); // #222
-$gray-dark:    lighten(#000, 20%);   // #333
-$gray:         lighten(#000, 33.5%); // #555
-$gray-light:   lighten(#000, 46.7%); // #777
-$gray-lighter: lighten(#000, 93.5%); // #eee
+$gray-darker:  rgba(20, 20, 20, 0.9); // #222
+$gray-dark:    rgba(20, 20, 20, 0.7);   // #333
+$gray:         rgba(20, 20, 20, 0.5); // #555
+$gray-light:   rgba(20, 20, 20, 0.3); // #777
+$gray-lighter: rgba(20, 20, 20, 0.1); // #eee
+
+// Background color
+$gray-transparent: rgba(20, 20, 20, 0.001);
 
 // Bootsrap
 $bootstrap-red: #EE5F5B;

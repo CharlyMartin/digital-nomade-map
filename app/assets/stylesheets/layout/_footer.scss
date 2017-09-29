@@ -1,7 +1,7 @@
 // Your footer style
 .myfooter {
   min-height: 40vh;
-  background: $gray-dark;
+  background: $gray-darker;
   padding: 30px;
   display: flex;
   justify-content: center;
@@ -15,10 +15,4 @@
   font-size: 25px;
   color: white;
   margin: 10px;
-}
-
-#footer-tagline {
-  font-size: 13px;
-  font-family: $header-font;
-  color: $green;
 }

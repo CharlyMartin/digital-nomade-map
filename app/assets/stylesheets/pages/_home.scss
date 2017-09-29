@@ -9,7 +9,6 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-
 }
 
 .brand-container {
@@ -26,10 +25,11 @@
   font-weight: 600;
   margin-bottom: 15px;
   text-align: center;
+  color: $gray-darker;
 }
 
 #caption {
-  color: $gray-light;
+  color: $gray;
   font-family: $header-font;
   font-size: 25px;
   font-weight: 300;
