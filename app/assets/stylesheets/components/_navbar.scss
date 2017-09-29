@@ -65,14 +65,9 @@ img#dLabel {
   }
 }
 
-//
-
-.pos-relative {
-  position: relative;
-}
-
-.pos-absolute {
-  position: absolute;
+.navbar-placeholder {
+  height: var(--navbar-height);
+  width: 100%;
 }
 
 .devise-container {
@@ -99,17 +94,6 @@ img#dLabel {
   &:hover {
     background: $green;
   }
-  // &:hover {
-  //   color: $gray-darker;
-  // }
-}
-
-//
-
-
-#avatar-home {
-  width: 30px;
-  border-radius: 40px;
 }
 
 #avatar-container {
@@ -118,13 +102,9 @@ img#dLabel {
   height: inherit;
 }
 
-// JS
-
 .active {
   right: 2vh;
   transition: right 400ms ease;
 }
-
-// MISC
 
 .mynavbar > *::before, .navbar > *::after { display: none !important; }
