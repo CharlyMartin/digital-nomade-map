@@ -30,15 +30,6 @@
   justify-content: center;
 }
 
-@keyframes levitate {
-  0% {transform: translateY(0px)}
-  75% {transform: translateY(0px)}
-  80% {transform: translateY(-5px)}
-  90% {transform: translateY(0px)}
-  95% {transform: translateY(-5px)}
-  100% {transform: translateY(0px)}
-}
-
 .scroll-down-container {
   display: flex;
   align-items: center;
