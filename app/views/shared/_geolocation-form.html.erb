@@ -1,7 +1,7 @@
 <h3> <%= t('forms.location') %> </h3>
 <%= f.input :latitude, as: :hidden, input_html: { value: session[:lat] || current_nomad.latitude }  %>
 <%= f.input :longitude, as: :hidden, input_html: { value: session[:lng] || current_nomad.longitude } %>
-<div id="map" style="width: 100%; height: 30vh;"></div>
+<div id="map" style="width: 100%; height: 40vh;"></div>
 <br>
 <div class="form-button">
   <p class="secondary-button" id="update-map"> <%= t('forms.refine') %> </p>

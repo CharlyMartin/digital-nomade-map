@@ -1,54 +1,33 @@
-.form-container {
-  width: 100%;
-  min-height: 100vh;
-  padding: 50px 0;
-}
-
-.form-container h2 {
+.form-inputs > h2 {
   text-align: center;
   font-family: $header-font;
   font-weight: 100;
-  font-size: 35px;
+  font-size: 30px;
   margin: 50px 0;
 }
 
-.form-inputs > h3 {
-  font-family: $header-font;
+.form-inputs h3 {
+  font-family: $base-font;
   font-size: 20px;
-  margin: 30px 0;
+  margin: 20px 0;
 }
 
 .form-inputs input {
   font-weight: 300;
+  font-size: 16px;
+  color: $gray-darker;
 }
 
 input[type="checkbox"] {
   box-shadow: none;
 }
 
-.form-button {
+.form-button-container {
   width: 100%;
   text-align: center;
 }
 
 .form-control:focus {
-  border-color: $green;
+  border-color: $gray-light;
   box-shadow: none;
-}
-
-.form-links {
-  width: 100%;
-  padding: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.form-links a {
-  font-family: $header-font;
-  color: $blue;
-  padding: 4px;
-  margin: 5px;
-  font-size: 15px;
 }

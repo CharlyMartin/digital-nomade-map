@@ -18,18 +18,18 @@
 }
 
 .secondary-button {
-  font-family: $header-font;
+  font-family: $base-font;
   padding: 10px 15px;
-  font-size: 15px;
-  color: $blue;
+  font-size: 16px;
+  color: $gray;
   display: inline;
-  border: 1px solid $blue;
+  border: 1px solid $gray;
   border-radius: 50px;
   cursor: pointer;
   max-width: fit-content;
   &:hover {
-    background: $blue;
+    background: $gray;
     color: white;
-    border: 1px solid $blue;
+    border: 1px solid transparent;
   }
 }
