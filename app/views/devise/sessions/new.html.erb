@@ -1,35 +1,27 @@
 <div class="navbar-placeholder"></div>
 
-<div class="form-container">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+<div class="container-resp">
 
-        <h2><%= t("forms.sign_in_html") %></h2>
+  <h2 class="form-title"><%= t("forms.sign_in_html") %></h2>
 
-        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <%= f.error_notification %>
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
 
-          <div class="form-inputs">
-            <%= f.input :email, required: false, label: false, autofocus: true, placeholder: t('placeholders.email') %>
-            <%= f.input :password, required: false, label: false, placeholder: t('placeholders.password') %>
-            <%= f.input :remember_me, id: 'no-box-shadow', as: :boolean if devise_mapping.rememberable? %>
-          </div>
-
-          <br>
-          <br>
-
-          <div class="form-button">
-            <%= f.button :submit, t(".sign_in"), class: 'primary-button' %>
-          </div>
-
-        <% end %>
-
-        <div class="form-links">
-          <% render "devise/shared/links" %>
-        </div>
-
-      </div>
+    <div class="form-inputs">
+      <%= f.input :email, required: false, label: false, autofocus: true, placeholder: t('placeholders.email') %>
+      <%= f.input :password, required: false, label: false, placeholder: t('placeholders.password') %>
+      <%= f.input :remember_me, id: 'no-box-shadow', as: :boolean if devise_mapping.rememberable? %>
     </div>
-  </div>
+
+    <br>
+    <br>
+
+    <div class="form-button-container">
+      <%= f.button :submit, t(".sign_in"), class: 'primary-button' %>
+    </div>
+
+  <% end %>
+
+  <% render "devise/shared/links" %>
+
 </div>

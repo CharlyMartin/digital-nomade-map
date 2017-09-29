@@ -2,8 +2,8 @@
 
 <div class="container-resp">
 
+  <h2 class="form-title"><%= t("forms.sign_up_html") %></h2>
   <div class="form-inputs">
-    <h2><%= t("forms.sign_up_html") %></h2>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
@@ -22,18 +22,12 @@
       <%= render 'shared/geolocation-form', f: f %>
     </div>
 
-    <hr>
-
     <div class="form-button-container">
       <%= f.button :submit, t(".sign_up"), class: 'primary-button' %>
     </div>
   <% end %>
 
-  <br>
-  <div class="form-links">
-    <% render "devise/shared/links" %>
-  </div>
-
+  <% render "devise/shared/links" %>
 </div>
 
 <% content_for :after_js do %>

@@ -1,13 +1,13 @@
-.form-inputs > h2 {
-  text-align: center;
-  font-family: $header-font;
-  font-weight: 100;
+.form-title {
+  font-family: $base-font;
+  font-weight: 600;
   font-size: 30px;
-  margin: 50px 0;
+  margin: 40px 0;
+  letter-spacing: -1.2px;
 }
 
 .form-inputs h3 {
-  font-family: $base-font;
+  font-family: $header-font;
   font-size: 20px;
   margin: 20px 0;
 }
@@ -25,6 +25,7 @@ input[type="checkbox"] {
 .form-button-container {
   width: 100%;
   text-align: center;
+  padding: 30px
 }
 
 .form-control:focus {

@@ -1,39 +1,31 @@
 <div class="navbar-placeholder"></div>
 
-<div class="form-container">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+<div class="container-resp">
 
-        <h2> <%= t('forms.edit_info') %> </h2>
+  <h2 class="form-title"> <%= t('forms.edit_info') %> </h2>
 
-        <%= simple_form_for @nomad, url: nomad_path, method: :patch do |f| %>
+  <%= simple_form_for @nomad, url: nomad_path, method: :patch do |f| %>
 
-          <div class="form-inputs">
-            <h3> <%= t('forms.about_you') %> </h3>
-            <%= f.input :first_name, label: false, placeholder: t('placeholders.first_name') %>
-            <%= f.input :last_name, label: false, placeholder: t('placeholders.last_name') %>
-            <%= f.input :username, label: false, placeholder: t('placeholders.username') %>
-            <%= f.input :gender, label: false, collection: Nomad.genders.keys[1..2] %>
-            <%= f.input :occupation, label: false, placeholder: t('placeholders.occupation') %>
-            <%= f.input :email, label: false, placeholder: t('placeholders.email') %>
-            <% f.input :facebook, label: false, placeholder: t('placeholders.facebook') %>
-            <br>
+    <div class="form-inputs">
+      <h3> <%= t('forms.about_you') %> </h3>
+      <%= f.input :first_name, label: false, placeholder: t('placeholders.first_name') %>
+      <%= f.input :last_name, label: false, placeholder: t('placeholders.last_name') %>
+      <%= f.input :username, label: false, placeholder: t('placeholders.username') %>
+      <%= f.input :gender, label: false, collection: Nomad.genders.keys[1..2] %>
+      <%= f.input :occupation, label: false, placeholder: t('placeholders.occupation') %>
+      <%= f.input :email, label: false, placeholder: t('placeholders.email') %>
+      <% f.input :facebook, label: false, placeholder: t('placeholders.facebook') %>
+      <br>
 
-            <hr>
-            <%= render 'shared/geolocation-form', f: f %>
-          </div>
-
-          <br>
-          <div class="form-button">
-            <%= f.submit t('forms.update'), class: 'primary-button' %>
-          </div>
-
-        <% end %>
-
-      </div>
+      <%= render 'shared/geolocation-form', f: f %>
     </div>
-  </div>
+
+    <br>
+    <div class="form-button-container">
+      <%= f.submit t('forms.update'), class: 'primary-button' %>
+    </div>
+
+  <% end %>
 </div>
 
 <% content_for :after_js do %>
