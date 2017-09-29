@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_nomad!, only: [:home, :nomads_around, :about, :auto_update, :privacy]
+  skip_before_action :authenticate_nomad!, only: [:home, :nomads_around, :about, :privacy]
 
   def home
     random_nomads = Nomad.order("RANDOM()").limit(15)

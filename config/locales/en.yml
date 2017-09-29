@@ -16,8 +16,9 @@ en:
       scroll_down: "Scroll down"
       form_placeholder: "Where are you?"
       form_submit: "GO"
-    auto-update:
-
+    auto_update:
+      title: "Auto-update"
+      content: "coco"
     about:
       title: "Why nomadmap?"
       content_html: |
@@ -87,4 +88,4 @@ en:
     facebook: "Facebook profile"
   footer:
     brand: "nomadmap"
-    contact: "Contact"
+    contact: "Contact us"
