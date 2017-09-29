@@ -16,16 +16,13 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     I18n.default_locale
-    # I18n.locale = params[:locale] || I18n.default_locale
   end
 
   def default_url_options
     { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }
   end
 
-  # nomad#index after authentication
   def after_sign_in_path_for(resource)
-    nomads_path
+    stored_location_for(resource) || nomads_path
   end
-
 end
