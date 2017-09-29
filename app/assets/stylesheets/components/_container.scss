@@ -1,5 +1,30 @@
 .container-resp {
+  background: red;
   margin: 0 auto;
-  width: 970px;
+  width: 1000px;
   height: 100%;
+}
+
+@media (min-width : $breakpoint-phone) {
+  .container-resp {
+    width: 300px;
+  }
+}
+
+@media (min-width : $breakpoint-phablet) {
+  .container-resp {
+    width: 400px;
+  }
+}
+
+@media (min-width : $breakpoint-tablet) {
+  .container-resp {
+    width: 700px;
+  }
+}
+
+@media (min-width : $breakpoint-desktop) {
+  .container-resp {
+    width: 900px;
+  }
 }
