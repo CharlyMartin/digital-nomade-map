@@ -11,15 +11,18 @@ $base-size: 16px;
 $base-height: 1.5;
 
 
-// Background color
-$gray-transparent: rgba(20, 20, 20, 0.001);
-
-
 // Brand Colors
 $blue: rgba(106, 127, 219, 1);
 $green: rgba(99, 226, 99, 1);
 $white: rgba(220, 220, 220, 1);
 
+
+// Feedback colors
+$success: $green;
+$error: $blue;
+
+// Background color
+$gray-transparent: rgba(20, 20, 20, 0.001);
 
 // Gray scale
 $gray-darker:  rgba(20, 20, 20, 0.9); // #222
