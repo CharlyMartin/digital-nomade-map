@@ -1,3 +1,4 @@
+// Main Container
 .container-resp {
   margin: 0 auto;
   width: 1000px;
@@ -26,5 +27,39 @@
 @media (min-width : $breakpoint-desktop) {
   .container-resp {
     width: 900px;
+  }
+}
+
+
+// Form Container
+.form-container-resp {
+  margin: 0 auto;
+  width: 700px;
+  height: 100%;
+  padding: 40px 10px;
+}
+
+
+@media (min-width : $breakpoint-phone) {
+  .form-container-resp {
+    width: 300px;
+  }
+}
+
+@media (min-width : $breakpoint-phablet) {
+  .form-container-resp {
+    width: 450px;
+  }
+}
+
+@media (min-width : $breakpoint-tablet) {
+  .form-container-resp {
+    width: 550px;
+  }
+}
+
+@media (min-width : $breakpoint-desktop) {
+  .form-container-resp {
+    width: 650px;
   }
 }
