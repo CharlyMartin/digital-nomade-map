@@ -1,8 +1,16 @@
 <div class="navbar-placeholder"></div>
 
-<div class="page-container">
-  <p class="result">
-    <%= t('pages.nomads_around.nomad_number_html', count: @nomads_around.count, location: params[:location][:location]) %>
-  </p>
-  <%= render 'shared/sign-up' %>
+<div class="container-resp flex horizontal-centered text-centered">
+  <div class="result-container">
+    <p class="result"> <%= t('pages.nomads_around.nomad_number_html', count: @nomads_around.count, location: params[:location][:location]) %> </p>
+  </div>
+
+  <div class="form-button-container">
+    <%= link_to t('pages.nomads_around.sign_up_email'), new_nomad_registration_path, class: "primary-button" %>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
 </div>

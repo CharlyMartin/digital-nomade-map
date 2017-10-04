@@ -50,7 +50,7 @@ en:
         other: |
           There are <span class='count'>%{count} digital nomads</span> near <span class='location'>%{location}</span>!
           <br> Sign-up and contact them &#x1F44B
-      sign_up_email: "Sign up with email"
+      sign_up_email: "Sign up"
       sign_up_facebook: "Continue with Facebook"
   nomads:
     index:

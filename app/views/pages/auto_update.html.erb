@@ -3,16 +3,18 @@
 </div>
 
 <div class="container-resp">
-  <h3>1. Download our chrome extension</h3>
-  <p>link to the ext</p>
+  <div class="instructions">
+    <h3>1. Get the chrome extension</h3>
+    <p>Go on the Chrome's web store and download &#x1F449 <a href="https://chrome.google.com/webstore/detail/nomadmap-location-auto-up/momgmpnakjhgkpgigjjjngdmepgehdli?hl=en">our extension</a> </p>
 
-  <h3>2. Fill our your username and api key</h3>
-  <p>Your username</p>
-  <p> <%= current_nomad.username %> </p>
-  <br>
-  <p>Your unique API key</p>
-  <p> <%= current_nomad.authentication_token %> </p>
+    <h3>2. Sync your account</h3>
+    <p> You will need your username and api key to sync your account  </p>
+    <p class="caption">Username</p>
+    <p> <%= current_nomad.username %> </p>
+    <p class="caption">API key</p>
+    <p> <%= current_nomad.authentication_token %> </p>
 
-  <h3>3. Enjoy life</h3>
-  <p>As you move around, you're position will be updated on the map</p>
+    <h3>3. Enjoy life</h3>
+    <p>As you move around, your position will be updated on the map &#x1F389</p>
+  </div>
 </div>
